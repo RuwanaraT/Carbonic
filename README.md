@@ -33,7 +33,7 @@ git-cheat-sheet can be found [here](https://education.github.com/git-cheat-sheet
 
 #### Using Git-Hub Dekstop 
 
-##### Initial Steps #####
+##### Initial Steps 
 
 1. Clone or download a repository.
 2. Open GitHub Dekstop.
@@ -49,7 +49,7 @@ git-cheat-sheet can be found [here](https://education.github.com/git-cheat-sheet
 9. create new pull request.
 
 
-##### Pull changes were made, in to your branch #####
+##### Pull changes were made, in to your branch 
 
 1. Go to main branch
 2. Click 'Fetch origin'
@@ -59,7 +59,7 @@ git-cheat-sheet can be found [here](https://education.github.com/git-cheat-sheet
 6. push origin
  
 
-##### Accept a pull request on browser #####
+#### Accept a pull request on browser 
 
 
 1. Click 'Add your review'.
