@@ -29,7 +29,7 @@
     ```
 4. Go to GitHub and create new pull request
 
-git-cheat-sheet can be found [here](https://education.github.com/git-cheat-sheet-education.pdf) <br>
+git-cheat-sheet can be found [here](https://education.github.com/git-cheat-sheet-education.pdf) <br><br>
 
 #### Using Git-Hub Dekstop 
 
@@ -42,21 +42,21 @@ git-cheat-sheet can be found [here](https://education.github.com/git-cheat-sheet
 
                ` After doing changes `
 
-4. select change files.
-5. put a commit message.
-7. push to your branch.
-8. push to main branch.
-9. create new pull request.
+4. Select change files.
+5. Put a commit message.
+7. Push to your branch.
+8. Push to main branch.
+9. Create new pull request.
 
 
 ##### Pull changes were made, in to your branch 
 
-1. Go to main branch
-2. Click 'Fetch origin'
-3. Change to your branch
-4. Click Choose a branch to merge into <your brach name>
-5. merge
-6. push origin
+1. Go to main branch.
+2. Click 'Fetch origin'.
+3. Change to your branch.
+4. Click Choose a branch to merge into <your brach name>.
+5. Click to Merge.
+6. Click Push origin.
  
 
 #### Accept a pull request on browser 
