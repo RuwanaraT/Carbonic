@@ -2,14 +2,33 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+var logger = require('morgan'); 
+var favicon=require('serve-favicon');
+var dotenv=require('dotenv');
 
 var hbs = require('express-handlebars');
 
+dotenv.config({path: './.env'})
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+const publicDirectory=path.join(__dirname,'./public/stylesheets');
+app.use(express.static(publicDirectory));
+
+app.get("/",(req,res)=>{
+  res.render("index")
+});
+
+app.get("/bregister",(req,res)=>{
+  res.render("bregister")
+});
+
+
+app.listen(8081,()=>{
+  console.log("Servet started on port 8081")
+})
+ 
 
 // view engine setup
 app.engine('hbs', hbs({extname:'hbs', defaultLayout:'layout', layoutsDir:__dirname+'/views/layouts/'}));
