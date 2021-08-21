@@ -24,6 +24,10 @@ app.get("/bregister",(req,res)=>{
   res.render("bregister")
 });
 
+app.get("/header",(req,res)=>{
+  res.render("header")
+});
+
 
 app.listen(8081,()=>{
   console.log("Servet started on port 8081")
