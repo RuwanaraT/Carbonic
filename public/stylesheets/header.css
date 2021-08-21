@@ -21,10 +21,11 @@
   
   }
   .logo1{
-    padding: 5px 0 0 400px;
+    position: relative;
+    left: 45%;
     width: 260px;
     height:100px;
-  }
+    }
   .logo{
     padding: 5px 0 0 50px;
     width: 100px;
