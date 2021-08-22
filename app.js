@@ -24,6 +24,10 @@ app.get("/bregister",(req,res)=>{
   res.render("bregister")
 });
 
+app.get("/addproduct",(req,res)=>{
+  res.render("addproduct")
+});
+
 app.get("/header",(req,res)=>{
   res.render("header")
 });
