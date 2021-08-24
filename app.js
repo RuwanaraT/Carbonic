@@ -22,6 +22,18 @@ app.use(express.json());
 app.use('/',require('./routes/pages'));
 app.use('/auth',require('./routes/auth'));
 
+app.get("/pickupform",(req,res)=>{
+  res.render("pickupform")
+});
+
+app.get("/pickupcancel",(req,res)=>{
+  res.render("pickupcancel")
+});
+
+app.get("/pickupdetailstable",(req,res)=>{
+  res.render("pickupdetailstable")
+});
+
 
 app.listen(8081,()=>{
   console.log("Servet started on port 8081")
