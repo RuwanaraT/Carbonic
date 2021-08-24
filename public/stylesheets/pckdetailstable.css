@@ -1,0 +1,22 @@
+body {
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    background-image: url("img/backimg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 130%
+}
+
+.table.table-bordered th {
+    text-align: center;
+}
+.danger-text {
+    color: #ff3547; 
+}  
+.success-text {
+    color: #00C851; 
+}
+.form-2 .input-group-addon {
+    border: 1px solid #ba68c8;
+}
+
