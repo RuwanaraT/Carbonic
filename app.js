@@ -15,22 +15,12 @@ var usersRouter = require('./routes/users');
 var app = express();
 const publicDirectory=path.join(__dirname,'./public/stylesheets');
 app.use(express.static(publicDirectory));
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
 
-app.get("/",(req,res)=>{
-  res.render("index")
-});
-
-app.get("/bregister",(req,res)=>{
-  res.render("bregister")
-});
-
-app.get("/addproduct",(req,res)=>{
-  res.render("addproduct")
-});
-
-app.get("/header",(req,res)=>{
-  res.render("header")
-});
+//routes
+app.use('/',require('./routes/pages'));
+app.use('/auth',require('./routes/auth'));
 
 
 app.listen(8081,()=>{
