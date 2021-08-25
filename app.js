@@ -34,6 +34,10 @@ app.get("/pickupdetailstable",(req,res)=>{
   res.render("pickupdetailstable")
 });
 
+app.get("/login",(req,res)=>{
+  res.render("login")
+});
+
 
 app.listen(8081,()=>{
   console.log("Servet started on port 8081")
