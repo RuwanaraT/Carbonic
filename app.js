@@ -38,6 +38,10 @@ app.get("/login",(req,res)=>{
   res.render("login")
 });
 
+app.get("/fregister",(req,res)=>{
+  res.render("fregister")
+});
+
 
 app.listen(8081,()=>{
   console.log("Servet started on port 8081")
