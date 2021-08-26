@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Carbonic - Farmer Registration</title>
+
+    <script src = "javascripts/fregister.js"> </script>
+
+    <script> 
+    alert("Welcome to Carbonic !!!");
+    var response = confirm("Do you want to create a farmer account ?");
+     </script>
+
+    <!-- display  favicon -->
+	<link rel = " shortcut icon " href = "img/carbonic-favicon-01.svg">
+
+</head>
+
+<body style="background-image: url(img/share1.jpg);backdrop-filter: blur(5px);">
+
+    <div class = "container mt-5" style="background-color: whitesmoke; width : 40%;">
+
+      	<form action = "" method = "" onsubmit="return checkPassword()">
+
+      		<center> <h1 style="color: seagreen;"> Register As Farmer </h1> </center>
+      		<hr style="border: 2px black solid;">
+
+          <p> Please fill all the mandatory information <span style="color:#ff0000">*</span> </p> 
+
+          <p style="font-weight: bold;"> Personal Info <span style="color:#ff0000">*</span> </p> 
+
+          <div class="form-group">
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Full Name"  required>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="NIC Number" required>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Mobile Number" required>
+          </div>
+
+          <hr style="border: 1px dimgray solid;">
+
+          <p style="font-weight: bold;"> Address Info <span style="color:#ff0000">*</span> </p>
+          
+          <div class="form-group">
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Address line 1" required>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Address line 2" required>
+          </div>
+
+          <div class="form-group">
+            <select id="inputState" class="form-control">
+              <option selected>Province</option>
+              <option>Central</option>
+              <option>Eastern</option>
+              <option>North-Central</option>
+              <option>North-Western</option>
+              <option>Northern</option>
+              <option>Sabaragamuwa</option>
+              <option>Southern</option>
+              <option>Uva</option>
+              <option>Western</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="District" required>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Postal Code" required>
+          </div>
+
+          <hr style="border: 1px dimgray solid;">
+
+          <p style="font-weight: bold;"> User Credintials <span style="color:#ff0000">*</span> </p>
+
+          <div class="form-group">
+              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Your Email" pattern ="[a-zA-Z0-9.%+-]*{8}" required> 
+          </div>
+
+        
+         <div class = "form-group">
+          <input type = "password" class = "form-control" id = "pwd" name = "pwd" placeholder = "Password" required>
+         </div> 
+
+         <div class = "form-group">
+          <input type = "password" class = "form-control" id = "rpwd" name = "rpwd" placeholder = "Re-Enter Password" required>
+         </div>
+
+          <hr style="border: 1px dimgray solid;">
+
+          <p style="font-weight: bold;"> Cultivated Crops </p>
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option5">
+            <label class="form-check-label" for="inlineCheckbox1">Food Crops</label>
+          </div> <br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option6">
+            <label class="form-check-label" for="inlineCheckbox1">Cash Crops</label>
+          </div> <br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option7">
+            <label class="form-check-label" for="inlineCheckbox1">Horticulture Crops</label>
+          </div><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option7">
+            <label class="form-check-label" for="inlineCheckbox1">Dairy & Poultry</label>
+          </div>
+
+          <hr style="border: 1px dimgray solid;">
+
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="policy" name = "policy" required onclick = "enableButton()">
+                <label class="form-check-label" for="exampleCheck1"> Accept Privacy & Policy Terms </label>
+            </div> <br>
+              
+            
+            <center>
+            <button type="submit" class="btn btn-primary" style = "background-color:green;" id="btn1" disabled>Sign Up</button> &nbsp; &nbsp; &nbsp; &nbsp;
+
+            <button type="submit" class="btn btn-primary" style = "background-color:tomato;">Cancel</button>
+            </center>
+
+            <br>
+
+      	</form>
+
+      </div>
+
+        <br>
+
+    
+</body>
+</html>

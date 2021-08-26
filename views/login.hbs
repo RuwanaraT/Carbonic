@@ -1,13 +1,60 @@
+<script>
+  var i = 0; // Start Point
+  var images = []; // Images Array
+  var time = 3000; // Time Between Switch
+  
+  // Image List
+  images[0] = "img/slider2.png";
+  images[1] = "img/slider3.png";
+  images[2] = "img/slider4.png";
+  images[3] = "img/slider5.png";
+  images[4] = "img/slider6.png";
+  
+  // Change Image
+  function changeImg() {
+    document.slide.src = images[i];
+  
+    // Check If Index Is Under Max
+    if (i < images.length - 1) {
+      // Add 1 to Index
+      i++;
+    } else {
+      // Reset Back To O
+      i = 0;
+    }
+  
+    // Run function every x seconds
+    setTimeout("changeImg()", time);
+  }
+  
+  // Run function when page loads
+  window.onload = changeImg
+  </script>
+
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+
   <title>Carbonic - Login</title>
+
+  <!-- display  favicon -->
+	<link rel = " shortcut icon " href = "img/carbonic-favicon-01.svg">
+
 </head>
-<body>
-  <div class = "container mt-5" style="width:25%; background-color: whitesmoke;">
+
+<body style="background-image: url(img/share1.jpg); backdrop-filter: blur(5px);">
+
+<br>
+
+  <center> <img name="slide" width="750" height="250" /> </center>
+
+  <div class = "container mt-5" style="width:30%; background-color: whitesmoke;">
 
             <form action = "" method = "">
 
@@ -54,5 +101,8 @@
             </form>
 
         </div>
+
+        <br>
 </body>
+
 </html>
