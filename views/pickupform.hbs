@@ -14,7 +14,7 @@
     <div class="row d-flex justify-content-center">
         <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
             <h3>Schedule Your Pickup</h3>
-            <p class="blue-text">Just answer a few questions<br> so that we can personalize the right experience for you.</p>
+            <p class="blue-text">Just schedule your pickup<br> *Please kindly set pickup date minimum of two days from ordered date.</p>
             <div class="card">
                 <h5 class="text-center mb-4">Add Your Pickup Details Here</h5>
                 <form class="form-card">
@@ -23,15 +23,15 @@
                         <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Province<span class="text-danger"> *</span></label> <input type="text" id="province" name="province" placeholder="Enter your province" > </div>
                     </div>
                     <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Mobile<span class="text-danger"> *</span></label> <input type="text" id="mobile" name="mobile" placeholder="Enter your mobile no" > </div>
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Pickup Time<span class="text-danger"> *</span></label> <input type="text" id="pcktime" name="pcktime" placeholder="Enter pickup time" > </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Mobile<span class="text-danger"> *</span></label> <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile no"  pattern="[0-9]{10}"> </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Pickup Time<span class="text-danger"> *</span></label> <input type="time" id="pcktime" name="pcktime" placeholder="Enter pickup time" > </div>
                     </div>
                     <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Pickup Date<span class="text-danger"> *</span></label> <input type="text" id="pckdate" name="pckdate" placeholder="Enter pickup date" > </div>
-                         <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Driver NIC<span class="text-danger"> *</span></label> <input type="text" id="drnic" name="drnic" placeholder="Enter driver nic" > </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Pickup Date<span class="text-danger"> *</span></label> <input type="date" id="pckdate" name="pckdate" placeholder="Enter pickup date" > </div>
+                         <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Driver NIC<span class="text-danger"> *</span></label> <input type="text" id="drnic" name="drnic" placeholder="Enter driver nic" pattern="[0-9]{10}"> </div>
                     </div>
                      <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Vehicle No<span class="text-danger"> *</span></label> <input type="text" id="vcno" name="vcno" placeholder="Enter vehicle no" > </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Vehicle No<span class="text-danger"> *</span></label> <input type="text" id="vcno" name="vcno" placeholder="Enter vehicle no" pattern="[a-z]{2}-[0-9]{4}"> </div>
                         
                     </div>
                    
