@@ -35,7 +35,7 @@
                         <!--Table head-->
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th>Pickup id</th>
                                 <th>Buyer Name</th>
                                 <th>Province</th>
                                 <th>Mobile</th>
@@ -43,93 +43,33 @@
                                 <th>Pickup Date</th>
                                 <th>Driver NIC</th>
                                 <th>Vehicle No</th>
+                                 <th>Buyer ID</th>
                                 <th>Dispatched/not</th>
                                 <th>Payement/not</th>
                                 <th>Delete Pickup</th>
+                               
 
                             </tr>
                         </thead>
                         <!--Table head-->
                         <!--Table body-->
                         <tbody>
+                            {{#each pickupobj}}
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
+                                <td>{{this.pid }}</td>
+                                <td>{{ this.buyername }}</td>
+                                <td>{{ this. province}}</td>
+                                <td>{{ this.mobile }}</td>
+                                <td>{{ this.settime}}</td>
+                                <td>{{ this.setdate }}</td>
+                                <td>{{ this.dnic }}</td>
+                                <td>{{ this.vno }}</td>
+                                <td>{{ this.buyerid }}</td>
                                 <td><input type="checkbox"></td>
                                 <td><input type="checkbox"></td>
                                 <td><button type="button" id="" name="">Delete</button></td>
                             </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                 <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox"></td>
-                                <td><button type="button" id="" name="">Delete</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                 <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox"></td>
-                                <td><button type="button" id="" name="">Delete</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                 <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox"></td>
-                                <td><button type="button" id="" name="">Delete</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                 <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox"></td>
-                                <td><button type="button" id="" name="">Delete</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                 <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox"></td>
-                                <td><button type="button" id="" name="">Delete</button></td>
-                            </tr>
+                            {{/each}}
                         </tbody>
                         <!--Table body-->
                     </table>
