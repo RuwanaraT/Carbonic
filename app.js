@@ -22,6 +22,8 @@ app.use(express.json());
 app.use('/',require('./routes/pages'));
 app.use('/auth',require('./routes/auth'));
 
+app.use('/fhand', require('./routes/fhand'));
+
 app.get("/pickupform",(req,res)=>{
   res.render("pickupform")
 });
