@@ -23,7 +23,11 @@ router.get("/header",(req,res)=>{
   });
    
 
+  router.get('/fregister', (req, res) => {
 
+    res.render("fregister");
+    
+});
   
 
 
