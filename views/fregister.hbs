@@ -1,0 +1,218 @@
+
+
+    <script src = "javascripts/fregister.js"> </script>
+
+    <script> 
+    alert("Welcome to Carbonic !!!");
+    var response = confirm("Do you want to create a farmer account ?");
+     </script>
+
+     <link rel="stylesheet" href="/header.css">
+     <link rel="stylesheet" href="/footer.css">
+
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+        <title>Carbonic - Farmer Registration</title>
+
+    <!-- display  favicon -->
+	<link rel = " shortcut icon " href = "img/carbonic-favicon-01.svg">
+
+  <img class="logo1" src="img/logo.svg" width="200px" height="200px">
+      <nav>
+         <img class="logo" src="img/carbonic-favicon-01.svg" width="200px" height="200px">
+         <ul>
+            <li><a class="active" href="/index">Home</a></li>
+            
+            <li>
+               <a href="#">Browse Products
+               <i class="fas fa-caret-down"></i>
+               </a>
+               <ul>
+                  <li><a href="#">Vegetables</a></li>
+                  <li><a href="#">Fruits</a></li>
+                  <li>
+                     <a href="#">Others
+                     <i class="fas fa-caret-right"></i>
+                     </a>
+                     <ul>
+                        <li><a href="#">Plants & seeds</a></li>
+                        <li><a href="#">Grains</a></li>
+                        <li><a href="#">Fertilizer</a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+            <li><a href="#">Contact Us</a></li>
+             <li><a href="#">About Us</a></li>
+            <li><a href="#">Feedback</a></li>
+             <li>
+               <a href="#">Register
+               <i class="fas fa-caret-down"></i>
+               </a>
+               <ul>
+                  <li><a href="/fregister">Farmer</a></li>
+                  <li><a href="/bregister">Buyer</a></li>
+               </ul>
+            </li>
+            <li>
+               <a href="#">Switch To
+               <i class="fas fa-caret-down"></i>
+               </a>
+               <ul>
+                  <li><a href="/login">Farmer</a></li>
+                  <li><a href="#">Buyer</a></li>
+               </ul>
+            </li>
+         </ul>
+      </nav>
+
+   <br><br><br><br><br>
+
+  
+
+    <div class = "container mt-5" style="background-color: whitesmoke; width : 40%;">
+
+      	<form action = "/fhand/fregister" method = "POST" onsubmit="return checkPassword()">
+
+      		<center> <h1 style="color: seagreen;"> Register As Farmer </h1> </center>
+      		<hr style="border: 2px black solid;">
+
+          <p> Please fill all the mandatory information <span style="color:#ff0000">*</span> </p> 
+
+          <p style="font-weight: bold;"> Personal Info <span style="color:#ff0000">*</span> </p> 
+
+          <div class="form-group">
+            <input type="text" class="form-control" id="fname" name="fname" placeholder="Full Name"  required>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" id="fnic" name="fnic" placeholder="NIC Number" required>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" id="fmobile" name="fmobile" placeholder="Mobile Number" required>
+          </div>
+
+          <hr style="border: 1px dimgray solid;">
+
+          <p style="font-weight: bold;"> Address Info <span style="color:#ff0000">*</span> </p>
+          
+          <div class="form-group">
+            <input type="text" class="form-control" id="fadline1" name="fadline1" placeholder="Address line 1" required>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" id="fadline2" name="fadline2" placeholder="Address line 2" required>
+          </div>
+
+          <div class="form-group">
+            <select id="fprovince" name="fprovince" class="form-control">
+              <option selected>Province</option>
+              <option>Central</option>
+              <option>Eastern</option>
+              <option>North-Central</option>
+              <option>North-Western</option>
+              <option>Northern</option>
+              <option>Sabaragamuwa</option>
+              <option>Southern</option>
+              <option>Uva</option>
+              <option>Western</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" id="fdistrict" name="fdistrict" placeholder="District" required>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" id="fpcode" name="fpcode" placeholder="Postal Code" required>
+          </div>
+
+          <hr style="border: 1px dimgray solid;">
+
+          <p style="font-weight: bold;"> User Credintials <span style="color:#ff0000">*</span> </p>
+
+          <div class="form-group">
+              <input type="text" class="form-control" id="femail" name="femail" placeholder="Your Email" pattern ="[a-zA-Z0-9.%+-]*{8}" required> 
+          </div>
+
+        
+         <div class = "form-group">
+          <input type = "password" class = "form-control" id = "fpwd" name = "fpwd" placeholder = "Password" required>
+         </div> 
+
+         <div class = "form-group">
+          <input type = "password" class = "form-control" id = "frpwd" name = "frpwd" placeholder = "Re-Enter Password" required>
+         </div>
+
+          <hr style="border: 1px dimgray solid;">
+
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="policy" name = "policy" required onclick = "enableButton()">
+                <label class="form-check-label" for="exampleCheck1"> Accept Privacy & Policy Terms </label>
+            </div> <br>
+              
+            
+            <center>
+            <button type="submit" class="btn btn-primary" style = "background-color:green;" id="btn1" disabled>Sign Up</button> &nbsp; &nbsp; &nbsp; &nbsp;
+
+            <button type="reset" class="btn btn-primary" style = "background-color:tomato;">Cancel</button>
+            </center>
+
+            <br>
+
+      	</form>
+
+                {{# if message}}
+                         <h4 class="alert alert-danger mt-4">{{message}}</h4>
+                         
+                {{/if}}
+
+      </div>
+
+      <br><br><br><br><br>
+
+      <footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>company</h4>
+        <ul>
+          <li><a href="#">about us</a></li>
+          <li><a href="#">our services</a></li>
+          <li><a href="#">privacy policy</a></li>
+          <li><a href="#">affiliate program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>get help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">shipping</a></li>
+          <li><a href="#">returns</a></li>
+          <li><a href="#">order status</a></li>
+          <li><a href="#">payment options</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>online shop</h4>
+        <ul>
+          <li><a href="#">Vegetables</a></li>
+          <li><a href="#">Fruits</a></li>
+          <li><a href="#">Beans</a></li>
+          <li><a href="#">others</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -15,17 +15,37 @@ var usersRouter = require('./routes/users');
 var app = express();
 const publicDirectory=path.join(__dirname,'./public/stylesheets');
 app.use(express.static(publicDirectory));
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
 
-app.get("/",(req,res)=>{
-  res.render("index")
+//routes
+app.use('/',require('./routes/pages'));
+app.use('/auth',require('./routes/auth'));
+
+app.use('/fhand', require('./routes/fhand'));
+
+app.get("/pickupform",(req,res)=>{
+  res.render("pickupform")
 });
 
-app.get("/bregister",(req,res)=>{
-  res.render("bregister")
+app.get("/pickupcancel",(req,res)=>{
+  res.render("pickupcancel")
 });
 
-app.get("/header",(req,res)=>{
-  res.render("header")
+app.get("/pickupdetailstable",(req,res)=>{
+  res.render("pickupdetailstable")
+});
+
+app.get("/login",(req,res)=>{
+  res.render("login")
+});
+
+app.get("/fregister",(req,res)=>{
+  res.render("fregister")
+});
+
+app.get("/requests",(req,res)=>{
+  res.render("requests")
 });
 
 

@@ -32,6 +32,7 @@
                 <!--Horizontal Line-->
                 <hr>
                 <div class="orDiv">Or</div>
+                <form action="/auth/bregister" method="POST">
  
                 <div class="formGroup">
                     <i class="far fa-user"></i>
@@ -70,15 +71,25 @@
                 </div>
                 <button class="btn">Register</button>
             </div>
- 
+            </form>
             <!-- Right section of responsive registration form -->
             <div class="welcomeDiv">
                
           
             </div>
  
-        </dive>
+        </div>
+        {{#if message}}
+        <div class="alert alert-primary d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+        <div>
+         <h3>{{message}}</h3>
+         </div>
+
+        {{/if}}
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" 
+    crossorigin="anonymous"></script>
     
 </body>
 </html>

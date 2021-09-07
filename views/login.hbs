@@ -1,9 +1,49 @@
-<link rel="stylesheet" href="/header.css">
-<link rel="stylesheet" href="/footer.css">
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+<script>
+  var i = 0; // Start Point
+  var images = []; // Images Array
+  var time = 3000; // Time Between Switch
+  
+  // Image List
+  images[0] = "img/slider2.png";
+  images[1] = "img/slider3.png";
+  images[2] = "img/slider4.png";
+  images[3] = "img/slider5.png";
+  images[4] = "img/slider6.png";
+  
+  // Change Image
+  function changeImg() {
+    document.slide.src = images[i];
+  
+    // Check If Index Is Under Max
+    if (i < images.length - 1) {
+      // Add 1 to Index
+      i++;
+    } else {
+      // Reset Back To O
+      i = 0;
+    }
+  
+    // Run function every x seconds
+    setTimeout("changeImg()", time);
+  }
+  
+  // Run function when page loads
+  window.onload = changeImg
+  </script>
+
+
+  <title>Carbonic - Login</title>
+
+  <link rel="stylesheet" href="/header.css">
+     <link rel="stylesheet" href="/footer.css">
+
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
-<img class="logo1" src="img/logo.svg" width="200px" height="200px">
+    <!-- display  favicon -->
+	<link rel = " shortcut icon " href = "img/carbonic-favicon-01.svg">
+
+  <img class="logo1" src="img/logo.svg" width="200px" height="200px">
       <nav>
          <img class="logo" src="img/carbonic-favicon-01.svg" width="200px" height="200px">
          <ul>
@@ -52,24 +92,52 @@
          </ul>
       </nav>
 
-<br><br><br><br><br>
 
 
-    <a href="/bregister">register</a> <br>
-    
-    <a href="/pickupform">PickupForm</a><br>
+<br><br><br><br><br><br>
 
-    <a href="/pickupcancel">Pickup Cancel</a><br>
+  <center> <img name="slide" width="750" height="250" /> </center> <br>
 
-    <a href="/pickupdetailstable">Pickup details table</a><br>
+  <div class = "container mt-5" style="width:30%; background-color: whitesmoke;">
 
-    <a href="/addproduct">Add Products</a> <br>
+            <form action = "" method = "">
 
-    <a href="/requests">Requests</a><br>
+               <center> <h1 style="font-weight: bold; color: seagreen; float: left;"> Login </h1> </center> <br> <br>
+               <hr style="border: 2px solid black;">   
+               
+               <br>
 
-    <br><br><br><br><br>
+                <div class="form-group">
+                    
+                    <input type="email" class="form-control" id="mailadd" aria-describedby="emailHelp" placeholder="Enter Your E-mail Address" pattern="[a-zA-Z0-9.%+-]*{8}" required style="border-color: yellowgreen; border-width: 4px;">
+                    
+                  </div>
 
-    <!--footer-->
+                  <div class="form-group">
+                    
+                    <input type="password" class="form-control" id="passcode" placeholder="Enter Your Password" required style="border-color: yellowgreen; border-width: 4px;">
+                  </div> <br>
+
+                  <button type="submit" class="btn btn-primary" style="background-color: white; color: darkred; font-weight: bold; width: 100%; border: 4px darkred solid;"> Login </button>
+                  <br><br>
+
+                  <div style="text-align: center;">
+                    <a href="" style="color:tomato; font-weight: bold; text-decoration: none;"> Forgotten Password ? </a>
+                  </div> <br>
+
+                  <p style="color: black; font-weight: bold;"> Don't You have an Account ? </p>
+
+                  <center>
+                  <a href="/fregister" class="btn btn-primary" style="background-color: white; border: 4px green solid; color:dimgray; font-size: small; font-weight: bold;">Register as a farmer</a>
+                  </center> <br>
+
+            </form>
+
+        </div>
+
+        <br><br><br><br><br><br>
+
+
 <footer class="footer">
   <div class="container">
     <div class="row">
@@ -113,5 +181,3 @@
     </div>
   </div>
 </footer>
-<!--footer-->
-    
