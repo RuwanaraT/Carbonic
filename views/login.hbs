@@ -94,13 +94,27 @@
 
 
 
-<br><br><br><br><br><br>
+<br><br><br><br>
 
-  <center> <img name="slide" width="750" height="250" /> </center> <br>
+<div class="container mt-5">
 
-  <div class = "container mt-5" style="width:30%; background-color: whitesmoke;">
+  <div class="row">
 
-            <form action = "" method = "">
+    <div class="col-7">
+
+      <br><br><br><br><br><br><br><br>
+
+          <center>  <img name="slide" width="100%" height="100%" /> </center>
+
+    </div>
+
+    <div class="col-5">
+
+      <br><br>
+
+  <div class = "container mt-4" style="width:90%; background-color: whitesmoke;">
+
+            <form action = "/fhand/login" method = "POST">
 
                <center> <h1 style="font-weight: bold; color: seagreen; float: left;"> Login </h1> </center> <br> <br>
                <hr style="border: 2px solid black;">   
@@ -109,13 +123,13 @@
 
                 <div class="form-group">
                     
-                    <input type="email" class="form-control" id="mailadd" aria-describedby="emailHelp" placeholder="Enter Your E-mail Address" pattern="[a-zA-Z0-9.%+-]*{8}" required style="border-color: yellowgreen; border-width: 4px;">
+                    <input type="email" class="form-control" id="femail" name="femail" aria-describedby="emailHelp" placeholder="Enter Your E-mail Address" pattern="[a-zA-Z0-9.%+-]*{8}" required style="border-color: yellowgreen; border-width: 4px;">
                     
                   </div>
 
                   <div class="form-group">
                     
-                    <input type="password" class="form-control" id="passcode" placeholder="Enter Your Password" required style="border-color: yellowgreen; border-width: 4px;">
+                    <input type="password" class="form-control" id="fpwd" name="fpwd" placeholder="Enter Your Password" required style="border-color: yellowgreen; border-width: 4px;">
                   </div> <br>
 
                   <button type="submit" class="btn btn-primary" style="background-color: white; color: darkred; font-weight: bold; width: 100%; border: 4px darkred solid;"> Login </button>
@@ -135,7 +149,13 @@
 
         </div>
 
-        <br><br><br><br><br><br>
+      </div>
+
+  </div>
+
+</div>
+
+        <br><br><br>
 
 
 <footer class="footer">
