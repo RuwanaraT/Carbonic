@@ -21,6 +21,10 @@ router.get("/addproduct",(req,res)=>{
 router.get("/header",(req,res)=>{
     res.render("header")
   });
+
+  router.get("/addforum",(req,res)=>{
+    res.render("addforum")
+  });
    
 
   router.get('/fregister', (req, res) => {
