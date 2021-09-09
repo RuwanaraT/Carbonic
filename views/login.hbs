@@ -31,28 +31,72 @@
   window.onload = changeImg
   </script>
 
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
 
   <title>Carbonic - Login</title>
 
-  <!-- display  favicon -->
+  <link rel="stylesheet" href="/header.css">
+     <link rel="stylesheet" href="/footer.css">
+
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <!-- display  favicon -->
 	<link rel = " shortcut icon " href = "img/carbonic-favicon-01.svg">
 
-</head>
+  <img class="logo1" src="img/logo.svg" width="200px" height="200px">
+      <nav>
+         <img class="logo" src="img/carbonic-favicon-01.svg" width="200px" height="200px">
+         <ul>
+            <li><a class="active" href="/index">Home</a></li>
+            
+            <li>
+               <a href="#">Browse Products
+               <i class="fas fa-caret-down"></i>
+               </a>
+               <ul>
+                  <li><a href="#">Vegetables</a></li>
+                  <li><a href="#">Fruits</a></li>
+                  <li>
+                     <a href="#">Others
+                     <i class="fas fa-caret-right"></i>
+                     </a>
+                     <ul>
+                        <li><a href="#">Plants & seeds</a></li>
+                        <li><a href="#">Grains</a></li>
+                        <li><a href="#">Fertilizer</a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+            <li><a href="#">Contact Us</a></li>
+             <li><a href="#">About Us</a></li>
+            <li><a href="#">Feedback</a></li>
+             <li>
+               <a href="#">Register
+               <i class="fas fa-caret-down"></i>
+               </a>
+               <ul>
+                  <li><a href="/fregister">Farmer</a></li>
+                  <li><a href="/bregister">Buyer</a></li>
+               </ul>
+            </li>
+            <li>
+               <a href="#">Switch To
+               <i class="fas fa-caret-down"></i>
+               </a>
+               <ul>
+                  <li><a href="/login">Farmer</a></li>
+                  <li><a href="#">Buyer</a></li>
+               </ul>
+            </li>
+         </ul>
+      </nav>
 
-<body style="background-image: url(img/share1.jpg); backdrop-filter: blur(5px);">
 
-<br>
 
-  <center> <img name="slide" width="750" height="250" /> </center>
+<br><br><br><br><br><br>
+
+  <center> <img name="slide" width="750" height="250" /> </center> <br>
 
   <div class = "container mt-5" style="width:30%; background-color: whitesmoke;">
 
@@ -72,17 +116,7 @@
                   <div class="form-group">
                     
                     <input type="password" class="form-control" id="passcode" placeholder="Enter Your Password" required style="border-color: yellowgreen; border-width: 4px;">
-                  </div>
-
-                  <div class="form-check" style="text-align: center; color:black; font-weight: bold;">
-
-                      <input class="form-check-input" type="radio" name="checkT" id="checkF" value="option1" checked style="position: absolute; left: 20%">
-                      <label class="form-check-label" for="checkF" style="position: absolute; left: 22%"> Farmer </label>
-
-                      <input class="form-check-input" type="radio" name="checkT" id="checkB" value="option2" style="position: absolute; left: 70%">
-                      <label class="form-check-label" for="checkB" style="position: absolute; left: 72%"> Buyer </label> <br/><br/>
-
-                  </div>
+                  </div> <br>
 
                   <button type="submit" class="btn btn-primary" style="background-color: white; color: darkred; font-weight: bold; width: 100%; border: 4px darkred solid;"> Login </button>
                   <br><br>
@@ -94,15 +128,56 @@
                   <p style="color: black; font-weight: bold;"> Don't You have an Account ? </p>
 
                   <center>
-                  <button type="" class="btn btn-primary" style="background-color: white;  width: 45%; border: 4px green solid"> <a href="" style="text-decoration: none; color:dimgray; font-size: small; font-weight: bold;"> Register as a Farmer </a></button>
-                  <button type="" class="btn btn-primary"  style="background-color: white;  width: 45%; border: 4px green solid"> <a href="/bregister"style="text-decoration: none; color:dimgray; font-size: small; font-weight: bold;">Register as a Buyer </a></button>
+                  <a href="/fregister" class="btn btn-primary" style="background-color: white; border: 4px green solid; color:dimgray; font-size: small; font-weight: bold;">Register as a farmer</a>
                   </center> <br>
 
             </form>
 
         </div>
 
-        <br>
-</body>
+        <br><br><br><br><br><br>
 
-</html>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>company</h4>
+        <ul>
+          <li><a href="#">about us</a></li>
+          <li><a href="#">our services</a></li>
+          <li><a href="#">privacy policy</a></li>
+          <li><a href="#">affiliate program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>get help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">shipping</a></li>
+          <li><a href="#">returns</a></li>
+          <li><a href="#">order status</a></li>
+          <li><a href="#">payment options</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>online shop</h4>
+        <ul>
+          <li><a href="#">Vegetables</a></li>
+          <li><a href="#">Fruits</a></li>
+          <li><a href="#">Beans</a></li>
+          <li><a href="#">others</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

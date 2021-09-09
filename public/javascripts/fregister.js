@@ -1,4 +1,4 @@
-function checkPassword ()
+/*function checkPassword ()
 {
          var check1 = document.getElementById("pwd").value;
          var check2 = document.getElementById("rpwd").value;
@@ -15,7 +15,7 @@ function checkPassword ()
               return true;
          }
          
-}
+}*/
 
 function enableButton()
 {
