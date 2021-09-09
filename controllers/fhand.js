@@ -12,6 +12,57 @@ const db = mysql.createConnection({
     
 });
 
+exports.login = async (req, res) => {
+
+    try{
+
+        const{femail,fpwd} = req.body;
+
+        if(!femail || !fpwd) {
+            return res.status(400).render('login', {
+                message: 'Please provide an email and password'
+            })
+        }
+
+        db.query('SELECT * FROM farmers WHERE femail = ?', [femail], async (error, results) => {
+
+            console.log(results);
+
+            if(!results || !(await bcrypt.compare(fpwd, results[0].fpwd)) ) {
+
+                res.status(401).render('login', {
+                    message: 'Email or password is incorrect'
+                })
+
+            } else {
+  
+                const id = results[0].id;
+
+                const token = jwt.sign({id}, process.env.JWT_SECRETE, {
+
+                    expiresIn : process.env.JWT_EXPIRES_IN
+                });
+
+                console.log("The token is: " + token);
+
+                const cookieOptions = {
+                    expires: new Date(
+                        Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 60 * 1000
+                    ),
+                    
+                    httpOnly:true
+                }
+
+                res.cookie('jwt', token, cookieOptions);
+                res.status(200).redirect("/");
+            }
+        })
+
+    }catch(error){
+        console.log(error);
+    }
+}
+
 exports.fregister = (req, res) => {
 
     console.log(req.body);

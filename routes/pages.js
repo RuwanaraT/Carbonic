@@ -14,6 +14,10 @@ router.get("/bregister",(req,res)=>{
     res.render("bregister")
   });
 
+  router.get("/blogin",(req,res)=>{
+    res.render("blogin")
+  });
+
 router.get("/addproduct",(req,res)=>{
     res.render("addproduct")
   });

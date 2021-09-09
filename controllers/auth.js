@@ -8,7 +8,49 @@
     user: "root",
     password: "",
     database: "carbonic"
-  })
+  });
+  exports.blogin= async (req,res)=>{
+      try {
+          const{email,password}=req.body;
+          if( !email || !password){
+              return res.status(400).render('blogin',{
+                message:'Pleace Enter Email and Password'
+              })
+          }
+     db.query('SELECT * FROM bdetails WHERE email=?', [email], async(error,results)=>{
+        console.log(results);
+        if(!results || !(await bcrypt.compare(password,results[0].password))){
+            res.status(401).render('blogin',{
+                message:'Email or Password incorrect'
+            })
+        }else{
+            const id=results[0].id;
+            const token=jwt.sign({id},process.env.JWT_SECRET,{
+                expiresIn:process.env.JWT_EXPIRES_IN
+
+            });
+            console.log("Token is"+token);
+            const cookieOption={
+                expires:new Date(
+                    Date.now() + process.env.JWT_COOKIE_EXPIRES *24*60*60*3600
+                ),
+                httpOnly:true
+
+            }
+            res.cookie('jwt',token,cookieOption);
+           res.status(200).redirect("/");
+           
+
+        }
+
+     })
+          
+      } catch (error) {
+          console.log(error)
+          
+      }
+
+  }
 
 
 exports.bregister=(req,res)=>{
