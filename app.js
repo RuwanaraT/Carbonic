@@ -11,6 +11,7 @@ var hbs = require('express-handlebars');
 dotenv.config({path: './.env'})
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var productRouter = require('./routes/product');
 
 var app = express();
 const publicDirectory=path.join(__dirname,'./public/stylesheets');
@@ -22,7 +23,7 @@ app.use(cookieParser());
 //routes
 app.use('/',require('./routes/pages'));
 app.use('/auth',require('./routes/auth'));
-
+app.use('/',require('./routes/product'));
 app.use('/fhand', require('./routes/fhand'));
 
 app.get("/pickupform",(req,res)=>{
@@ -68,6 +69,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/',productRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
