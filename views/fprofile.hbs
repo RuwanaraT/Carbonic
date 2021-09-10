@@ -1,0 +1,261 @@
+<link rel="stylesheet" href="/header.css">
+<link rel="stylesheet" href="/footer.css">
+<link rel="stylesheet" href="/fprofile.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+<img class="logo1" src="img/logo.svg" width="200px" height="200px">
+      <nav>
+         <img class="logo" src="img/carbonic-favicon-01.svg" width="200px" height="200px">
+         <ul>
+            <li><a class="active" href="/index">Home</a></li>
+            
+            <li>
+               <a href="#">Browse Products
+               <i class="fas fa-caret-down"></i>
+               </a>
+               <ul>
+                  <li><a href="#">Vegetables</a></li>
+                  <li><a href="#">Fruits</a></li>
+                  <li>
+                     <a href="#">Others
+                     <i class="fas fa-caret-right"></i>
+                     </a>
+                     <ul>
+                        <li><a href="#">Plants & seeds</a></li>
+                        <li><a href="#">Grains</a></li>
+                        <li><a href="#">Fertilizer</a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+            <li><a href="#">Contact Us</a></li>
+             <li><a href="#">About Us</a></li>
+            <li><a href="#">Feedback</a></li>
+             <li>
+               <a href="/fprofile">Profile
+               {{!-- <i class="fas fa-caret-down"></i> --}}
+               </a>
+               {{!-- <ul>
+                  <li><a href="/fregister">Farmer</a></li>
+                  <li><a href="/bregister">Buyer</a></li>
+               </ul> --}}
+            </li>
+            <li>
+               <a href="/fhand/logout">Log Out
+               {{!-- <i class="fas fa-caret-down"></i> --}}
+               </a>
+               {{!-- <ul>
+                  <li><a href="/login">Farmer</a></li>
+                  <li><a href="#">Buyer</a></li>
+               </ul> --}}
+            </li>
+         </ul>
+      </nav>
+
+<br><br><br><br><br>
+
+
+    
+<div class="container mt-4">
+        <div class="row">
+            <div class="col-3">
+             <div class="card" >
+                <div class="avater-ctn">
+                    <img src="img/pp.png" class="avater" alt="User Profile Picture">
+                </div>
+             <div class="card-body">
+                 <h5 class="card-title">{{user.fname}}</h5>
+                 <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad alias qui inventore facere repellat at, pariatur aliquid reiciendis quaerat similique incidunt, perferendis minus ea totam placeat nobis suscipit, laboriosam minima.</p>
+                 
+            </div>
+            
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Reports : </li>
+                <center>
+                <li class="list-group-item"><a href="#" class="card-link" style="text-decoration: none;">Download Report 1</a></li>
+                <li class="list-group-item"><a href="#" class="card-link" style="text-decoration: none;">Download Report 2</a></li>
+                <li class="list-group-item"><a href="#" class="card-link" style="text-decoration: none;">Download Report 3</a></li>
+                </center>
+                <li class="list-group-item"><a href="#" class="card-link" style="text-decoration: none; color: black;">Find for Buyers<img src="img/investor.png" alt="" height="10%" width="10%" style="position: relative; left: 45%;"></a></li>
+                <li class="list-group-item"><a href="#" class="card-link" style="text-decoration: none; color: black;">Add Products<img src="img/fruit.png" alt="" height="10%" width="10%" style="position: relative; left: 49%;"></a></li>
+                {{!-- <li class="list-group-item"><a href="#" class="card-link" style="text-decoration: none; color: black;">Feedbacks <img src="img/criticism.png" alt="" height="10%" width="10%" style="position: relative; left: 55%;"></a></li>  --}}
+                <li class="list-group-item"><a href="#" class="card-link" style="text-decoration: none; color: black;"> Reset Password <img src="img/rotation-lock.png" alt="" height="10%" width="10%" style="position: relative; left: 38%;"></a></li>
+                <li class="list-group-item"><a href="#" class="card-link" style="text-decoration: none; color: black;"> Delete Account <img src="img/delete.png" alt="" height="10%" width="10%" style="position: relative; left: 40%;"></a></li>
+                {{!-- <li class="list-group-item"><a href="#" class="card-link" style="text-decoration: none; color: black;">Log Out <img src="img/log-out.png" alt="" height="10%" width="10%" style="position: relative; left: 67%;"></a></li> --}}
+            </ul>
+
+            </div>
+            <br>
+            </div>
+
+
+            <div class="col-9">
+                
+                <div class="card text-center">
+                    <div class="card-head"></div>
+                    <h1 style="color: seagreen; font-weight: bold;"> My Carbonic </h1>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title">Good Morning, </h6>
+                    <h5 class="card-title">{{user.fname}}, </h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, eos! Quos quaerat necessitatibus voluptas fuga, cupiditate, consequuntur minus a exercitationem consectetur nulla officiis quidem. Cupiditate facilis sunt est consequuntur adipisci.</p>    
+                </div>
+                <div class="card-text">
+
+                    <form action="fhand/fprofile/{{user.id}}" method="POST">
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                          <label for="one" class = "lbl">Full Name</label>
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" id = "one" name = "fname" class = "txtbx" value="{{user.fname}}">
+                        </div>
+                      </div> 
+            
+                      <hr>
+            
+                      <div class="row">
+                        <div class="col">
+                          <label for="two" class = "lbl">NIC Number</label>
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" id = "two" name = "fnic" class = "txtbx" value="{{user.fnic}}">
+                        </div>
+                      </div> 
+            
+                      <hr>
+            
+                      <div class="row">
+                        <div class="col">
+                          <label for="three" class = "lbl">Mobile Number</label>
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" id = "three" name = "fmobile" class = "txtbx" value="{{user.fmobile}}">
+                        </div>
+                      </div>
+                      <hr>
+            
+                      <div class="row">
+                        <div class="col">
+                          <label for="four" class = "lbl">Email</label>
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" id = "four" name = "femail" class = "txtbx" value="{{user.femail}}">
+                        </div>
+                      </div> 
+                      <hr>
+            
+                      <div class="row">
+                        <div class="col">
+                          <label for="five" class = "lbl">Address line 1</label> <br> 
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" id = "five" name = "fadline1" class = "txtbx" value="{{user.fadline1}}">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <label for="six" class = "lbl">Address line 2</label> <br> 
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" id = "six" name = "fadline2" class = "txtbx" value="{{user.fadline2}}">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <label for="seven" class = "lbl">Province</label> <br> 
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" id = "seven" name = "fprovince" class = "txtbx" value="{{user.fprovince}}">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <label for="eight" class = "lbl">District</label> <br> 
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" id = "eight" name = "fdistrict" class = "txtbx" value="{{user.fdistrict}}">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <label for="nine" class = "lbl">Postal Code</label> <br> 
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" id = "nine" name = "fpcode" class = "txtbx" value="{{user.fpcode}}">
+                        </div>
+                      </div>
+                       <hr>
+            
+                     <br>
+
+                      <center> <button type="submit" class="btn btn-primary" style="background-color: white;  border: 4px green solid; color:dimgray; font-size: small; font-weight: bold;"> Edit Account </button> </center> <br>
+            
+                      
+
+                    </form>
+                
+                </div>
+                <center><div class="card-footer text mutued">
+                    <a href="#" style="text-decoration: none;">{{user.femail}}</a>
+                </div>
+                </center>
+            </div>
+        </div>
+    <br>
+    
+    </div>
+    
+
+
+
+<br><br>
+
+    <!--footer-->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>company</h4>
+        <ul>
+          <li><a href="#">about us</a></li>
+          <li><a href="#">our services</a></li>
+          <li><a href="#">privacy policy</a></li>
+          <li><a href="#">affiliate program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>get help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">shipping</a></li>
+          <li><a href="#">returns</a></li>
+          <li><a href="#">order status</a></li>
+          <li><a href="#">payment options</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>online shop</h4>
+        <ul>
+          <li><a href="#">Vegetables</a></li>
+          <li><a href="#">Fruits</a></li>
+          <li><a href="#">Beans</a></li>
+          <li><a href="#">others</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--footer-->
+    
