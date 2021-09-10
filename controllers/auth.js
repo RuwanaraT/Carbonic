@@ -2,6 +2,7 @@
   var mysql=require('mysql');
   const jwt=require('jsonwebtoken');
   const bcrypt=require('bcryptjs');
+  const {promisify}=require('util');
 
   const db=mysql.createConnection({
     host: "localhost",
@@ -92,8 +93,37 @@ exports.bregister=(req,res)=>{
 
     });
 
-    
+} 
+exports.isLoggedIn=async(req,res,next)=>{
+    //console.log(req.cookies);
+    if(req.cookies.jwt){
+        try {
+            //01)Token in correct or not
+            const decoded=await promisify(jwt.verify)(req.cookies.jwt,
+                process.env.JWT_SECRET
+                );
+                console.log(decoded)
+                //User is exsixt
+                db.query('SELECT * FROM bdetails WHERE id=?',[decoded.id],(error,results)=>{
+                    console.log(results);
 
+                    if(!results){
+                        return next();
+                    }
+                    req.buyer=results[0]
+                    return next();
+                });
+        } catch (error) {
+            console.log(error);
+            return next();
+            
+        }
+    }else{
+        next();
+
+    }
+   
+
+}
 
    
-}

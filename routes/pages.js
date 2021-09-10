@@ -1,5 +1,7 @@
 const express=require('express');
+const authController=require('../controllers/auth');
 const router=express.Router();
+
 
 router.get('/',(req,res)=>{
     res.render('index');
@@ -32,6 +34,18 @@ router.get("/header",(req,res)=>{
 
   router.get("/addforum",(req,res)=>{
     res.render("addforum")
+  });
+
+  router.get("/bprofile",authController.isLoggedIn, (req,res)=>{
+    if(req.buyer){
+     
+    res.render("bprofile",{
+      buyer:req.buyer
+    })
+
+    }else{
+      res.redirect('/blogin"');
+    }
   });
    
 
