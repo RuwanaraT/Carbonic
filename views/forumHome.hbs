@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="/footer.css">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+<link rel="stylesheet" href="/forumHome.css">
 
 <img class="logo1" src="img/logo.svg" width="200px" height="200px">
       <nav>
@@ -23,26 +24,46 @@
 
 <br><br><br><br><br>
 
+  <div class="top">
+  <h1 class="topic">All Quections</h1>
+  <button class="Postadd">Ask Quection</button>
+  </div>
 
-   
+  <h1>{{x}}</h1>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  {{#each post}}
+  <!--this is a structure of a post-->
+  <div class="container1">
+    <div class="mainPost">
+      <div class="post-row">
+        <div class="column-uname allColumn ">
+          <div class="uname1">
+            <a href="#">{{this.bid}}</a>
+          </div>
+          <div class="date">
+            <small>
+              {{this.date}}
+            </small>
+          </div>
+        </div>
+        <div class="column-title allColumn">
+          <a href="#">
+          <p>{{this.psubject}}</p>
+          </a>
+        </div>
+        <div class="column-status allColumn center">
+          <div class="reply">          
+            reply-03
+          </div>
+        </div>
+        <div class="column-like allColumn center">
+          like- 02  
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- end of post-->
+   {{/each}}
 
 
 

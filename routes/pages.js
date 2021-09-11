@@ -22,8 +22,12 @@ router.get("/header",(req,res)=>{
     res.render("header")
   });
 
-  router.get("/addforum",(req,res)=>{
-    res.render("addforum")
+  //router.get("/addforum",(req,res)=>{
+  //  res.render("addforum")
+  // });
+
+  router.get("/forumHome",(req,res)=>{
+    res.render("forumHome")
   });
    
 
