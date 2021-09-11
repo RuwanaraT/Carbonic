@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="/searchforbuyers.css">
+
+<div class = "container mt-5"  style="background-color: whitesmoke;">
+
+  <br> 
+  <a href="/fprofile" style="text-decoration: none;"><h5>< Back to Profile</h5></a>
+   <center><h1 style="font-weight: bold; color:seagreen;"> Search for Buyers </h1> </center>
+   <hr style="border: 2px solid black">
+
+   <form class="d-flex" action="" method="POST">
+    <input class="form-control me-2" type="search" placeholder="Search by location..." aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"># Number</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Location</th>
+        <th scope="col">Contact No</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-success">
+        <th scope="row">{{this.id}}</th>
+        <td>{{this.name}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.address}}</td>
+        <td>{{this.contactNumber}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+</div>

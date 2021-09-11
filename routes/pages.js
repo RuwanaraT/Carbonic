@@ -79,5 +79,23 @@ router.get('/fprofile', fhandController.isLoggedIn, (req, res) => {
   
 });
 
+router.get('/searchforbuyers', (req, res) => {
+
+  res.render("searchforbuyers");
+  
+});
+
+router.get('/resetpassword', (req, res) => {
+
+  res.render("resetpassword");
+  
+});
+
+router.get('/fdelete', (req, res) => {
+
+  res.render("fdelete");
+  
+});
+
 
   module.exports=router;
