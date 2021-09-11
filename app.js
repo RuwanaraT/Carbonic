@@ -38,14 +38,6 @@ app.get("/pickupdetailstable",(req,res)=>{
   res.render("pickupdetailstable")
 });
 
-app.get("/login",(req,res)=>{
-  res.render("login")
-});
-
-app.get("/fregister",(req,res)=>{
-  res.render("fregister")
-});
-
 app.get("/requests",(req,res)=>{
   res.render("requests")
 });

@@ -1,6 +1,7 @@
 const mysql = require("mysql");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+const {promisify}=require('util');
 
 const db = mysql.createConnection({
 
@@ -38,7 +39,7 @@ exports.login = async (req, res) => {
   
                 const id = results[0].id;
 
-                const token = jwt.sign({id}, process.env.JWT_SECRETE, {
+                const token = jwt.sign({id}, process.env.JWT_SECRET, {
 
                     expiresIn : process.env.JWT_EXPIRES_IN
                 });
@@ -103,4 +104,54 @@ exports.fregister = (req, res) => {
 
         })
     });
+}
+
+exports.isLoggedIn = async (req, res, next) => {
+
+    //console.log(req.cookies);
+
+    if(req.cookies.jwt) {
+
+        try {
+
+            // 1) verify the token
+            const decoded = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRET);
+
+            console.log(decoded);
+
+            // 2) check if the user is still exsists
+
+            db.query('SELECT * FROM farmers WHERE id = ?', [decoded.id], (error, results) => {
+
+                console.log(results);
+
+                if(!results) {
+
+                    return next();
+                }
+
+                req.user = results[0];
+                return next();
+            })
+            
+        } catch (error) {
+           console.log(error);
+           return next(); 
+        }
+    }else {
+
+        next();
+    }
+     
+}
+
+exports.logout = async (req, res) => { 
+
+    res.cookie('jwt', 'logout', {
+
+        expires : new Date(Date.now() + 2*1000),
+        httpOnly : true
+    });
+
+    res.status(200).redirect('/');
 }
