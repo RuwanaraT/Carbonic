@@ -47,46 +47,46 @@
       <nav>
          <img class="logo" src="img/carbonic-favicon-01.svg" width="200px" height="200px">
          <ul>
-            <li><a class="active" href="/index">Home</a></li>
+            <li><a href="/" style="text-decoration: none;">Home</a></li>
             
             <li>
-               <a href="#">Browse Products
+               <a href="#" style="text-decoration: none;">Browse Products
                <i class="fas fa-caret-down"></i>
                </a>
                <ul>
-                  <li><a href="#">Vegetables</a></li>
-                  <li><a href="#">Fruits</a></li>
+                  <li><a href="#" style="text-decoration: none;">Vegetables</a></li>
+                  <li><a href="#" style="text-decoration: none;">Fruits</a></li>
                   <li>
-                     <a href="#">Others
+                     <a href="#" style="text-decoration: none;">Others
                      <i class="fas fa-caret-right"></i>
                      </a>
                      <ul>
-                        <li><a href="#">Plants & seeds</a></li>
-                        <li><a href="#">Grains</a></li>
-                        <li><a href="#">Fertilizer</a></li>
+                        <li><a href="#" style="text-decoration: none;">Plants & seeds</a></li>
+                        <li><a href="#" style="text-decoration: none;">Grains</a></li>
+                        <li><a href="#" style="text-decoration: none;">Fertilizer</a></li>
                      </ul>
                   </li>
                </ul>
             </li>
-            <li><a href="#">Contact Us</a></li>
-             <li><a href="#">About Us</a></li>
-            <li><a href="#">Feedback</a></li>
+            <li><a href="/contactus" style="text-decoration: none;">Contact Us</a></li>
+             <li><a href="#" style="text-decoration: none;">About Us</a></li>
+            <li><a href="#" style="text-decoration: none;">Feedback</a></li>
              <li>
-               <a href="#">Register
+               <a href="#" style="text-decoration: none;">Register
                <i class="fas fa-caret-down"></i>
                </a>
                <ul>
-                  <li><a href="/fregister">Farmer</a></li>
-                  <li><a href="/bregister">Buyer</a></li>
+                  <li><a href="/fregister" style="text-decoration: none;">Farmer</a></li>
+                  <li><a href="/bregister" style="text-decoration: none;">Buyer</a></li>
                </ul>
             </li>
             <li>
-               <a href="#">Switch To
+               <a href="#" class="active" style="text-decoration: none;">Switch To
                <i class="fas fa-caret-down"></i>
                </a>
                <ul>
-                  <li><a href="/login">Farmer</a></li>
-                  <li><a href="#">Buyer</a></li>
+                  <li><a href="/login" style="text-decoration: none;">Farmer</a></li>
+                  <li><a href="/blogin" style="text-decoration: none;">Buyer</a></li>
                </ul>
             </li>
          </ul>
@@ -114,7 +114,7 @@
 
   <div class = "container mt-4" style="width:90%; background-color: whitesmoke;">
 
-            <form action = "/fhand/login" method = "POST">
+            <form action = "fhand/login" method = "POST">
 
                <center> <h1 style="font-weight: bold; color: seagreen; float: left;"> Login </h1> </center> <br> <br>
                <hr style="border: 2px solid black;">   
@@ -154,6 +154,11 @@
   </div>
 
 </div>
+
+      {{#if message}}
+                         <h4 class="alert alert-danger mt-4">{{message}}</h4>
+                         
+      {{/if}}
 
         <br><br><br>
 
