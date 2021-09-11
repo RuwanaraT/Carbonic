@@ -2,6 +2,7 @@
   var mysql=require('mysql');
   const jwt=require('jsonwebtoken');
   const bcrypt=require('bcryptjs');
+  const nodemailer=require('nodemailer');
   const {promisify}=require('util');
 
   const db=mysql.createConnection({
@@ -94,6 +95,41 @@ exports.bregister=(req,res)=>{
     });
 
 } 
+exports.contact=(req,res)=>{
+            
+    console.log(req.body);
+    const transporter=nodemailer.createTransport({
+        service:'gmail',
+        auth:{
+            user:'carbonic30@gmail.com',
+            pass:'rootroot'
+        }
+    })
+    const mailOption={
+        from:req.body.email,
+        to:'carbonic30@gmail.com',
+        subject:'Message From '+ req.body.email,
+        text:req.body.message
+    }
+    transporter.sendMail(mailOption,(error,info)=>{
+        if(error){
+            console.log(error);
+            res.send('error')
+        }else{
+            console.log('Email sent :'+info.response)
+            res.send('success')
+        }
+    })
+
+
+
+
+
+
+
+
+
+}
 exports.isLoggedIn=async(req,res,next)=>{
     //console.log(req.cookies);
     if(req.cookies.jwt){
