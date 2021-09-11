@@ -54,6 +54,12 @@ router.get("/header",(req,res)=>{
     res.render("fregister");
     
 });
+router.get('/contactus', (req, res) => {
+
+  res.render("contactus");
+  
+});
+
   
 
 
