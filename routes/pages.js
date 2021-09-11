@@ -106,5 +106,11 @@ router.get('/fdelete', (req, res) => {
   
 });
 
+router.get('/prdupdate', (req, res) => {
+
+  res.render("prdupdate");
+  
+});
+
 
   module.exports=router;
