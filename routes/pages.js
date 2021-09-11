@@ -57,6 +57,14 @@ router.get("/addproduct",(req,res)=>{
     
 });
 
+router.get('/contactus', (req, res) => {
+
+  res.render("contactus");
+  
+});
+
+
+
 
 router.get('/login', (req, res) => {
 
@@ -82,6 +90,7 @@ router.get('/fprofile', fhandController.isLoggedIn, (req, res) => {
 router.get('/searchforbuyers', (req, res) => {
 
   res.render("searchforbuyers");
+
   
 });
 
@@ -94,6 +103,12 @@ router.get('/resetpassword', (req, res) => {
 router.get('/fdelete', (req, res) => {
 
   res.render("fdelete");
+  
+});
+
+router.get('/prdupdate', (req, res) => {
+
+  res.render("prdupdate");
   
 });
 
