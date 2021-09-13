@@ -11,9 +11,9 @@
     <nav class="navbar">
         <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">Contact us</a></li>
-            <li><a href="#education">Delete profile</a></li>
-            <li><a href="#portfolio">Update profile</a></li>
+            <li><a href="/contactus">Contact us</a></li>
+            <li><a href="/auth/deleteBuyer/{{buyer.id}}">Delete profile</a></li>
+            <li><a href="/auth/editbuyer/{{buyer.id}}">Update profile</a></li>
             
         </ul>
     </nav>
@@ -25,7 +25,7 @@
 <div id="menu" class="fas fa-bars"></div>
 
 <!-- home section starts  -->
-<div class="section" id="section">
+{{!-- <div class="section" id="section"> --}}
 <article class="home" id="home">
 
     <h3>HI THERE !</h3>
@@ -34,13 +34,13 @@
 	Use this if you want to make changes to your acconunt
     </p>
     <a href="#about"><button class="btn">about me <i class="fas fa-user"></i></button></a>
-
-</article>
+{
+</article> 
 </div>
 <!-- home section ends -->
 
 <!-- about section starts  -->
-<div class="section" id="section">
+{{!-- <div class="section" id="section"> --}}
 <article class="about" id="about">
 
 <h1 class="heading"> <span>about</span> me </h1>
@@ -62,7 +62,7 @@
 </article>
 <!-- portfolio section starts  -->
 </div>
-<div class="section" id="section">
+{{!-- <div class="section" id="section"> --}}
 <article class="portfolio" id="portfolio">
 
 <hr>
@@ -105,10 +105,10 @@
 
 
 <!-- jquery cdn link  -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+{{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> --}}
 
 <!-- custom js file link  -->
-<script src="js/script.js"></script>
+{{!-- <script src="js/script.js"></script> --}}
 
 
 </body>
