@@ -11,18 +11,28 @@ var hbs = require('express-handlebars');
 dotenv.config({path: './.env'})
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var productRouter = require('./routes/product');
+
+
 
 var app = express();
 const publicDirectory=path.join(__dirname,'./public/stylesheets');
 app.use(express.static(publicDirectory));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+app.use(cookieParser());
 
 //routes
 app.use('/',require('./routes/pages'));
 app.use('/auth',require('./routes/auth'));
-
+app.use('/pmviewproduct',require('./routes/product'));
+app.use('/addproduct',require('./routes/product'));
 app.use('/fhand', require('./routes/fhand'));
+
+app.use('/forumHome',require('./routes/forumHome')); //h
+
+
+
 
 app.get("/pickupform",(req,res)=>{
   res.render("pickupform")
@@ -36,17 +46,11 @@ app.get("/pickupdetailstable",(req,res)=>{
   res.render("pickupdetailstable")
 });
 
-app.get("/login",(req,res)=>{
-  res.render("login")
-});
-
-app.get("/fregister",(req,res)=>{
-  res.render("fregister")
-});
-
 app.get("/requests",(req,res)=>{
   res.render("requests")
 });
+
+
 
 
 app.listen(8081,()=>{
@@ -67,6 +71,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/',productRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

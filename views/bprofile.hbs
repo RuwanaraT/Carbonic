@@ -1,0 +1,118 @@
+  <link rel="stylesheet" href="/bprofile.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+ <header>
+
+    <div class="user">
+        <img src="img/pic.png" alt="">
+        <h3 class="name">{{buyer.name}}</h3>
+       
+    </div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="/contactus">Contact us</a></li>
+            <li><a href="/auth/deleteBuyer/{{buyer.id}}">Delete profile</a></li>
+            <li><a href="/auth/editbuyer/{{buyer.id}}">Update profile</a></li>
+            
+        </ul>
+    </nav>
+
+</header>
+
+<!-- header section ends -->
+
+<div id="menu" class="fas fa-bars"></div>
+
+<!-- home section starts  -->
+{{!-- <div class="section" id="section"> --}}
+<article class="home" id="home">
+
+    <h3>HI THERE !</h3>
+    <h1>Welcome <span>{{buyer.name}}</span></h1>
+    <p>Our main goal is to provide fresh organic food full of flavor.Let's build a healthy generation.
+	Use this if you want to make changes to your acconunt
+    </p>
+    <a href="#about"><button class="btn">about me <i class="fas fa-user"></i></button></a>
+{
+</article> 
+</div>
+<!-- home section ends -->
+
+<!-- about section starts  -->
+{{!-- <div class="section" id="section"> --}}
+<article class="about" id="about">
+
+<h1 class="heading"> <span>about</span> me </h1>
+
+<div class="row">
+
+    <div class="info">
+        <h3> <span> Name : </span> {{buyer.name}} </h3>
+        <h3> <span> Email: </span> {{buyer.email}} </h3>
+        <h3> <span> Address : </span> {{buyer.address}} </h3>
+        <h3> <span> Contact Number: </span> {{buyer.contactNumber}}</h3>
+        
+    </div>
+
+    
+
+</div>
+
+</article>
+<!-- portfolio section starts  -->
+</div>
+{{!-- <div class="section" id="section"> --}}
+<article class="portfolio" id="portfolio">
+
+<hr>
+
+<div class="box-container">
+
+    <div class="box">
+        <img src="img/img1.jfif" alt="">
+    </div>
+
+    <div class="box">
+        <img src="img/img2.png" alt="">
+    </div>
+
+    <div class="box">
+        <img src="img/img3.jpg" alt="">
+    </div>
+
+    <div class="box">
+        <img src="img/img4.jpg" alt="">
+    </div>
+
+    <div class="box">
+        <img src="img/img5.jpg" alt="">
+    </div>
+
+    <div class="box">
+        <img src="img/img6.jpeg" alt="">
+    </div>
+
+</div>
+
+</article>
+
+<!-- portfolio section ends -->
+
+
+
+
+
+
+<!-- jquery cdn link  -->
+{{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> --}}
+
+<!-- custom js file link  -->
+{{!-- <script src="js/script.js"></script> --}}
+
+
+</body>
+</html>
+
+</body>
+</html>

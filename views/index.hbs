@@ -31,6 +31,26 @@
             <li><a href="#">Contact Us</a></li>
              <li><a href="#">About Us</a></li>
             <li><a href="#">Feedback</a></li>
+            {{# if user}}
+               <li>
+               <a href="/fprofile">Profile
+               {{!-- <i class="fas fa-caret-down"></i> --}}
+               </a>
+               {{!-- <ul>
+                  <li><a href="/fregister">Farmer</a></li>
+                  <li><a href="/bregister">Buyer</a></li>
+               </ul> --}}
+            </li>
+            <li>
+               <a href="/fhand/logout">Log Out
+               {{!-- <i class="fas fa-caret-down"></i> --}}
+               </a>
+               {{!-- <ul>
+                  <li><a href="/login">Farmer</a></li>
+                  <li><a href="#">Buyer</a></li>
+               </ul> --}}
+            </li>
+            {{else}}
              <li>
                <a href="#">Register
                <i class="fas fa-caret-down"></i>
@@ -49,6 +69,7 @@
                   <li><a href="#">Buyer</a></li>
                </ul>
             </li>
+            {{/if}}
          </ul>
       </nav>
 
@@ -66,6 +87,27 @@
     <a href="/addproduct">Add Products</a> <br>
 
     <a href="/requests">Requests</a><br>
+
+    <a href="forumHome/forumHome">forum</a><br>
+
+    <a href="/blogin">Blogin</a><br>
+
+    <a href="/bprofile">BProfile</a><br>
+
+    <a href="/contactus">contactus</a><br>
+
+    <a href="/pmviewproduct">PM view Product</a><br>
+
+
+    <a href="/buyerDashboard">buyerDashboard</a><br>
+
+    <a href="/prdupdate">Update Product</a><br>
+
+    <a href="/alogin">Admin Login</a> <br>
+    
+
+
+
 
     <br><br><br><br><br>
 

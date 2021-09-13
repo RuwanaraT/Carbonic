@@ -13,26 +13,26 @@
 <!--xx-->
 
      
-    <title>Add Products</title>
+    <title>Update Products</title>
 </head>
 <body>
 
     <!--start of form-->
 <div class="p-3 mb-2 bg-dark text-white gradient-custom">
 <center>
-<form action="/addproduct" method="post" class="form-horizontal">
+<form action="/updateproduct" method="post" class="form-horizontal">
     <fieldset>
 
         <!-- Form Name -->
-        <legend>ADD A PRODUCT</legend>
+        <legend>UPDATE A PRODUCT</legend>
 
-        <!-- Text input-->
+        {{!-- <!-- Text input-->
         <div class="form-group">
             <label class="col-md-4 control-label" for="fid">FARMER ID</label>
             <div class="col-md-4">
                 <input id="fid" name="fid" placeholder="FARMER ID" class="form-control input-md" required="" type="text">
             </div>
-        </div>
+        </div> --}}
 
         <!-- Text input-->
         <div class="form-group">
@@ -47,18 +47,6 @@
             <label class="col-md-4 control-label" for="pname">PRODUCT NAME</label>
             <div class="col-md-4">
                 <input id="pname" name="pname" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text">
-            </div>
-        </div>
-
-        <!-- Select Basic -->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="ptype">PRODUCT TYPE</label>
-            <div class="col-md-4">
-                <select id="ptype" name="ptype" class="form-control">
-                    <option selected value="Vegetables">Vegetables</option>
-                    <option value="Fruits">Fruits</option>
-                    <option value="Grains">Grains</option>
-                </select>
             </div>
         </div>
 
@@ -116,7 +104,7 @@
                 <!-- Button -->
                 <div class="form-group">
                     <div class="col-md-4">
-                        <button id="submitbutton" name="submitbutton" class="btn btn-outline-success">Submit Product</button>
+                        <button id="submitbutton" name="submitbutton" class="btn btn-outline-success">Update Product</button>
                     </div>
                 </div>
 
