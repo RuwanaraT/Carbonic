@@ -21,6 +21,8 @@ router.post('/login', fhandController.login);
 
 router.get('/logout', fhandController.logout);
 
+
+// route for update fprofile
 router.post('/fprofile/:id', function(req, res) {
 
     var fname = req.body.fname;
@@ -43,6 +45,50 @@ router.post('/fprofile/:id', function(req, res) {
 
   })
 
+  // route for retrieve data from farmer table to the fdelete page
+  router.get('/getsingleuser/:id', function(req, res) {
+
+    var fid = req.params.id;
+
+    db.query("SELECT * FROM farmers WHERE id = ?", [fid], function(err, rows) {
+
+      if(err) throw err;
+      res.render("fdelete", {userdata : rows});
+
+    })
+
+    
+  })
+
+ // route for delete single farmer
+ router.get('/fdelete/:id', function(req, res) {
+
+  var fid = req.params.id;
+
+  db.query("DELETE * FROM farmers WHERE id = ?", [fid], function(err, results) {
+
+    if(err) throw err;
+    res.redirect('/');
+  })
+
+ })
+
+
+ // route for retrieve buyers from buyer table
+ router.get('/searchforbuyers', function(req, res, next) {
+
+  db.query('SELECT * FROM bdetails', function (err, rows) {
+
+    if(err) throw err;
+
+    console.log(rows);
+
+    res.render('searchforbuyers', {buyers:rows} );
+
+  });
+
+ 
+});
 
 
 module.exports = router;

@@ -34,8 +34,12 @@ router.get("/bregister",(req,res)=>{
 //   });
   
 
-  router.get("/addforum",(req,res)=>{
-    res.render("addforum")
+  //router.get("/addforum",(req,res)=>{
+  //  res.render("addforum")
+  // });
+
+  router.get("/forumHome",(req,res)=>{
+    res.render("forumHome")
   });
 
   router.get("/bprofile",authController.isLoggedIn, (req,res)=>{
@@ -110,6 +114,12 @@ router.get('/prdupdate', (req, res) => {
 
   res.render("prdupdate");
   
+});
+
+router.get('/alogin', (req, res) => {
+
+res.render("alogin");
+
 });
 
 
