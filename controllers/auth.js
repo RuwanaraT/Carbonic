@@ -40,7 +40,7 @@
 
             }
             res.cookie('jwt',token,cookieOption);
-           res.status(200).redirect("/");
+           res.status(200).render("buyerDashboard");
            
 
         }
@@ -77,6 +77,12 @@ exports.bregister=(req,res)=>{
                 message:'Password is not same'
             });
         }
+        //new
+        // else if(name==0){
+        //     return res,render('bregister',{
+        //         message:'plese enter username'
+        //     })
+        // }
 
         let hashedPassword= await bcrypt.hash(password, 8);
         console.log(hashedPassword);
@@ -163,3 +169,37 @@ exports.isLoggedIn=async(req,res,next)=>{
 }
 
    
+exports.deleteBuyer=(req,res)=>{
+    const buyerid=req.params.id;
+    // console.log('BUyer Id is'+buyerid);
+    // res.send('id received');
+    db.query("DELETE FROM bdetails WHERE id=?",[buyerid],function (error,rows){
+        if(error) throw err;
+        res.render("index");
+    })
+}
+
+exports.editbuyer=(req,res)=>{
+    const buyerid=req.params.id;
+    db.query("SELECT * FROM bdetails WHERE id=?",[buyerid],function(err,rows){
+       if(err) throw err;
+        res.render('editbuyer');
+   
+    })
+
+}
+
+exports.updatebuyer=(req,res)=>{
+    const name=req.body.name;
+    const email=req.body.email;
+    const address=req.body.address;
+    const contactNumber=req.body.contactNumber;
+    const id=req.body.id;
+    db.query("UPDATE bdetails SET name=?,email=?,address=?,contactNumber=? WHERE id=?",[name,email,address,contactNumber,id],function(err,results){
+        if(err) throw err;
+        console.log(err);
+        res.redirect('profile');
+    })
+   
+
+}

@@ -111,6 +111,19 @@ router.get('/prdupdate', (req, res) => {
   res.render("prdupdate");
   
 });
+// router.get('/editbuyer', (req, res) => {
+
+//   res.render("editbuyer");
+  
+// });
+router.get('/buyerDashboard', (req, res) => {
+  if(req.buyer) {
+
+    res.render("buyerDashboard", {
+        user : req.user
+    });
+}
+});
 
 
   module.exports=router;
