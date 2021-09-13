@@ -23,7 +23,8 @@ app.use(cookieParser());
 //routes
 app.use('/',require('./routes/pages'));
 app.use('/auth',require('./routes/auth'));
-app.use('/',require('./routes/product'));
+app.use('/pmviewproduct',require('./routes/product'));
+app.use('/addproduct',require('./routes/product'));
 app.use('/fhand', require('./routes/fhand'));
 
 app.get("/pickupform",(req,res)=>{
