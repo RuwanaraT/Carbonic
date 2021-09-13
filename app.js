@@ -13,6 +13,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/product');
 
+
+
 var app = express();
 const publicDirectory=path.join(__dirname,'./public/stylesheets');
 app.use(express.static(publicDirectory));
@@ -23,8 +25,14 @@ app.use(cookieParser());
 //routes
 app.use('/',require('./routes/pages'));
 app.use('/auth',require('./routes/auth'));
-app.use('/',require('./routes/product'));
+app.use('/pmviewproduct',require('./routes/product'));
+app.use('/addproduct',require('./routes/product'));
 app.use('/fhand', require('./routes/fhand'));
+
+app.use('/forumHome',require('./routes/forumHome')); //h
+
+
+
 
 app.get("/pickupform",(req,res)=>{
   res.render("pickupform")
@@ -41,6 +49,8 @@ app.get("/pickupdetailstable",(req,res)=>{
 app.get("/requests",(req,res)=>{
   res.render("requests")
 });
+
+
 
 
 app.listen(8081,()=>{

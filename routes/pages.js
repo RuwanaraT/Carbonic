@@ -25,17 +25,21 @@ router.get("/bregister",(req,res)=>{
     res.render("blogin")
   });
 
-router.get("/addproduct",(req,res)=>{
-    res.render("addproduct")
-  });
+// router.get("/addproduct",(req,res)=>{
+//     res.render("addproduct")
+//   });
 
- router.get("/pmviewproduct",(req,res)=>{
-    res.render("pmviewproduct")
-  });
+//  router.get("/pmviewproduct",(req,res)=>{
+//     res.render("pmviewproduct")
+//   });
   
 
-  router.get("/addforum",(req,res)=>{
-    res.render("addforum")
+  //router.get("/addforum",(req,res)=>{
+  //  res.render("addforum")
+  // });
+
+  router.get("/forumHome",(req,res)=>{
+    res.render("forumHome")
   });
 
   router.get("/bprofile",authController.isLoggedIn, (req,res)=>{
@@ -123,6 +127,12 @@ router.get('/buyerDashboard', (req, res) => {
         user : req.user
     });
 }
+});
+
+router.get('/alogin', (req, res) => {
+
+res.render("alogin");
+
 });
 
 
