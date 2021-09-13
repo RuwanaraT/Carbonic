@@ -116,5 +116,11 @@ router.get('/prdupdate', (req, res) => {
   
 });
 
+router.get('/alogin', (req, res) => {
+
+res.render("alogin");
+
+});
+
 
   module.exports=router;

@@ -3,16 +3,19 @@ var router = express.Router();
 var connection  = require('../config/connection')
 
 
-router.get('/', function(req, res, next) {
+router.get('/pmviewproduct', function(req, res, next) {
 
-//   connection.query("SELECT * FROM product", function(err, rows) {
-//     if(err) throw err;
-//     console.log(rows);
-//     res.render('index', { productobj:rows });
+  connection.query("SELECT * FROM product", function(err, rows) {
+    
+    if(err) throw err;
 
-//   });
+    console.log(rows);
+
+    res.render('pmviewproduct', {product:rows});
+
+  });
   
-res.render('index',{title: 'Welcome'});
+// res.render('index',{title: 'Welcome'});
 });
 
 router.post('/addproduct', function(req, res, next) {
