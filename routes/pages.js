@@ -61,6 +61,16 @@ router.get("/bregister",(req,res)=>{
     
 });
 
+
+router.get("/shoppingcart",(req,res)=>{
+    res.render("shoppingcart")
+  });
+  
+router.get("/home",(req,res)=>{
+    res.render("home")
+  });
+
+
 router.get('/contactus', (req, res) => {
 
   res.render("contactus");
@@ -103,6 +113,7 @@ router.get('/resetpassword', (req, res) => {
   res.render("resetpassword");
   
 });
+
 
 router.get('/fdelete', (req, res) => {
 
