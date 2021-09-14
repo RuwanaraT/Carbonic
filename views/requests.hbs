@@ -22,43 +22,22 @@
                 <form class="form-card">
                   <table class="table table-striped">
                       <thead>
-                     <th>Pikcup ID</th>
-                     <th>Pickup Date</th>
-                     <th>Reason</th>
-                     <th>Cancel</th>
-                 </thead>
+                        <th>Request ID</th>
+                        <th>Pickup Date</th>
+                        <th>Reason</th>
+                        <th>Pikcup ID</th>
+                        <th>Cancel</th>
+                    </thead>
                  <tbody>
-                     
+                     {{#each reqcancel}}
                      <tr>
-                         <td>PCK001</td>
-                         <td>1/1/2021</td>
-                         <td>Curfew</td>
-                         <td><button class="btn btn-primary">Delete</button></td>
+                         <td>{{ this.rid }}</td>
+                         <td>{{ this.pck_date }}</td>
+                         <td>{{ this.reason }}</td>
+                         <td>{{ this.pck_id }}</td>
+                         <td><a href="/checkRow/checkrow/{{ this.pck_id }}"><button class="btn btn-primary">Checkout</button></a></td>
                      </tr>
-                     <tr>
-                         <td>PCK001</td>
-                         <td>1/1/2021</td>
-                         <td>Curfew</td>
-                         <td><button class="btn btn-primary">Delete</button> </td>
-                     </tr>
-                     <tr>
-                         <td>PCK001</td>
-                         <td>1/1/2021</td>
-                         <td>Curfew</td>
-                         <td><button class="btn btn-primary">Delete</button> </td>
-                     </tr>
-                     <tr>
-                         <td>PCK001</td>
-                         <td>1/1/2021</td>
-                         <td>Curfew</td>
-                         <td><button class="btn btn-primary">Delete</button> </td>
-                     </tr>
-                     <tr>
-                         <td>PCK001</td>
-                         <td>1/1/2021</td>
-                         <td>Curfew</td>
-                         <td><button class="btn btn-primary">Delete</button> </td>
-                     </tr>
+                    {{/each}}
                  </tbody>
                       </table>
                    

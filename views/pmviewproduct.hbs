@@ -1,0 +1,171 @@
+{{!-- stylesheets --}}
+<link rel="stylesheet" href="/footer.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+{{!-- bootstrap js for product list --}}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+{{!-- bootstrap for the delete and update icons --}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+<h1 class="text-success">Product Manager</h1>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-success active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> View Products
+  </label>
+  <label class="btn btn-success">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Add Products
+  </label>
+  <label class="btn btn-success">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Monthly Sales Report
+  </label>
+  <label class="btn btn-success">
+    <input type="radio" name="options" id="option4" autocomplete="off"> Radio
+  </label>
+</div>
+<hr>
+<br><br>
+{{!-- start of product list --}}
+{{!-- <section>
+
+    <div class="row mb-4">
+      <div class="col-md-5 col-lg-3 col-xl-3">
+  
+        <div class="z-depth-1 rounded mb-3 mb-md-0 text-right">
+          <img class="img-thumbnail w-50"
+            src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg"
+            alt="Sample">
+        </div>
+        
+  
+      </div>
+      <div class="col-md-7 col-lg-9 col-xl-9">
+        <div class="row">
+          <div class="col-lg-7 col-xl-7">
+  
+            <h5>Fantasy T-shirt</h5>
+            <p class="mb-2 text-muted text-uppercase small">Shirts</p>
+            
+            <hr>
+            <p class="mb-lg-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+              sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis
+              voluptates laboriosam. Distinctio, officia quis dolore quos sapiente tempore alias.</p>
+  
+          </div>
+          <div class="col-lg-5 col-xl-5">
+  
+            <h6 class="mb-3"><span>$12.99</span></h6>
+            <div class="my-4">
+              <button type="button" class="btn btn-success btn-md mr-1 mb-2"><i
+                  class="bi bi-arrow-clockwise pr-2"></i>Update</button>
+              <button type="button" class="btn btn-light btn-md mr-1 mb-2"><i
+                  class="fas fa-info-circle pr-2"></i>Details</button>
+            </div>
+            <button type="button" class="btn btn-danger btn-md px-3 mb-lg-2 material-tooltip-main"
+              data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i
+                class="bi bi-trash"></i></button>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </section> --}}
+
+{{#each product}}
+  <section>
+
+    <div class="row mb-4">
+      <div class="col-md-5 col-lg-3 col-xl-3">
+  
+        <div class="z-depth-1 rounded mb-3 mb-md-0 text-right">
+          <img class="img-thumbnail w-50"
+            src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg"
+            alt="Sample">
+        </div>
+        
+  
+      </div>
+      <div class="col-md-7 col-lg-9 col-xl-9">
+        <div class="row">
+          <div class="col-lg-7 col-xl-7">
+  
+            <h5>{{ this.pname }}</h5>
+            <p class="mb-2 text-muted text-uppercase small">Shirts</p>
+            
+            <hr>
+            <p class="mb-lg-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+              sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis
+              voluptates laboriosam. Distinctio, officia quis dolore quos sapiente tempore alias.</p>
+  
+          </div>
+          <div class="col-lg-5 col-xl-5">
+  
+            <h6 class="mb-3"><span>{{ this.pricepu }}</span></h6>
+            <div class="my-4">
+              <button type="button" class="btn btn-success btn-md mr-1 mb-2"><i
+                  class="bi bi-arrow-clockwise pr-2"></i>Update</button>
+              <button type="button" class="btn btn-light btn-md mr-1 mb-2"><i
+                  class="fas fa-info-circle pr-2"></i>Details</button>
+            </div>
+            <button type="button" class="btn btn-danger btn-md px-3 mb-lg-2 material-tooltip-main"
+              data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i
+                class="bi bi-trash"></i></button>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </section>
+{{/each}}
+  {{!-- end of product list --}}
+
+    <br><br><br><br><br>
+
+    <!--footer-->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>company</h4>
+        <ul>
+          <li><a href="#">about us</a></li>
+          <li><a href="#">our services</a></li>
+          <li><a href="#">privacy policy</a></li>
+          <li><a href="#">affiliate program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>get help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">shipping</a></li>
+          <li><a href="#">returns</a></li>
+          <li><a href="#">order status</a></li>
+          <li><a href="#">payment options</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>online shop</h4>
+        <ul>
+          <li><a href="#">Vegetables</a></li>
+          <li><a href="#">Fruits</a></li>
+          <li><a href="#">Beans</a></li>
+          <li><a href="#">others</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--footer-->
+    

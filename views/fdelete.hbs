@@ -1,0 +1,117 @@
+
+<link rel="stylesheet" href="/fdelete.css">
+
+<div class = "container mt-5" style="background-color:  whitesmoke; width : 45%;">
+
+  {{#each userdata}}
+
+        <form action="fhand/fdelete{{this.id}}" method="GET">
+
+          <center> <h1 style="color: seagreen; font-weight: bold;"> My Carbonic  </h1> </center>
+      
+
+          {{!-- <img src = "img/pp.png" class = "ProPic"> 
+
+          <hr>  --}}
+             
+          <div class="row">
+            <div class="col">
+              <label for="one" class = "lbl">Full Name</label>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" id = "one" name = "one" class = "txtbx" value="{{this.fname}}">
+            </div>
+          </div> 
+
+          <hr>
+
+          <div class="row">
+            <div class="col">
+              <label for="two" class = "lbl">NIC Number</label>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" id = "two" name = "two" class = "txtbx" value="{{this.fnic}}">
+            </div>
+          </div> 
+
+          <hr>
+
+          <div class="row">
+            <div class="col">
+              <label for="three" class = "lbl">Mobile Number</label>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" id = "three" name = "three" class = "txtbx" value="{{this.fmobile}}">
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col">
+              <label for="four" class = "lbl">Email</label>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" id = "four" name = "four" class = "txtbx" value="{{this.femail}}">
+            </div>
+          </div> 
+
+          <hr>
+
+          <div class="row">
+            <div class="col">
+              <label for="five" class = "lbl">Address line 1</label> <br> 
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" id = "five" name = "five" class = "txtbx" value="{{this.fadline1}}">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label for="six" class = "lbl">Address line 2</label> <br> 
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" id = "six" name = "six" class = "txtbx" value="{{this.fadline2}}">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label for="seven" class = "lbl">Province</label> <br> 
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" id = "seven" name = "seven" class = "txtbx" value="{{this.fprovince}}">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label for="eight" class = "lbl">District</label> <br> 
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" id = "eight" name = "eight" class = "txtbx" value="{{this.fdistrict}}">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label for="nine" class = "lbl">Postal Code</label> <br> 
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" id = "nine" name = "nine" class = "txtbx" value="{{this.fpcode}}">
+            </div>
+          </div>
+
+           <hr>
+
+          <center> 
+            <button type="" class="btn btn-primary" style="background-color: white; border: 4px green solid;"><a href="/fprofile" style="text-decoration: none; color:dimgray; font-size: small; font-weight: bold;">Cancel</a></button> &nbsp;&nbsp;
+            <button type="submit" class="btn btn-primary" style="background-color: white;  border: 4px red solid; color:dimgray; font-size: small; font-weight: bold;"> Delete Account </button>
+          </center>
+
+          <br>   
+          
+        </form>
+
+        {{/each}}
+
+    </div>
+
+    <br>

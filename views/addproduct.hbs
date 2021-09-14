@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/addProduct.css">
+
+<link rel="stylesheet" href="/addProduct.css">
 <!--xxx-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 {{!-- bootstrap 5 below,just used for gradient--}}
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/footer.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
 <!--xx-->
 
@@ -21,7 +20,7 @@
     <!--start of form-->
 <div class="p-3 mb-2 bg-dark text-white gradient-custom">
 <center>
-<form action="addedProduct" method="post" class="form-horizontal">
+<form action="/addproduct" method="post" class="form-horizontal">
     <fieldset>
 
         <!-- Form Name -->
@@ -29,33 +28,33 @@
 
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="farmer_id">FARMER ID</label>
+            <label class="col-md-4 control-label" for="fid">FARMER ID</label>
             <div class="col-md-4">
-                <input id="farmer_id" name="farmer_id" placeholder="FARMER ID" class="form-control input-md" required="" type="text">
+                <input id="fid" name="fid" placeholder="FARMER ID" class="form-control input-md" required="" type="text">
             </div>
         </div>
 
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="product_id">PRODUCT ID</label>
+            <label class="col-md-4 control-label" for="pid">PRODUCT ID</label>
             <div class="col-md-4">
-                <input id="product_id" name="product_id" placeholder="PRODUCT ID" class="form-control input-md" required="" type="text">
+                <input id="pid" name="pid" placeholder="PRODUCT ID" class="form-control input-md" required="" type="text">
             </div>
         </div>
 
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="product_name">PRODUCT NAME</label>
+            <label class="col-md-4 control-label" for="pname">PRODUCT NAME</label>
             <div class="col-md-4">
-                <input id="product_name" name="product_name" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text">
+                <input id="pname" name="pname" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text">
             </div>
         </div>
 
         <!-- Select Basic -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="product_type">PRODUCT TYPE</label>
+            <label class="col-md-4 control-label" for="ptype">PRODUCT TYPE</label>
             <div class="col-md-4">
-                <select id="product_type" name="product_type" class="form-control">
+                <select id="ptype" name="ptype" class="form-control">
                     <option selected value="Vegetables">Vegetables</option>
                     <option value="Fruits">Fruits</option>
                     <option value="Grains">Grains</option>
@@ -66,27 +65,27 @@
 
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="expiry_date"> Expiry Date</label>
+            <label class="col-md-4 control-label" for="expdate">EXPIRY DATE</label>
             <div class="col-md-4">
-                <input id="expiry_date" name="expiry_date" placeholder="DD/MM/YYYY" class="form-control input-md" required="" type="date">
+                <input id="expdate" name="expdate" placeholder="DD/MM/YYYY" class="form-control input-md" required="" type="date">
 
             </div>
         </div>
 
         <!-- Text input-->
          <div class="form-group">
-            <label class="col-md-4 control-label" for="quantity">Quantity</label>
+            <label class="col-md-4 control-label" for="qty">QUANTITY</label>
             <div class="col-md-4">
-                <input id="quantity" name="quantity" placeholder="" class="form-control input-md" required="" type="number">
+                <input id="qty" name="qty" placeholder="" class="form-control input-md" required="" type="number">
 
             </div>
         </div>
 
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="price">PRICE PER UNIT(USD $)</label>
+            <label class="col-md-4 control-label" for="pricepu">PRICE PER UNIT(USD $)</label>
             <div class="col-md-4">
-                <input id="price" name="price" placeholder="Enter a USD value(Ex:10)" class="form-control input-md" required="" type="number">
+                <input id="pricepu" name="pricepu" placeholder="Enter a USD value(Ex:10)" class="form-control input-md" required="" type="number">
 
             </div>
         </div>
@@ -95,25 +94,25 @@
 
         <!-- Textarea -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="product_description">PRODUCT DESCRIPTION</label>
+            <label class="col-md-4 control-label" for="pdesc">PRODUCT DESCRIPTION</label>
             <div class="col-md-4">
-                <textarea class="form-control" id="product_description" name="product_description"></textarea>
+                <textarea class="form-control" id="pdesc" name="pdesc"></textarea>
             </div>
         </div>
 
-        {{!--Upload Picture--}}
+        {{!--Upload Picture
         <div class="form-group">
           <div class="input-group mb-3 col-md-4">
             <div class="input-group-prepend">
                 <span class="input-group-text">Upload</span>
             </div>
             <div class="custom-file">
-                <input type="file" class="custom-file-input" id="inputGroupFile01">
+                <input type="file" class="custom-file-input" id="inputGroupFile01" name="prod_image">
                 <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
             </div>
           </div>
         </div>
-
+          --}}
                 <!-- Button -->
                 <div class="form-group">
                     <div class="col-md-4">
@@ -124,9 +123,52 @@
     </fieldset>
 </form>
 </center>
+
 </div>
-
 <!--end of form-->
-
-</body>
-</html>
+ 
+<!--footer-->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>company</h4>
+        <ul>
+          <li><a href="#">about us</a></li>
+          <li><a href="#">our services</a></li>
+          <li><a href="#">privacy policy</a></li>
+          <li><a href="#">affiliate program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>get help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">shipping</a></li>
+          <li><a href="#">returns</a></li>
+          <li><a href="#">order status</a></li>
+          <li><a href="#">payment options</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>online shop</h4>
+        <ul>
+          <li><a href="#">Vegetables</a></li>
+          <li><a href="#">Fruits</a></li>
+          <li><a href="#">Beans</a></li>
+          <li><a href="#">others</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--footer-->   

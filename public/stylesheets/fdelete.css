@@ -1,0 +1,18 @@
+body {
+    background-image: url("img/share1.jpg");
+    backdrop-filter: blur(5px);
+}
+.ProPic{
+    position: relative;
+    left: 40%;
+    align-items: center;
+    width: 20%;
+    height: 20%;
+}
+
+.lbl{
+    position: relative;
+    left:30%;
+    color: green;
+    font-weight: bold;
+}
