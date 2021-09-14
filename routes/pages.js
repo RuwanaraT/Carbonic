@@ -25,9 +25,9 @@ router.get("/bregister",(req,res)=>{
     res.render("blogin")
   });
 
-// router.get("/addproduct",(req,res)=>{
-//     res.render("addproduct")
-//   });
+router.get("/addproduct",(req,res)=>{
+    res.render("addproduct")
+  });
 
 //  router.get("/pmviewproduct",(req,res)=>{
 //     res.render("pmviewproduct")
