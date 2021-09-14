@@ -20,7 +20,8 @@
     <!--start of form-->
 <div class="p-3 mb-2 bg-dark text-white gradient-custom">
 <center>
-<form action="/updateproduct" method="post" class="form-horizontal">
+{{#each product}}
+<form action="/updateproduct/{{this.pid}}" method="post" class="form-horizontal">
     <fieldset>
 
         <!-- Form Name -->
@@ -35,18 +36,18 @@
         </div> --}}
 
         <!-- Text input-->
-        <div class="form-group">
+        {{!-- <div class="form-group">
             <label class="col-md-4 control-label" for="pid">PRODUCT ID</label>
             <div class="col-md-4">
                 <input id="pid" name="pid" placeholder="PRODUCT ID" class="form-control input-md" required="" type="text">
             </div>
-        </div>
+        </div> --}}
 
         <!-- Text input-->
         <div class="form-group">
             <label class="col-md-4 control-label" for="pname">PRODUCT NAME</label>
             <div class="col-md-4">
-                <input id="pname" name="pname" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text">
+                <input id="pname" name="pname" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text" value="{{ this.pname }}">
             </div>
         </div>
 
@@ -55,7 +56,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="expdate">EXPIRY DATE</label>
             <div class="col-md-4">
-                <input id="expdate" name="expdate" placeholder="DD/MM/YYYY" class="form-control input-md" required="" type="date">
+                <input id="expdate" name="expdate" placeholder="DD/MM/YYYY" class="form-control input-md" required="" type="date" value="{{ this.expdate }}">
 
             </div>
         </div>
@@ -64,7 +65,7 @@
          <div class="form-group">
             <label class="col-md-4 control-label" for="qty">QUANTITY</label>
             <div class="col-md-4">
-                <input id="qty" name="qty" placeholder="" class="form-control input-md" required="" type="number">
+                <input id="qty" name="qty" placeholder="" class="form-control input-md" required="" type="number" value="{{ this.qty }}">
 
             </div>
         </div>
@@ -73,7 +74,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="pricepu">PRICE PER UNIT(USD $)</label>
             <div class="col-md-4">
-                <input id="pricepu" name="pricepu" placeholder="Enter a USD value(Ex:10)" class="form-control input-md" required="" type="number">
+                <input id="pricepu" name="pricepu" placeholder="Enter a USD value(Ex:10)" class="form-control input-md" required="" type="number" value="{{ this.pricepu }}">
 
             </div>
         </div>
@@ -84,7 +85,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="pdesc">PRODUCT DESCRIPTION</label>
             <div class="col-md-4">
-                <textarea class="form-control" id="pdesc" name="pdesc"></textarea>
+                <textarea class="form-control" id="pdesc" name="pdesc" value="{{ this.pdesc }}"></textarea>
             </div>
         </div>
 
@@ -110,6 +111,7 @@
 
     </fieldset>
 </form>
+{{/each}}
 </center>
 
 </div>
