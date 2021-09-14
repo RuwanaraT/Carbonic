@@ -152,5 +152,11 @@ router.get('/feedback', (req, res) => {
   
   });
 
+  router.get('/adminprofile', (req, res) => {
+
+    res.render("adminprofile");
+    
+    });
+
 
   module.exports=router;
