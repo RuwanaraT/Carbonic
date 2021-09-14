@@ -146,5 +146,11 @@ res.render("alogin");
 
 });
 
+router.get('/feedback', (req, res) => {
+
+  res.render("feedback");
+  
+  });
+
 
   module.exports=router;

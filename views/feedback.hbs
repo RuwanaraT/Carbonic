@@ -75,46 +75,41 @@
 
 <br><br><br><br><br>
 
+	<link rel="stylesheet" href="/feedback.css">
 
-    <a href="/bregister">register</a> <br>
-    
-    
+	
 
-    <a href="/pickupcancel">Pickup Cancel</a><br>
+  <div class="wrapper">
+  	<div id="formContent">
 
-    
-    <a href="/addproduct">Add Products</a> <br>
+  		<div id="FormBeg">
+  			<h1> Feedback </h1>
+  			<h3> Feel free to add your complaints and Suggestions </h3>
+  		</div>
 
-   
+  		<form method="POST" action="/feedback"> 
+  			<lable for="cuzid"> Customer ID :  </lable> <br>
+  			<input type="text" id="cuzid" name="feedbackForm" placeholder="Enter Your Customer ID"> <br>
 
-    <a href="forumHome/forumHome">forum</a><br>
+  			<lable for="cuzName"> Customer Name :  </lable> <br>
+  			<input type="text" id="cuzName" name="feedbackForm" placeholder="Enter Your Name"> <br>
 
-    <a href="/blogin">Blogin</a><br>
+  			<label> Select Type : </label> <br>
+  			<label id="rdbtn" for="complaint"> Complaint </label>
+  			<input type="radio" id="complaint" name="feedbackForm" value="Complaint">
+  			<label id="rdbtn" for="Suggestion"> Suggestion </label>
+  			<input type="radio" id="Suggestion" name="feedbackForm" value="Suggestion"> <br>
 
-    <a href="/bprofile">BProfile</a><br>
+  			<label> Comments :  </label> <br>
+  			<textarea name="feedbackForm"> Leave Your Comments here... </textarea> <br>
 
-    <a href="/contactus">contactus</a><br>
+  			<input type="submit" name="feedbackForm" value="Submit Feedback">
+  		</form>
 
-    <a href="/pmviewproduct">PM view Product</a><br>
+  	</div>
+  </div>
 
-
-    <a href="/buyerDashboard">buyerDashboard</a><br>
-
-    <a href="/prdupdate">Update Product</a><br>
-
-    <a href="/alogin">Admin Login</a> <br>
-
-    <a href="/feedback">Feedback</a> <br>
-    
-
-
-
-
-    <a href="/shoppingcart">shoppingcart</a> <br>
-
-    <a href="/home">home</a> <br>
-
-    <br><br><br><br><br>
+  <br><br><br><br><br>
 
     <!--footer-->
 <footer class="footer">
@@ -160,5 +155,3 @@
     </div>
   </div>
 </footer>
-<!--footer-->
-    
