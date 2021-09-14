@@ -14,7 +14,7 @@
     <input type="radio" name="options" id="option1" autocomplete="off" checked> View Products
   </label>
   <label class="btn btn-success">
-    <input type="radio" name="options" id="option2" autocomplete="off"> Add Products
+    <input type="radio" name="options" id="option2" autocomplete="off"><a href="/addproduct"class="text-white"> Add Products</a> 
   </label>
   <label class="btn btn-success">
     <input type="radio" name="options" id="option3" autocomplete="off"> Monthly Sales Report
@@ -103,14 +103,14 @@
   
             <h6 class="mb-3"><span>{{ this.pricepu }}</span></h6>
             <div class="my-4">
-              <button type="button" class="btn btn-success btn-md mr-1 mb-2"><i
-                  class="bi bi-arrow-clockwise pr-2"></i>Update</button>
+              <a href="/prdupdate/{{ this.pid }}"><button type="button" class="btn btn-success btn-md mr-1 mb-2"><i
+                  class="bi bi-arrow-clockwise pr-2"></i>Update</button></a>
               <button type="button" class="btn btn-light btn-md mr-1 mb-2"><i
                   class="fas fa-info-circle pr-2"></i>Details</button>
             </div>
-            <button type="button" class="btn btn-danger btn-md px-3 mb-lg-2 material-tooltip-main"
-              data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i
-                class="bi bi-trash"></i></button>
+            <a href="/deleteProduct/{{ this.pid }}"><button type="button" class="btn btn-danger btn-md px-3 mb-lg-2 material-tooltip-main"
+              data-toggle="tooltip" data-placement="top" title="Delete Product"><i
+                class="bi bi-trash"></i></button></a>
   
           </div>
         </div>
