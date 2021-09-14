@@ -24,6 +24,8 @@ app.use('/auth',require('./routes/auth'));
 
 app.use('/fhand', require('./routes/fhand'));
 
+app.use('/cart', require('./routes/cart'));
+
 app.get("/pickupform",(req,res)=>{
   res.render("pickupform")
 });
@@ -46,6 +48,14 @@ app.get("/fregister",(req,res)=>{
 
 app.get("/requests",(req,res)=>{
   res.render("requests")
+});
+
+app.get("/shoppingcart",(req,res)=>{
+  res.render("shoppingcart")
+});
+
+app.get("/home",(req,res)=>{
+  res.render("home")
 });
 
 

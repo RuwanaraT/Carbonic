@@ -28,8 +28,14 @@ router.get("/header",(req,res)=>{
     res.render("fregister");
     
 });
-  
 
+router.get("/shoppingcart",(req,res)=>{
+    res.render("shoppingcart")
+  });
+  
+router.get("/home",(req,res)=>{
+    res.render("home")
+  });
 
 
 
