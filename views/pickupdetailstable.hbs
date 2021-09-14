@@ -44,8 +44,8 @@
                                 <th>Driver NIC</th>
                                 <th>Vehicle No</th>
                                  <th>Buyer ID</th>
-                                <th>Dispatched/not</th>
-                                <th>Payement/not</th>
+                                <th>Dispatched</th>
+                                <th>Payement</th>
                                 <th>Delete Pickup</th>
                                
 
@@ -54,20 +54,20 @@
                         <!--Table head-->
                         <!--Table body-->
                         <tbody>
-                            {{#each pickupobj}}
+                            {{#each pickupobj }}
                             <tr>
                                 <td>{{this.pid }}</td>
                                 <td>{{ this.buyername }}</td>
-                                <td>{{ this. province}}</td>
-                                <td>{{ this.mobile }}</td>
+                                <td>{{ this.province}}</td>
+                                <td>{{ this.driver_mobile }}</td>
                                 <td>{{ this.settime}}</td>
                                 <td>{{ this.setdate }}</td>
-                                <td>{{ this.dnic }}</td>
-                                <td>{{ this.vno }}</td>
+                                <td>{{ this.driver_NIC }}</td>
+                                <td>{{ this.vehicle_no }}</td>
                                 <td>{{ this.buyerid }}</td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox"></td>
-                                <td><button type="button" id="" name="">Delete</button></td>
+                                <td><input type="checkbox" id="toggle"></td>
+                                <td><input type="checkbox" id="toggle"></td>
+                                <td><a href="/deletePickup/deletepck/{{ this.pid }}"><button type="button" id="" name="">Delete</button></a><td>
                             </tr>
                             {{/each}}
                         </tbody>

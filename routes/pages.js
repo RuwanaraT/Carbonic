@@ -25,13 +25,13 @@ router.get("/bregister",(req,res)=>{
     res.render("blogin")
   });
 
-router.get("/addproduct",(req,res)=>{
-    res.render("addproduct")
-  });
+// router.get("/addproduct",(req,res)=>{
+//     res.render("addproduct")
+//   });
 
- router.get("/pmviewproduct",(req,res)=>{
-    res.render("pmviewproduct")
-  });
+//  router.get("/pmviewproduct",(req,res)=>{
+//     res.render("pmviewproduct")
+//   });
   
 
   //router.get("/addforum",(req,res)=>{
@@ -60,6 +60,16 @@ router.get("/addproduct",(req,res)=>{
     res.render("fregister");
     
 });
+
+
+router.get("/shoppingcart",(req,res)=>{
+    res.render("shoppingcart")
+  });
+  
+router.get("/home",(req,res)=>{
+    res.render("home")
+  });
+
 
 router.get('/contactus', (req, res) => {
 
@@ -104,6 +114,7 @@ router.get('/resetpassword', (req, res) => {
   
 });
 
+
 router.get('/fdelete', (req, res) => {
 
   res.render("fdelete");
@@ -114,6 +125,19 @@ router.get('/prdupdate', (req, res) => {
 
   res.render("prdupdate");
   
+});
+// router.get('/editbuyer', (req, res) => {
+
+//   res.render("editbuyer");
+  
+// });
+router.get('/buyerDashboard', (req, res) => {
+  if(req.buyer) {
+
+    res.render("buyerDashboard", {
+        user : req.user
+    });
+}
 });
 
 router.get('/alogin', (req, res) => {
