@@ -45,27 +45,27 @@ router.post('/fprofile/:id', function(req, res) {
 
   })
 
-  // route for retrieve data from farmer table to the fdelete page
-  router.get('/getsingleuser/:id', function(req, res) {
+  //route for retrieve data from farmer table to the fdelete page
+  // router.get('/getsingleuser/:id', function(req, res) {
 
-    var fid = req.params.id;
+  //   var fid = req.params.id;
 
-    db.query("SELECT * FROM farmers WHERE id = ?", [fid], function(err, rows) {
+  //   db.query("SELECT * FROM farmers WHERE id = ?", [fid], function(err, rows) {
 
-      if(err) throw err;
-      res.render("fdelete", {userdata : rows});
+  //     if(err) throw err;
+  //     res.render("fdelete", {userdata : rows});
 
-    })
+  //   })
 
     
-  })
+  // })
 
  // route for delete single farmer
  router.get('/fdelete/:id', function(req, res) {
 
   var fid = req.params.id;
 
-  db.query("DELETE * FROM farmers WHERE id = ?", [fid], function(err, results) {
+  db.query("DELETE FROM farmers WHERE id = ?", [fid], function(err, results) {
 
     if(err) throw err;
     res.redirect('/');
