@@ -26,11 +26,23 @@ app.use(cookieParser());
 //routes
 app.use('/',require('./routes/pages'));
 app.use('/auth',require('./routes/auth'));
-app.use('/',require('./routes/product'));
+app.use('/pmviewproduct',require('./routes/product'));
+//
+app.use('/editbuyer',require('./routes/auth'));
+//
+app.use('/addproduct',require('./routes/product'));
 app.use('/fhand', require('./routes/fhand'));
+
 
 app.use('/2nd',require('./routes/3rd')); //h
 app.use('/forumHome', forumRouter);
+
+
+app.use('/cart', require('./routes/cart'));
+
+app.use('/forumHome',require('./routes/forumHome')); //h
+
+
 
 
 
@@ -49,6 +61,14 @@ app.get("/pickupdetailstable",(req,res)=>{
 
 app.get("/requests",(req,res)=>{
   res.render("requests")
+});
+
+app.get("/shoppingcart",(req,res)=>{
+  res.render("shoppingcart")
+});
+
+app.get("/home",(req,res)=>{
+  res.render("home")
 });
 
 

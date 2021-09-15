@@ -1,0 +1,164 @@
+
+<link rel="stylesheet" href="/addProduct.css">
+<!--xxx-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+{{!-- bootstrap 5 below,just used for gradient--}}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/footer.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+<!--xx-->
+
+     
+    <title>Update Products</title>
+</head>
+<body>
+
+    <!--start of form-->
+<div class="p-3 mb-2 bg-dark text-white gradient-custom">
+<center>
+{{#each product}}
+<form action="/updateproduct/{{this.pid}}" method="post" class="form-horizontal">
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend>UPDATE A PRODUCT</legend>
+
+        {{!-- <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="fid">FARMER ID</label>
+            <div class="col-md-4">
+                <input id="fid" name="fid" placeholder="FARMER ID" class="form-control input-md" required="" type="text">
+            </div>
+        </div> --}}
+
+        <!-- Text input-->
+        {{!-- <div class="form-group">
+            <label class="col-md-4 control-label" for="pid">PRODUCT ID</label>
+            <div class="col-md-4">
+                <input id="pid" name="pid" placeholder="PRODUCT ID" class="form-control input-md" required="" type="text">
+            </div>
+        </div> --}}
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="pname">PRODUCT NAME</label>
+            <div class="col-md-4">
+                <input id="pname" name="pname" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text" value="{{ this.pname }}">
+            </div>
+        </div>
+
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="expdate">EXPIRY DATE</label>
+            <div class="col-md-4">
+                <input id="expdate" name="expdate" placeholder="DD/MM/YYYY" class="form-control input-md" required="" type="date" value="{{ this.expdate }}">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+         <div class="form-group">
+            <label class="col-md-4 control-label" for="qty">QUANTITY</label>
+            <div class="col-md-4">
+                <input id="qty" name="qty" placeholder="" class="form-control input-md" required="" type="number" value="{{ this.qty }}">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="pricepu">PRICE PER UNIT(USD $)</label>
+            <div class="col-md-4">
+                <input id="pricepu" name="pricepu" placeholder="Enter a USD value(Ex:10)" class="form-control input-md" required="" type="number" value="{{ this.pricepu }}">
+
+            </div>
+        </div>
+
+
+
+        <!-- Textarea -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="pdesc">PRODUCT DESCRIPTION</label>
+            <div class="col-md-4">
+                <textarea class="form-control" id="pdesc" name="pdesc" value="{{ this.pdesc }}"></textarea>
+            </div>
+        </div>
+
+        {{!--Upload Picture
+        <div class="form-group">
+          <div class="input-group mb-3 col-md-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Upload</span>
+            </div>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inputGroupFile01" name="prod_image">
+                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+            </div>
+          </div>
+        </div>
+          --}}
+                <!-- Button -->
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <button id="submitbutton" name="submitbutton" class="btn btn-outline-success">Update Product</button>
+                    </div>
+                </div>
+
+    </fieldset>
+</form>
+{{/each}}
+</center>
+
+</div>
+<!--end of form-->
+ 
+<!--footer-->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>company</h4>
+        <ul>
+          <li><a href="#">about us</a></li>
+          <li><a href="#">our services</a></li>
+          <li><a href="#">privacy policy</a></li>
+          <li><a href="#">affiliate program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>get help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">shipping</a></li>
+          <li><a href="#">returns</a></li>
+          <li><a href="#">order status</a></li>
+          <li><a href="#">payment options</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>online shop</h4>
+        <ul>
+          <li><a href="#">Vegetables</a></li>
+          <li><a href="#">Fruits</a></li>
+          <li><a href="#">Beans</a></li>
+          <li><a href="#">others</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--footer-->   

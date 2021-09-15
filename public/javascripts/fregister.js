@@ -30,3 +30,26 @@ function enableButton()
          }
 
 }
+
+
+function retrieveData(value) {
+
+     if(value == "demo") {
+
+          document.getElementById("fname").value = "R.Perera";
+          document.getElementById("fnic").value = "692442721V";
+          document.getElementById("fmobile").value = "0716429301";
+          document.getElementById("fadline1").value = "No:138/A";
+          document.getElementById("fadline2").value = "Kudawewa"
+          document.getElementById("fdistrict").value = "Kurunegala";
+          document.getElementById("fpcode").value = "6000";
+          document.getElementById("femail").value = "rangith@gmail.com";
+          document.getElementById("fpwd").value = "rangi123";
+          document.getElementById("frpwd").value = "rangi123";
+     }
+
+     else {
+          alert("Invalid")
+     }
+} 
+

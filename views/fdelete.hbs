@@ -3,21 +3,23 @@
 
 <div class = "container mt-5" style="background-color:  whitesmoke; width : 45%;">
 
-        <form action="" method="POST">
+  {{#each userdata}}
+
+        <form action="fhand/fdelete{{this.id}}" method="GET">
 
           <center> <h1 style="color: seagreen; font-weight: bold;"> My Carbonic  </h1> </center>
       
 
-          <img src = "img/pp.png" class = "ProPic"> 
+          {{!-- <img src = "img/pp.png" class = "ProPic"> 
 
-          <hr> 
+          <hr>  --}}
              
           <div class="row">
             <div class="col">
               <label for="one" class = "lbl">Full Name</label>
             </div>
             <div class="col">
-              <input type="text" class="form-control" id = "one" name = "one" class = "txtbx">
+              <input type="text" class="form-control" id = "one" name = "one" class = "txtbx" value="{{this.fname}}">
             </div>
           </div> 
 
@@ -28,7 +30,7 @@
               <label for="two" class = "lbl">NIC Number</label>
             </div>
             <div class="col">
-              <input type="text" class="form-control" id = "two" name = "two" class = "txtbx">
+              <input type="text" class="form-control" id = "two" name = "two" class = "txtbx" value="{{this.fnic}}">
             </div>
           </div> 
 
@@ -39,7 +41,7 @@
               <label for="three" class = "lbl">Mobile Number</label>
             </div>
             <div class="col">
-              <input type="text" class="form-control" id = "three" name = "three" class = "txtbx">
+              <input type="text" class="form-control" id = "three" name = "three" class = "txtbx" value="{{this.fmobile}}">
             </div>
           </div>
 
@@ -50,7 +52,7 @@
               <label for="four" class = "lbl">Email</label>
             </div>
             <div class="col">
-              <input type="text" class="form-control" id = "four" name = "four" class = "txtbx">
+              <input type="text" class="form-control" id = "four" name = "four" class = "txtbx" value="{{this.femail}}">
             </div>
           </div> 
 
@@ -61,7 +63,7 @@
               <label for="five" class = "lbl">Address line 1</label> <br> 
             </div>
             <div class="col">
-              <input type="text" class="form-control" id = "five" name = "five" class = "txtbx">
+              <input type="text" class="form-control" id = "five" name = "five" class = "txtbx" value="{{this.fadline1}}">
             </div>
           </div>
           <div class="row">
@@ -69,7 +71,7 @@
               <label for="six" class = "lbl">Address line 2</label> <br> 
             </div>
             <div class="col">
-              <input type="text" class="form-control" id = "six" name = "six" class = "txtbx">
+              <input type="text" class="form-control" id = "six" name = "six" class = "txtbx" value="{{this.fadline2}}">
             </div>
           </div>
           <div class="row">
@@ -77,7 +79,7 @@
               <label for="seven" class = "lbl">Province</label> <br> 
             </div>
             <div class="col">
-              <input type="text" class="form-control" id = "seven" name = "seven" class = "txtbx">
+              <input type="text" class="form-control" id = "seven" name = "seven" class = "txtbx" value="{{this.fprovince}}">
             </div>
           </div>
           <div class="row">
@@ -85,7 +87,7 @@
               <label for="eight" class = "lbl">District</label> <br> 
             </div>
             <div class="col">
-              <input type="text" class="form-control" id = "eight" name = "eight" class = "txtbx">
+              <input type="text" class="form-control" id = "eight" name = "eight" class = "txtbx" value="{{this.fdistrict}}">
             </div>
           </div>
           <div class="row">
@@ -93,7 +95,7 @@
               <label for="nine" class = "lbl">Postal Code</label> <br> 
             </div>
             <div class="col">
-              <input type="text" class="form-control" id = "nine" name = "nine" class = "txtbx">
+              <input type="text" class="form-control" id = "nine" name = "nine" class = "txtbx" value="{{this.fpcode}}">
             </div>
           </div>
 
@@ -107,6 +109,8 @@
           <br>   
           
         </form>
+
+        {{/each}}
 
     </div>
 

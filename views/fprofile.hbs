@@ -4,36 +4,36 @@
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
-<img class="logo1" src="img/logo.svg" width="200px" height="200px">
+<img class="logo1" src="../img/logo.svg" width="200px" height="200px">
       <nav>
-         <img class="logo" src="img/carbonic-favicon-01.svg" width="200px" height="200px">
+         <img class="logo" src="../img/carbonic-favicon-01.svg" width="200px" height="200px">
          <ul>
-            <li><a class="active" href="/index">Home</a></li>
+            <li><a href="/buyerDashboard" style="text-decoration: none;">Home</a></li>
             
             <li>
-               <a href="#">Browse Products
+               <a href="#" style="text-decoration: none;">Browse Products
                <i class="fas fa-caret-down"></i>
                </a>
                <ul>
-                  <li><a href="#">Vegetables</a></li>
-                  <li><a href="#">Fruits</a></li>
+                  <li><a href="#" style="text-decoration: none;">Vegetables</a></li>
+                  <li><a href="#" style="text-decoration: none;">Fruits</a></li>
                   <li>
-                     <a href="#">Others
+                     <a href="#" style="text-decoration: none;">Others
                      <i class="fas fa-caret-right"></i>
                      </a>
                      <ul>
-                        <li><a href="#">Plants & seeds</a></li>
-                        <li><a href="#">Grains</a></li>
-                        <li><a href="#">Fertilizer</a></li>
+                        <li><a href="#" style="text-decoration: none;">Plants & seeds</a></li>
+                        <li><a href="#" style="text-decoration: none;">Grains</a></li>
+                        <li><a href="#" style="text-decoration: none;">Fertilizer</a></li>
                      </ul>
                   </li>
                </ul>
             </li>
-            <li><a href="#">Contact Us</a></li>
-             <li><a href="#">About Us</a></li>
-            <li><a href="#">Feedback</a></li>
+            <li><a href="/contactus" style="text-decoration: none;">Contact Us</a></li>
+             <li><a href="#" style="text-decoration: none;">About Us</a></li>
+            <li><a href="#" style="text-decoration: none;">Feedback</a></li>
              <li>
-               <a href="/fprofile">Profile
+               <a href="/fprofile" class="active" style="text-decoration: none;">Profile
                {{!-- <i class="fas fa-caret-down"></i> --}}
                </a>
                {{!-- <ul>
@@ -42,7 +42,7 @@
                </ul> --}}
             </li>
             <li>
-               <a href="/fhand/logout">Log Out
+               <a href="/fhand/logout" style="text-decoration: none;">Log Out
                {{!-- <i class="fas fa-caret-down"></i> --}}
                </a>
                {{!-- <ul>
@@ -71,18 +71,16 @@
             </div>
             
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Reports : </li>
+                <li class="list-group-item">Documents : </li>
                 <center>
-                <li class="list-group-item"><a href="#" class="card-link" style="text-decoration: none;">Download Report 1</a></li>
-                <li class="list-group-item"><a href="#" class="card-link" style="text-decoration: none;">Download Report 2</a></li>
-                <li class="list-group-item"><a href="#" class="card-link" style="text-decoration: none;">Download Report 3</a></li>
+                <li class="list-group-item"><a href="#" class="card-link" style="text-decoration: none;">Download Document 1</a></li>
+                <li class="list-group-item"><a href="#" class="card-link" style="text-decoration: none;">Download Document 2</a></li>
+                <li class="list-group-item"><a href="#" class="card-link" style="text-decoration: none;">Download Document 3</a></li>
                 </center>
-                <li class="list-group-item"><a href="/searchforbuyers" class="card-link" style="text-decoration: none; color: black;">Find for Buyers<img src="img/investor.png" alt="" height="10%" width="10%" style="position: relative; left: 45%;"></a></li>
+                <li class="list-group-item"><a href="fhand/searchforbuyers" class="card-link" style="text-decoration: none; color: black;">Find for Buyers<img src="img/investor.png" alt="" height="10%" width="10%" style="position: relative; left: 45%;"></a></li>
                 <li class="list-group-item"><a href="/addproduct" class="card-link" style="text-decoration: none; color: black;">Add Products<img src="img/fruit.png" alt="" height="10%" width="10%" style="position: relative; left: 49%;"></a></li>
-                {{!-- <li class="list-group-item"><a href="#" class="card-link" style="text-decoration: none; color: black;">Feedbacks <img src="img/criticism.png" alt="" height="10%" width="10%" style="position: relative; left: 55%;"></a></li>  --}}
                 <li class="list-group-item"><a href="/resetpassword" class="card-link" style="text-decoration: none; color: black;"> Reset Password <img src="img/rotation-lock.png" alt="" height="10%" width="10%" style="position: relative; left: 38%;"></a></li>
-                <li class="list-group-item"><a href="/fdelete" class="card-link" style="text-decoration: none; color: black;"> Delete Account <img src="img/delete.png" alt="" height="10%" width="10%" style="position: relative; left: 40%;"></a></li>
-                {{!-- <li class="list-group-item"><a href="#" class="card-link" style="text-decoration: none; color: black;">Log Out <img src="img/log-out.png" alt="" height="10%" width="10%" style="position: relative; left: 67%;"></a></li> --}}
+                <li class="list-group-item"><a href="fhand/fdelete/{{user.id}}" class="card-link" style="text-decoration: none; color: black;"> Delete Account <img src="img/delete.png" alt="" height="10%" width="10%" style="position: relative; left: 40%;"></a></li>
             </ul>
 
             </div>
