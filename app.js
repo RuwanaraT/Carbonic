@@ -12,6 +12,7 @@ dotenv.config({path: './.env'})
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/product');
+var forumRouter = require('./routes/forum');
 
 
 
@@ -28,7 +29,8 @@ app.use('/auth',require('./routes/auth'));
 app.use('/',require('./routes/product'));
 app.use('/fhand', require('./routes/fhand'));
 
-app.use('/forumHome',require('./routes/forumHome')); //h
+app.use('/2nd',require('./routes/3rd')); //h
+app.use('/forumHome', forumRouter);
 
 
 

@@ -47,49 +47,20 @@
   </div>
   <div id="mainpage">
     <div id="content">
-      <div class="side-image">
-      <center>
-      <h2 class="topic1">  Ask Question</h2>
-      </center>
-      <!-- Quction form-->
-
-      <form action="/forumHome/addPost" method="POST" >
-        <div class="contactform">
-          <label for="Name"></label>
-          <textarea class="textfield" name="psubject" cols="30" rows="2" placeholder="                                     What's on your mind ?"></textarea>  
-          <div class="clear2"></div>
-          <label for="Comments"></label>
-          <textarea class="textfield" name="pdescription" cols="30" rows="3" placeholder="                                               Explan "></textarea>
-          <div class="clear2"></div>
-          <button type="submit" class="form-submit">Submit</button><a href="#" class="form-btn"></a>
-          <p class="postinfo"> </p>
-        </div>
-      </form>
-      </div>
-
-      <!--end Quction form-->  
-
-        <div class="topic">
-          <h1>All Questions</h1>
-          <h5 class="amount">475- questios</h5>
-        </div>
-      
-      <p class="postinfo"> </p>
-
-
       
 
       <!--post container-->
-      {{#each post}}
       
+      <p class="postinfo"> </p> 
       <div class="post-container">
         <div class="post-detail post-center">
           <div class="post-user">
-            <a href="#"><small>{{this.bid}}</small></a>
+            <a href="#"><small>Hashan chathuranaga</small></a>
           </div>
           <div class="post-time commen-margin">
             <small> 
-              {{this.date}}
+              02.15 Pm<br>
+              01/11/21
             </small>
           </div>
           <div class="post-status  commen-margin">
@@ -100,17 +71,82 @@
         <div class="post-contend post-center" >
           <div class="subject">
             <a href="#">
-             {{this.psubject}}
+              This is sample subject
+              This is sample subject
+              This is sample subject
             </a>
           </div>
           <div class="description commen-margin">
-            {{this.pdescription}}
+            This is sample description This is sample description
+            This is sample description
+            This is sample description
+            This is sample descriptionThis is sample description
+            This is sample description
+            This is sample description
+            This is sample descriptionThis is sample description
+            This is sample description
           </div>
         </div>
       </div>
       <p class="postinfo"> </p>  
-      {{/each}}
       <!-- end post container-->
+
+
+
+    <!-- comment form-->
+
+      <form action="#">
+        <div class="contactform">
+          
+          <label for="Comments"></label>
+          <textarea class="textfield" name="Comments" cols="30" rows="5" placeholder="          add comment                     "></textarea>
+          <div class="clear2"></div>
+          <a href="#" class="form-btn"><button class="form-submit">Submit</button></a>
+          <p class="postinfo"> </p>
+        </div>
+      </form>
+    <!--end comment form-->  
+
+
+        <div class="topic">
+          <h1>All Comments</h1>
+          <h5 class="amount">05- comments</h5>
+        </div><p class="postinfo"> </p>
+    
+    <!--All comments-->
+
+        <div class="post-container">
+        <div class="post-detail post-center">
+          <div class="post-user">
+            <a href="#"><small>Hashan chathuranaga</small></a>
+          </div>
+          <div class="post-time commen-margin">
+            <small> 
+              02.15 Pm<br>
+              01/11/21
+            </small>
+          </div>
+          <div class="post-status  commen-margin">
+            02 -<small> Like</small> <br>
+            05-<small>Reply</small>
+          </div>
+        </div>
+        <div class="post-contend post-center" >
+          <div class="description commen-margin">
+            This is sample description This is sample description
+            This is sample description
+            This is sample description
+            This is sample descriptionThis is sample description
+            This is sample description
+            This is sample description
+            This is sample descriptionThis is sample description
+            This is sample description
+          </div>
+        </div>
+        </div><p class="postinfo"> </p>
+        <!--end All comments-->
+
+
 
     
     </div>
@@ -146,8 +182,6 @@
     <p class="clear"></p>
   </div>
 </div>
-
-
 
 
 
@@ -198,4 +232,3 @@
   </div>
 </footer>
 <!--footer-->
-    

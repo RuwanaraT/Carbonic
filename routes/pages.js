@@ -34,13 +34,26 @@ router.get("/addproduct",(req,res)=>{
   });
   
 
-  //router.get("/addforum",(req,res)=>{
-  //  res.render("addforum")
+  router.get("/1st",(req,res)=>{ //h
+   res.render("1st")
+  });
+
+  // router.get("/",(req,res)=>{          //h
+  //   res.render("2nd")
   // });
 
-  router.get("/forumHome",(req,res)=>{
+  router.get("/",(req,res)=>{            //h
     res.render("forumHome")
   });
+
+  router.get("/forumpost",(req,res)=>{            //h
+    res.render("forumPost")
+  });
+
+
+
+ 
+
 
   router.get("/bprofile",authController.isLoggedIn, (req,res)=>{
     if(req.buyer){
