@@ -34,9 +34,9 @@ router.get("/addproduct",(req,res)=>{
 //   });
   
 
-  //router.get("/addforum",(req,res)=>{
-  //  res.render("addforum")
-  // });
+  router.get("/addforum",(req,res)=>{
+   res.render("addforum")
+  });
 
   router.get("/forumHome",(req,res)=>{
     res.render("forumHome")

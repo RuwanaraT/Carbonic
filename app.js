@@ -26,6 +26,9 @@ app.use(cookieParser());
 app.use('/',require('./routes/pages'));
 app.use('/auth',require('./routes/auth'));
 app.use('/pmviewproduct',require('./routes/product'));
+//
+app.use('/editbuyer',require('./routes/auth'));
+//
 app.use('/addproduct',require('./routes/product'));
 app.use('/fhand', require('./routes/fhand'));
 
