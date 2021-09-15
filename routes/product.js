@@ -22,7 +22,7 @@ router.post('/addproduct', function(req, res, next) {
 
     const productdata ={
       fid:req.body.fid,
-      pid:req.body.pid,
+      // pid:req.body.pid,
       pname:req.body.pname,
       ptype:req.body.ptype,
       expdate:req.body.expdate,
