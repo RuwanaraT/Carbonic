@@ -134,6 +134,11 @@ router.get('/alogin', (req, res) => {
 res.render("alogin");
 
 });
+router.get('/buyerhandler', (req, res) => {
+
+  res.render("buyerhandler");
+  
+  });
 
 
   module.exports=router;
