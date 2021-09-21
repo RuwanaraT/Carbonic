@@ -1,140 +1,123 @@
-<link rel="stylesheet" href="/header.css">
+ <link rel="stylesheet" href="/header.css">
 <link rel="stylesheet" href="/footer.css">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+<link rel="stylesheet" href="/feedback.css">
 
 <img class="logo1" src="img/logo.svg" width="200px" height="200px">
       <nav>
          <img class="logo" src="img/carbonic-favicon-01.svg" width="200px" height="200px">
          <ul>
-            <li><a class="active" href="/" style="text-decoration: none;">Home</a></li>
+            <li><a class="active" href="/index">Home</a></li>
             
             <li>
-               <a href="#" style="text-decoration: none;">Browse Products
+               <a href="#">Browse Products
                <i class="fas fa-caret-down"></i>
                </a>
                <ul>
-                  <li><a href="#" style="text-decoration: none;">Vegetables</a></li>
-                  <li><a href="#" style="text-decoration: none;">Fruits</a></li>
+                  <li><a href="#">Vegetables</a></li>
+                  <li><a href="#">Fruits</a></li>
                   <li>
-                     <a href="#" style="text-decoration: none;">Others
+                     <a href="#">Others
                      <i class="fas fa-caret-right"></i>
                      </a>
                      <ul>
-                        <li><a href="#" style="text-decoration: none;">Plants & seeds</a></li>
-                        <li><a href="#" style="text-decoration: none;">Grains</a></li>
-                        <li><a href="#" style="text-decoration: none;">Fertilizer</a></li>
+                        <li><a href="#">Plants & seeds</a></li>
+                        <li><a href="#">Grains</a></li>
+                        <li><a href="#">Fertilizer</a></li>
                      </ul>
                   </li>
                </ul>
             </li>
-            <li><a href="/contactus" style="text-decoration: none;">Contact Us</a></li>
-             <li><a href="#" style="text-decoration: none;">About Us</a></li>
-            <li><a href="#" style="text-decoration: none;">Feedback</a></li>
+            <li><a href="#">Contact Us</a></li>
+             <li><a href="#">About Us</a></li>
+            <li><a href="#">Feedback</a></li>
             {{# if user}}
                <li>
-               <a href="/fprofile" style="text-decoration: none;">Profile
-               {{!-- <i class="fas fa-caret-down"></i> --}}
+               <a href="/fprofile">Profile
+             <i class="fas fa-caret-down"></i> 
                </a>
-               {{!-- <ul>
+                <ul>
                   <li><a href="/fregister">Farmer</a></li>
                   <li><a href="/bregister">Buyer</a></li>
-               </ul> --}}
+               </ul> 
             </li>
             <li>
-               <a href="/fhand/logout" style="text-decoration: none;">Log Out
-               {{!-- <i class="fas fa-caret-down"></i> --}}
+               <a href="/fhand/logout">Log Out
+              <i class="fas fa-caret-down"></i> 
                </a>
-               {{!-- <ul>
+                <ul>
                   <li><a href="/login">Farmer</a></li>
                   <li><a href="#">Buyer</a></li>
-               </ul> --}}
+               </ul> 
             </li>
             {{else}}
              <li>
-               <a href="#" style="text-decoration: none;">Register
+               <a href="#">Register
                <i class="fas fa-caret-down"></i>
                </a>
                <ul>
-                  <li><a href="/fregister" style="text-decoration: none;">Farmer</a></li>
-                  <li><a href="/bregister" style="text-decoration: none;">Buyer</a></li>
+                  <li><a href="/fregister">Farmer</a></li>
+                  <li><a href="/bregister">Buyer</a></li>
                </ul>
             </li>
             <li>
-               <a href="#" style="text-decoration: none;">Switch To
+               <a href="#">Switch To
                <i class="fas fa-caret-down"></i>
                </a>
                <ul>
-                  <li><a href="/login" style="text-decoration: none;">Farmer</a></li>
-                  <li><a href="#" style="text-decoration: none;">Buyer</a></li>
+                  <li><a href="/login">Farmer</a></li>
+                  <li><a href="#">Buyer</a></li>
                </ul>
             </li>
             {{/if}}
          </ul>
       </nav>
 
-<br><br><br><br><br>
-
-   <div class = "container">
-
-    <a href="/bregister">register</a> <br>
-    
-    
-
-    <a href="/pickupcancel">Pickup Cancel</a><br>
-
-    
-    <a href="/addproduct">Add Products</a> <br>
-
-   
-
-    <a href="/2nd">forum</a><br>
-
-    <a href="/blogin">Blogin</a><br>
-
-    <a href="/bprofile">BProfile</a><br>
-
-    <a href="/contactus">contactus</a><br>
-
-    <a href="/pmviewproduct">PM view Product</a><br>
-
-    <a href="/forumHome">new forum</a> <br>
-
-    <a href="/forumPost">forum post</a>
-
-
-    <a href="/buyerDashboard">buyerDashboard</a><br>
-
-    <a href="/prdupdate">Update Product</a><br>
-
-    <a href="/alogin">Admin Login</a> <br>
-
-   <a href="/buyerhandler">buyerhandler</a> <br>
-    
+<br><br><br><br> 
 
 
 
 
-    <a href="/shoppingcart">shoppingcart</a> <br>
-
-    <a href="/home">home</a> <br>
-
-   <a href="/feedback">Feedback</a> <br>
-
-   <a href="/delfeedback"> Delete Feedback </a> <br>
-
-   <a href="/viewadmin"> View Admin </a>
 
 
-    
 
-    </div>
+<div id="totalContent">
+   <div class="wrapper">
+  	<div id="formContent">
+
+  		<div id="FormBeg">
+  			<h1> Feedback </h1>
+  			<h3> Feel free to add your complaints and Suggestions </h3>
+  		</div>
+
+  		<form action="/feedback" method="POST">
+  		
+  			<lable> Customer Name :  </lable> <br>
+  			<input type="text" id="cuzname" name="cuzname" placeholder="Enter Your Name"> <br>
+
+  			<label> Select Type : </label> <br>
+  			<input type="text" id="ctype" name="ctype" placeholder="Enter the type"> <br>
+
+  			<label> Comments :  </label> <br>
+  			<textarea name="cuzcom"> </textarea> <br>
+
+  			
+         <button type="submit" class="btn btn-primary" id="subfeedback">Submit Feedback</button> 
+
+  		</form>
+
+  	</div>
+  </div>
+</div>
 
 
-    <br><br><br><br><br>
+
+
+ 
 
     <!--footer-->
-<footer class="footer">
+ <footer class="footer">
   <div class="container">
     <div class="row">
       <div class="footer-col">
@@ -177,5 +160,6 @@
     </div>
   </div>
 </footer>
-<!--footer-->
+<!--footer--> 
     
+

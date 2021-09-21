@@ -40,4 +40,5 @@ router.get('/blogout',authController.blogout);
 
 
 
+
 module.exports=router;
