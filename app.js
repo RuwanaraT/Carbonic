@@ -12,7 +12,11 @@ dotenv.config({path: './.env'})
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/product');
+
 var adminkRouter = require('./routes/admin'); //j
+
+var forumRouter = require('./routes/forum');
+
 
 
 
@@ -27,13 +31,21 @@ app.use(cookieParser());
 app.use('/',require('./routes/pages'));
 app.use('/auth',require('./routes/auth'));
 app.use('/pmviewproduct',require('./routes/product'));
+//
+app.use('/editbuyer',require('./routes/auth'));
+//
 app.use('/addproduct',require('./routes/product'));
 app.use('/fhand', require('./routes/fhand'));
 
 
+// app.use('/2nd',require('./routes/3rd')); //h
+app.use('/forumHome', forumRouter);
+
+
 app.use('/cart', require('./routes/cart'));
 
-app.use('/forumHome',require('./routes/forumHome')); //h
+// app.use('/forumHome',require('./routes/forumHome')); //h
+
 
 app.use('/delfeedback', adminkRouter);  //j
 

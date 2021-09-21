@@ -7,11 +7,16 @@
     <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+   
      <link rel="stylesheet" href="/contactus.css">
-  <script>
-       function myFunction() {
-          Swal.fire('Your Email is sent..Thank You!')
-           }
+     <script>
+  function myFunction() {
+    if(document.getElementById("email").value==""){
+        Swal.fire('Pleace enter your email address')
+}else{
+    Swal.fire('Your email is sent')
+}
+}
            
            
 	  window.onload=function(){

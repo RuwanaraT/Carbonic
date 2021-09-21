@@ -7,33 +7,33 @@
       <nav>
          <img class="logo" src="img/carbonic-favicon-01.svg" width="200px" height="200px">
          <ul>
-            <li><a class="active" href="/index">Home</a></li>
+            <li><a class="active" href="/" style="text-decoration: none;">Home</a></li>
             
             <li>
-               <a href="#">Browse Products
+               <a href="#" style="text-decoration: none;">Browse Products
                <i class="fas fa-caret-down"></i>
                </a>
                <ul>
-                  <li><a href="#">Vegetables</a></li>
-                  <li><a href="#">Fruits</a></li>
+                  <li><a href="#" style="text-decoration: none;">Vegetables</a></li>
+                  <li><a href="#" style="text-decoration: none;">Fruits</a></li>
                   <li>
-                     <a href="#">Others
+                     <a href="#" style="text-decoration: none;">Others
                      <i class="fas fa-caret-right"></i>
                      </a>
                      <ul>
-                        <li><a href="#">Plants & seeds</a></li>
-                        <li><a href="#">Grains</a></li>
-                        <li><a href="#">Fertilizer</a></li>
+                        <li><a href="#" style="text-decoration: none;">Plants & seeds</a></li>
+                        <li><a href="#" style="text-decoration: none;">Grains</a></li>
+                        <li><a href="#" style="text-decoration: none;">Fertilizer</a></li>
                      </ul>
                   </li>
                </ul>
             </li>
-            <li><a href="#">Contact Us</a></li>
-             <li><a href="#">About Us</a></li>
-            <li><a href="#">Feedback</a></li>
+            <li><a href="/contactus" style="text-decoration: none;">Contact Us</a></li>
+             <li><a href="#" style="text-decoration: none;">About Us</a></li>
+            <li><a href="#" style="text-decoration: none;">Feedback</a></li>
             {{# if user}}
                <li>
-               <a href="/fprofile">Profile
+               <a href="/fprofile" style="text-decoration: none;">Profile
                {{!-- <i class="fas fa-caret-down"></i> --}}
                </a>
                {{!-- <ul>
@@ -42,7 +42,7 @@
                </ul> --}}
             </li>
             <li>
-               <a href="/fhand/logout">Log Out
+               <a href="/fhand/logout" style="text-decoration: none;">Log Out
                {{!-- <i class="fas fa-caret-down"></i> --}}
                </a>
                {{!-- <ul>
@@ -52,21 +52,21 @@
             </li>
             {{else}}
              <li>
-               <a href="#">Register
+               <a href="#" style="text-decoration: none;">Register
                <i class="fas fa-caret-down"></i>
                </a>
                <ul>
-                  <li><a href="/fregister">Farmer</a></li>
-                  <li><a href="/bregister">Buyer</a></li>
+                  <li><a href="/fregister" style="text-decoration: none;">Farmer</a></li>
+                  <li><a href="/bregister" style="text-decoration: none;">Buyer</a></li>
                </ul>
             </li>
             <li>
-               <a href="#">Switch To
+               <a href="#" style="text-decoration: none;">Switch To
                <i class="fas fa-caret-down"></i>
                </a>
                <ul>
-                  <li><a href="/login">Farmer</a></li>
-                  <li><a href="#">Buyer</a></li>
+                  <li><a href="/login" style="text-decoration: none;">Farmer</a></li>
+                  <li><a href="#" style="text-decoration: none;">Buyer</a></li>
                </ul>
             </li>
             {{/if}}
@@ -75,6 +75,7 @@
 
 <br><br><br><br><br>
 
+   <div class = "container">
 
     <a href="/bregister">register</a> <br>
     
@@ -87,7 +88,7 @@
 
    
 
-    <a href="forumHome/forumHome">forum</a><br>
+    <a href="/2nd">forum</a><br>
 
     <a href="/blogin">Blogin</a><br>
 
@@ -97,12 +98,18 @@
 
     <a href="/pmviewproduct">PM view Product</a><br>
 
+    <a href="/forumHome">new forum</a> <br>
+
+    <a href="/forumPost">forum post</a>
+
 
     <a href="/buyerDashboard">buyerDashboard</a><br>
 
     <a href="/prdupdate">Update Product</a><br>
 
     <a href="/alogin">Admin Login</a> <br>
+
+   <a href="/buyerhandler">buyerhandler</a> <br>
     
 
 
@@ -120,6 +127,9 @@
 
 
     
+
+    </div>
+
 
     <br><br><br><br><br>
 

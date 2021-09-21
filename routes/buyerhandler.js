@@ -4,20 +4,13 @@ const authController=require('../controllers/auth');
 const router=express.Router();
 const mysql = require("mysql");
 
-router.post('/bregister',authController.bregister);
-router.post('/blogin',authController.blogin);
-router.post('/contact',authController.contact);
-router.get('/deleteBuyer/:id',authController.deleteBuyer);
-router.get('/editbuyer/:id',authController.editbuyer);
-router.post('/updatebuyer',authController.updatebuyer);
-router.get('/blogout',authController.blogout);
 
-// const db=mysql.createConnection({
-//     host: "localhost",
-//     user: "root",
-//     password: "",
-//     database: "carbonic"
-//   });
+const db=mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "carbonic"
+  });
 
 
 
@@ -36,8 +29,18 @@ router.get('/blogout',authController.blogout);
 
 // })
 // });
+     router.get('/', function(req, res, next) {
 
-
+     db.query("SELECT * FROM bdetails", function(err, rows) {
+      
+      if(err) throw err;
+  
+      console.log(rows);
+  
+      res.render('buyerhandler', {buye:rows});//sent to pmviewproduct.hbs
+  
+    });
+});
 
 
 
