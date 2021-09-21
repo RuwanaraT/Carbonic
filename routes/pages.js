@@ -145,9 +145,9 @@ router.get('/alogin', (req, res) => {
 res.render("alogin");
 
 });
-router.get('/buyerhandler', (req, res) => {
+router.get('/', (req, res) => {
 
-  res.render("buyerhandler");
+  res.render("buyerh");
   
   });
 

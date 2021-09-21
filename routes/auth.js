@@ -9,7 +9,7 @@ router.post('/blogin',authController.blogin);
 router.post('/contact',authController.contact);
 router.get('/deleteBuyer/:id',authController.deleteBuyer);
 router.get('/editbuyer/:id',authController.editbuyer);
-router.post('/updatebuyer',authController.updatebuyer);
+router.post('/updatebuyer/:id',authController.updatebuyer);
 router.get('/blogout',authController.blogout);
 
 // const db=mysql.createConnection({

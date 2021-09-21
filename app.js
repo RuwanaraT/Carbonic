@@ -12,7 +12,7 @@ dotenv.config({path: './.env'})
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/product');
-
+var buyerRouter=require('./routes/buyerh');
 
 
 var app = express();
@@ -37,7 +37,7 @@ app.use('/cart', require('./routes/cart'));
 
 app.use('/forumHome',require('./routes/forumHome')); //h
 
-
+app.use('/buyerh',buyerRouter);
 
 
 
