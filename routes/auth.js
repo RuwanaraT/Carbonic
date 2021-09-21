@@ -12,4 +12,5 @@ router.post('/updatebuyer/:id',authController.updatebuyer);
 
 
 
+
 module.exports=router;

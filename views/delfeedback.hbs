@@ -1,8 +1,7 @@
- <link rel="stylesheet" href="/header.css">
+<link rel="stylesheet" href="/header.css">
 <link rel="stylesheet" href="/footer.css">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-<link rel="stylesheet" href="/feedback.css">
 
 <img class="logo1" src="img/logo.svg" width="200px" height="200px">
       <nav>
@@ -35,21 +34,21 @@
             {{# if user}}
                <li>
                <a href="/fprofile">Profile
-             <i class="fas fa-caret-down"></i> 
+               {{!-- <i class="fas fa-caret-down"></i> --}}
                </a>
-                <ul>
+               {{!-- <ul>
                   <li><a href="/fregister">Farmer</a></li>
                   <li><a href="/bregister">Buyer</a></li>
-               </ul> 
+               </ul> --}}
             </li>
             <li>
                <a href="/fhand/logout">Log Out
-              <i class="fas fa-caret-down"></i> 
+               {{!-- <i class="fas fa-caret-down"></i> --}}
                </a>
-                <ul>
+               {{!-- <ul>
                   <li><a href="/login">Farmer</a></li>
                   <li><a href="#">Buyer</a></li>
-               </ul> 
+               </ul> --}}
             </li>
             {{else}}
              <li>
@@ -74,50 +73,58 @@
          </ul>
       </nav>
 
-<br><br><br><br> 
+<br><br><br><br><br>
 
 
 
 
 
+	<link rel="stylesheet" href="/delfeedback.css"> 
 
 
-<div id="totalContent">
-   <div class="wrapper">
-  	<div id="formContent">
+	<div class="wrapper">
+		<div id="formContent">
+			
+			<div><h2>Customer Feedback</h2></div>
 
-  		<div id="FormBeg">
-  			<h1> Feedback </h1>
-  			<h3> Feel free to add your complaints and Suggestions </h3>
-  		</div>
+				<table>
+					<thead>
+						<th>ID</th>
+						<th>Customer Name</th>
+						<th>Type</th>
+						<th>Comments</th>
+						<th>Delete</th>
+					</thead>
 
-  		<form action="/feedback" method="POST">
-  		
-  			<lable> Customer Name :  </lable> <br>
-  			<input type="text" id="cuzname" name="cuzname" placeholder="Enter Your Name"> <br>
+            <tbody>
 
-  			<label> Select Type : </label> <br>
-  			<input type="text" id="ctype" name="ctype" placeholder="Enter the type"> <br>
+               {{#each feedback}}
 
-  			<label> Comments :  </label> <br>
-  			<textarea name="cuzcom"> </textarea> <br>
+               <tr>
+						<td> {{this.cuzid}} </td>
+						<td> {{this.cuzname}} </td>
+						<td> {{this.ctype}} </td>
+						<td> {{this.cuzcom}} </td>
+						<td> <a href="deletefeedback/{{this.cuzid}}"<button type="submit" class="btn btn-primary" id="del">Delete</button> </a> </td>
+					</tr>
 
-  			
-         <button type="submit" class="btn btn-primary" id="subfeedback">Submit Feedback</button> 
+               {{/each}}
 
-  		</form>
+            </tbody>
+					
+				</table>
 
-  	</div>
-  </div>
-</div>
-
-
+		</div>
+	</div>
 
 
- 
+
+
+
+   <br><br><br><br><br>
 
     <!--footer-->
- <footer class="footer">
+<footer class="footer">
   <div class="container">
     <div class="row">
       <div class="footer-col">
@@ -160,6 +167,5 @@
     </div>
   </div>
 </footer>
-<!--footer--> 
+<!--footer-->
     
-

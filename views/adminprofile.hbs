@@ -1,84 +1,3 @@
-	<link rel="stylesheet" href="/header.css">
-<link rel="stylesheet" href="/footer.css">
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-
-<img class="logo1" src="img/logo.svg" width="200px" height="200px">
-      <nav>
-         <img class="logo" src="img/carbonic-favicon-01.svg" width="200px" height="200px">
-         <ul>
-            <li><a class="active" href="/index">Home</a></li>
-            
-            <li>
-               <a href="#">Browse Products
-               <i class="fas fa-caret-down"></i>
-               </a>
-               <ul>
-                  <li><a href="#">Vegetables</a></li>
-                  <li><a href="#">Fruits</a></li>
-                  <li>
-                     <a href="#">Others
-                     <i class="fas fa-caret-right"></i>
-                     </a>
-                     <ul>
-                        <li><a href="#">Plants & seeds</a></li>
-                        <li><a href="#">Grains</a></li>
-                        <li><a href="#">Fertilizer</a></li>
-                     </ul>
-                  </li>
-               </ul>
-            </li>
-            <li><a href="#">Contact Us</a></li>
-             <li><a href="#">About Us</a></li>
-            <li><a href="#">Feedback</a></li>
-            {{# if user}}
-               <li>
-               <a href="/fprofile">Profile
-               {{!-- <i class="fas fa-caret-down"></i> --}}
-               </a>
-               {{!-- <ul>
-                  <li><a href="/fregister">Farmer</a></li>
-                  <li><a href="/bregister">Buyer</a></li>
-               </ul> --}}
-            </li>
-            <li>
-               <a href="/fhand/logout">Log Out
-               {{!-- <i class="fas fa-caret-down"></i> --}}
-               </a>
-               {{!-- <ul>
-                  <li><a href="/login">Farmer</a></li>
-                  <li><a href="#">Buyer</a></li>
-               </ul> --}}
-            </li>
-            {{else}}
-             <li>
-               <a href="#">Register
-               <i class="fas fa-caret-down"></i>
-               </a>
-               <ul>
-                  <li><a href="/fregister">Farmer</a></li>
-                  <li><a href="/bregister">Buyer</a></li>
-               </ul>
-            </li>
-            <li>
-               <a href="#">Switch To
-               <i class="fas fa-caret-down"></i>
-               </a>
-               <ul>
-                  <li><a href="/login">Farmer</a></li>
-                  <li><a href="#">Buyer</a></li>
-               </ul>
-            </li>
-            {{/if}}
-         </ul>
-      </nav>
-
-<br><br><br><br><br>
- 
-     
-     
-     
-     
      <meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -106,6 +25,9 @@
     });
 }); 
     </script>
+
+
+    {{#each adminData}}   
 	
 
 	<div class="wrapper">
@@ -118,12 +40,15 @@
     </div>
     <div class="row">
       <div class="col-sm-3">
-              
+
+   
+
+      <form class="form" action="/update/{{this.aid}}" method="post" >
 
       <div class="text-center">
         <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
         <h6>Upload the profile picture</h6>
-        <input type="file" class="text-center center-block file-upload">
+        <input type="file" class="text-center center-block file-upload" name="adminpic" value="{{this.adminpic}}">
       </div></hr><br>
           
         </div><!--/col-3-->
@@ -132,19 +57,21 @@
           <div class="tab-content">
             <div class="tab-pane active" id="home">
                 <hr>
-                  <form class="form" action="##" method="post" id="registrationForm">
+                 
                       <div class="form-group">
+
+                          {{!-- <input type="hidden" name="aid" id="admin_id" value="{{this.aid}}"> --}}
                           
                           <div class="col-xs-6">
                               <label for="first_name"><h4>First name</h4></label>
-                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                              <input type="text" class="form-control" name="afname" id="first_name" placeholder="first name" title="enter your first name if any." value="{{this.afname}}">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
                             <label for="last_name"><h4>Last name</h4></label>
-                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                              <input type="text" class="form-control" name="alname" id="last_name" placeholder="last name" title="enter your last name if any." value="{{this.alname}}">
                           </div>
                       </div>
           
@@ -152,21 +79,21 @@
                           
                           <div class="col-xs-6">
                               <label for="phone"><h4>Phone Number</h4></label>
-                              <input type="text" class="form-control" name="phone" id="phone" placeholder="phone number" title="enter your phone number if any.">
+                              <input type="text" class="form-control" name="aphone" id="phone" placeholder="phone number" title="enter your phone number if any." value="{{this.aphone}}">
                           </div>
                       </div>
           
                       <div class="form-group">
                           <div class="col-xs-6">
                              <label for="section"><h4>Administration Section</h4></label>
-                              <input type="text" class="form-control" name="section" id="section" placeholder="administration section" title="enter your administration section if any.">
+                              <input type="text" class="form-control" name="asection" id="section" placeholder="administration section" title="enter your administration section if any." value="{{this.asection}}">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
                               <label for="email"><h4>Email</h4></label>
-                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                              <input type="email" class="form-control" name="aemail" id="email" placeholder="you@email.com" title="enter your email." value="{{this.aemail}}">
                           </div>
                       </div>
                      
@@ -174,18 +101,20 @@
                           
                           <div class="col-xs-6">
                               <label for="password"><h4>Password</h4></label>
-                              <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
+                              <input type="password" class="form-control" name="apsw" id="password" placeholder="password" title="enter your password." value="{{this.apsw}}">
                           </div>
                       </div>
                    
                       <div class="form-group">
                            <div class="col-xs-12">
                                 <br>
-                                <button class="btn btn-lg btn-success" type="submit"> Save </button>
-                                <button class="btn btn-lg" type="reset"> Delete </button>
+                                <button class="btn btn-lg btn-success" type="submit"> Save Changes </button>
+                               
                             </div>
                       </div>
                 </form>
+
+                
               
               <hr>
               
@@ -199,54 +128,5 @@
 		</div>
 	</div>
 
+    {{/each}}
 
-
-
-<br><br><br><br><br>
-
-    <!--footer-->
-<footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="footer-col">
-        <h4>company</h4>
-        <ul>
-          <li><a href="#">about us</a></li>
-          <li><a href="#">our services</a></li>
-          <li><a href="#">privacy policy</a></li>
-          <li><a href="#">affiliate program</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>get help</h4>
-        <ul>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">shipping</a></li>
-          <li><a href="#">returns</a></li>
-          <li><a href="#">order status</a></li>
-          <li><a href="#">payment options</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>online shop</h4>
-        <ul>
-          <li><a href="#">Vegetables</a></li>
-          <li><a href="#">Fruits</a></li>
-          <li><a href="#">Beans</a></li>
-          <li><a href="#">others</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>follow us</h4>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-<!--footer-->
-    
