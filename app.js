@@ -12,7 +12,16 @@ dotenv.config({path: './.env'})
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/product');
+
 var buyerRouter=require('./routes/buyerh');
+
+
+var adminkRouter = require('./routes/admin'); //j
+
+var forumRouter = require('./routes/forum');
+
+
+
 
 
 var app = express();
@@ -33,11 +42,25 @@ app.use('/addproduct',require('./routes/product'));
 app.use('/fhand', require('./routes/fhand'));
 
 
+// app.use('/2nd',require('./routes/3rd')); //h
+app.use('/forumHome', forumRouter);
+
+
 app.use('/cart', require('./routes/cart'));
 
-app.use('/forumHome',require('./routes/forumHome')); //h
+// app.use('/forumHome',require('./routes/forumHome')); //h
+
 
 app.use('/buyerh',buyerRouter);
+
+
+app.use('/delfeedback', adminkRouter);  //j
+
+app.use('/viewadmin', adminkRouter); //j
+
+app.use('/adminprofile/:aid', adminkRouter); //j
+
+
 
 
 
@@ -68,6 +91,7 @@ app.get("/home",(req,res)=>{
 
 
 
+
 app.listen(8081,()=>{
   console.log("Servet started on port 8081")
 })
@@ -87,6 +111,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/',productRouter);
+app.use('/',adminkRouter); //j
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

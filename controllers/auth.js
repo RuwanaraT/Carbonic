@@ -217,6 +217,7 @@ exports.updatebuyer=(req,res)=>{
    
 
 }
+
 exports.blogout=async(req,res,next)=>{
     res.cookie('jwt','blogout',{
         expires:new Date(Date.now()+2*1000),
@@ -225,3 +226,4 @@ exports.blogout=async(req,res,next)=>{
     });
     res.status(200).redirect('/')
 }
+

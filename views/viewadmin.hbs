@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="viewadmin.css">
+
+
+
+		<div class="wrapper">
+		<div id="formContent">
+			
+			<div><h2>Admin Panel</h2></div>
+
+				<table>
+					<thead>
+						<tr>
+						<th>ID</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Section</th>
+					</thead>
+
+            <tbody>
+         
+			 {{#each admin}}
+
+					<tr>
+						<td> {{this.aid}} </td>
+						<td> {{this.afname}} </td>
+						<td> {{this.alname}} </td>
+						<td> {{this.asection}} </td>
+						<td>
+							<a href="adminprofile/{{this.aid}}"> <button class="btn btn-primary" id="edit">Edit</button>  </a>
+						</td>
+						<td>
+							<a href="deleteAdmin/{{this.aid}}"><button class="btn btn-primary" id="del">Delete</button> </a> 
+						</td>
+					</tr>
+
+			 {{/each}}
+
+
+   			  </tbody>
+					
+				</table>
+
+		</div>
+	</div>
+
