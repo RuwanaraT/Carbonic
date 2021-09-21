@@ -83,8 +83,12 @@ exports.bregister=(req,res)=>{
                message:'password include 5 characters'
             });
         }
+        else if(name==''){
+            return res.render('bregister',{
+                 message:'Must be included username'
+              });
 
-            
+            }  
             ////////
         //new
         // else if(name==0){
