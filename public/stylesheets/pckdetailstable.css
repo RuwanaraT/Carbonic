@@ -1,9 +1,7 @@
 body {
     color: #000;
     overflow-x: hidden;
-    height: 100%;
-    width: 100%;
-    background-color: cadetblue;
+    background-image: url("img/food.jpg");
     background-repeat: no-repeat;
     
     
@@ -12,12 +10,7 @@ body {
 .table.table-bordered th {
     text-align: center;
 }
-.danger-text {
-    color: #ff3547; 
-}  
-.success-text {
-    color: #00C851; 
-}
+
 .form-2 .input-group-addon {
     border: 1px solid #ba68c8;
 }

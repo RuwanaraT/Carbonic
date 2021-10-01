@@ -164,16 +164,34 @@ router.get('/alogin', (req, res) => {
 res.render("alogin");
 
 });
-router.get('/', (req, res) => {
 
+
+router.get("/pickupform",(req,res)=>{
+  res.render("pickupform");
+});//ir
+
+router.get("/pickupcancel",(req,res)=>{
+  res.render("pickupcancel");
+});//ir
+
+router.get("/pickupdetailstable",(req,res)=>{
+  res.render("pickupdetailstable");
+});//ir
+
+router.get("/requests",(req,res)=>{
+  res.render("requests");
+});//ir
+
+router.get('/', (req, res) => {
   res.render("buyerh");
   
-  });
+});
 
 router.get('/feedback', (req, res) => {
 
   res.render("feedback");
   
   });
+
 
   module.exports=router;
