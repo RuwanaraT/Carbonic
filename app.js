@@ -84,6 +84,24 @@ app.get("/shoppingcart",(req,res)=>{
 app.get("/home",(req,res)=>{
   res.render("home")
 });
+//bovini*
+app.use('/',require('./routes/invoicelist'));
+//app.use('/invoicetemplate',require('./routes/invoicetemplte'));
+
+app.use('/pay', require('./routes/pay'));
+
+app.get("/invoicelist",(req,res)=>{
+  res.render("invoicelist")
+});
+
+app.get("/invoicetemplate",(req,res)=>{
+  res.render("invoicetemplate")
+});
+
+app.get("/pay",(req,res)=>{
+  res.render("pay")
+});
+//*bovini
 
 
 
