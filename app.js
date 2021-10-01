@@ -30,25 +30,18 @@ app.use('/addproduct',require('./routes/product'));
 app.use('/fhand', require('./routes/fhand'));
 
 app.use('/forumHome',require('./routes/forumHome')); //h
+app.use('/cancel',require('./routes/cancel'));
+app.use('/addDetails',require('./routes/pickup'));//ir
+app.use('/pickup',require('./routes/pickup'));//ir
+app.use('/deletepck',require('./routes/pickup'));//ir
+app.use('/checkRow',require('./routes/checkRow'));
 
 
 
 
-app.get("/pickupform",(req,res)=>{
-  res.render("pickupform")
-});
 
-app.get("/pickupcancel",(req,res)=>{
-  res.render("pickupcancel")
-});
 
-app.get("/pickupdetailstable",(req,res)=>{
-  res.render("pickupdetailstable")
-});
 
-app.get("/requests",(req,res)=>{
-  res.render("requests")
-});
 
 
 

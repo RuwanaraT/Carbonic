@@ -135,5 +135,20 @@ res.render("alogin");
 
 });
 
+router.get("/pickupform",(req,res)=>{
+  res.render("pickupform");
+});//ir
+
+router.get("/pickupcancel",(req,res)=>{
+  res.render("pickupcancel");
+});//ir
+
+router.get("/pickupdetailstable",(req,res)=>{
+  res.render("pickupdetailstable");
+});//ir
+
+router.get("/requests",(req,res)=>{
+  res.render("requests");
+});//ir
 
   module.exports=router;
