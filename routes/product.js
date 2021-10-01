@@ -22,7 +22,7 @@ router.post('/addproduct', function(req, res, next) {
 
     const productdata ={
       fid:req.body.fid,
-      pid:req.body.pid,
+      // pid:req.body.pid,
       pname:req.body.pname,
       ptype:req.body.ptype,
       expdate:req.body.expdate,
@@ -47,9 +47,22 @@ router.post('/addproduct', function(req, res, next) {
   });
 
 //   Update Query
-router.post('/updateproduct', function(req,res){
+router.get('/prdupdate/:pid',function(req,res){
 
-    var updatepid = req.body.pid;
+    var updatepid = req.params.pid;
+
+    connection.query("SELECT * FROM product WHERE pid = ?",[updatepid], function(err,rows){
+
+      if(err) throw err;
+
+      res.render('prdupdate', {product:rows});
+    })
+
+});
+
+router.post('/updateproduct/:pid', function(req,res){
+
+    // var updatepid = req.body.pid;
     var pname=req.body.pname;
     var expdate = req.body.expdate;
     var qty = req.body.qty;
@@ -61,16 +74,31 @@ router.post('/updateproduct', function(req,res){
     // var email = req.body.email;
     // var prof = req.body.prof;
     
-    //var updateId = req.params.id; //to identify which record should be updated
+    var updateId = req.params.pid; //to identify which record should be updated
 
-    connection.query("UPDATE product SET pname=?,expdate=?,qty=?,pricepu=?,pdesc=? WHERE pid=?",[pname,expdate,qty,pricepu,pdesc,updatepid], function(err,respond){
+    connection.query("UPDATE product SET pname=?,expdate=?,qty=?,pricepu=?,pdesc=? WHERE pid=?",[pname,expdate,qty,pricepu,pdesc,updateId], function(err,respond){
       if(err) throw err;
 
-      res.redirect('../../')//else ridirect to 2k piitipassata
+      res.redirect('/pmviewproduct')//else ridirect to 2k piitipassata
 
     });
 
 })
+
+router.get('/deleteProduct/:pid', function(req,res){
+
+    var deleteid = req.params.pid;
+
+    // console.log(deleteid);
+    // res.send("id recieved")
+
+    connection.query("DELETE FROM product WHERE pid = ?", [deleteid], function(err,rows){
+     
+      if(err) throw err;
+
+      res.redirect('/pmviewproduct')//to redirect to the same pageafter deletion
+    })
+});
 
 
 module.exports = router;

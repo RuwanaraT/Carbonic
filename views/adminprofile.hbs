@@ -1,0 +1,132 @@
+     <meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="adminprofile.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script >
+     $(document).ready(function() {
+
+    
+    var readURL = function(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('.avatar').attr('src', e.target.result);
+            }
+    
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+
+    $(".file-upload").on('change', function(){
+        readURL(this);
+    });
+}); 
+    </script>
+
+
+    {{#each adminData}}   
+	
+
+	<div class="wrapper">
+		<div id="Content">
+
+			<hr>
+  <div class="container bootstrap snippet">
+    <div class="row">
+      <div class="col-sm-10"><h1>Administrator</h1></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+
+   
+
+      <form class="form" action="/update/{{this.aid}}" method="post" >
+
+      <div class="text-center">
+        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+        <h6>Upload the profile picture</h6>
+        <input type="file" class="text-center center-block file-upload" name="adminpic" value="{{this.adminpic}}">
+      </div></hr><br>
+          
+        </div><!--/col-3-->
+      <div class="col-sm-9">
+              
+          <div class="tab-content">
+            <div class="tab-pane active" id="home">
+                <hr>
+                 
+                      <div class="form-group">
+
+                          {{!-- <input type="hidden" name="aid" id="admin_id" value="{{this.aid}}"> --}}
+                          
+                          <div class="col-xs-6">
+                              <label for="first_name"><h4>First name</h4></label>
+                              <input type="text" class="form-control" name="afname" id="first_name" placeholder="first name" title="enter your first name if any." value="{{this.afname}}">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="last_name"><h4>Last name</h4></label>
+                              <input type="text" class="form-control" name="alname" id="last_name" placeholder="last name" title="enter your last name if any." value="{{this.alname}}">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="phone"><h4>Phone Number</h4></label>
+                              <input type="text" class="form-control" name="aphone" id="phone" placeholder="phone number" title="enter your phone number if any." value="{{this.aphone}}">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          <div class="col-xs-6">
+                             <label for="section"><h4>Administration Section</h4></label>
+                              <input type="text" class="form-control" name="asection" id="section" placeholder="administration section" title="enter your administration section if any." value="{{this.asection}}">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Email</h4></label>
+                              <input type="email" class="form-control" name="aemail" id="email" placeholder="you@email.com" title="enter your email." value="{{this.aemail}}">
+                          </div>
+                      </div>
+                     
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="password"><h4>Password</h4></label>
+                              <input type="password" class="form-control" name="apsw" id="password" placeholder="password" title="enter your password." value="{{this.apsw}}">
+                          </div>
+                      </div>
+                   
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br>
+                                <button class="btn btn-lg btn-success" type="submit"> Save Changes </button>
+                               
+                            </div>
+                      </div>
+                </form>
+
+                
+              
+              <hr>
+              
+             </div><!--/tab-pane-->
+             
+          </div><!--/tab-content-->
+
+        </div><!--/col-9-->
+    </div><!--/row-->
+
+		</div>
+	</div>
+
+    {{/each}}
+

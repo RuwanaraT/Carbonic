@@ -73,7 +73,7 @@
 
     <div class = "container mt-5" style="background-color: whitesmoke; width : 40%;">
 
-      	<form action = "/fhand/fregister" method = "POST" onsubmit="return checkPassword()">
+      	<form action = "fhand/fregister" method = "POST">
 
       		<center> <h1 style="color: seagreen;"> Register As Farmer </h1> </center>
       		<hr style="border: 2px black solid;">
@@ -157,7 +157,9 @@
             <center>
             <button type="submit" class="btn btn-primary" style = "background-color:green;" id="btn1" disabled>Sign Up</button> &nbsp; &nbsp; &nbsp; &nbsp;
 
-            <button type="reset" class="btn btn-primary" style = "background-color:tomato;">Cancel</button>
+            <button type="reset" class="btn btn-primary" style = "background-color:tomato;">Cancel</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button class="btn btn-primary" id="demo" style="background-color: red;" onclick="retrieveData('demo')">Demo</button>
             </center>
 
             <br>

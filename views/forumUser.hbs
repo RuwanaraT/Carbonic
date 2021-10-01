@@ -1,0 +1,183 @@
+
+
+
+    <link href="/forumCommon.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/forumHome.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+
+  <!-- navigation bar-->
+  <nav>
+    <div class="menu-icon">
+       <span class="fas fa-bars"></span>
+    </div>
+   
+    <div class="logo1">
+      <img  src="/img/logo.svg" >
+    </div>
+    <div class="nav-items">
+       <li><a href="#">Home</a></li>
+       <li><a href="#">About</a></li>
+       
+       <li><a href="#">Contact</a></li>
+       <li><a href="#">Feedback</a></li>
+    </div>
+    <div class="search-icon">
+       <span class="fas fa-search"></span>
+    </div>
+    <div class="cancel-icon">
+       <span class="fas fa-times"></span>
+    </div>
+    <form action="#">
+       <input type="search" class="search-data" placeholder="Search" required>
+       <button type="submit" class="fas fa-search"></button>
+    </form>
+ </nav>
+ <!-- navigation bar-->
+
+
+
+<div id="wrap">
+  
+  <div id="header">
+  
+  </div>
+  <div id="mainpage">
+    <div id="content">
+      
+<p class="postinfo"> </p>
+      <!--end Quction form-->  
+
+        <div class="topic">
+          <h1>my Questions</h1>
+          <h5 class="amount">475- questios</h5>
+        </div>
+      
+      <p class="postinfo"> </p>
+
+
+      
+
+      <!--post container-->
+      {{#each post}}
+      
+      <div class="post-container">
+        <div class="post-detail post-center">
+          <div class="post-user">
+            <a href="#"><small>{{this.bid}}</small></a>
+          </div>
+          <div class="post-time commen-margin">
+            <small> 
+              {{this.date}}
+            </small>
+          </div>
+          <div class="post-status  commen-margin">
+            02 -<small> Like</small> <br>
+            05-<small>Reply</small>
+          </div>
+        </div>
+        <div class="post-contend post-center" >
+          <div class="subject">
+            <a href="/forumHome/forumPost/{{this.pid}}">
+             {{this.psubject}}
+            </a>
+          </div>
+          <div class="description commen-margin">
+            {{this.pdescription}}
+          </div>
+        </div>
+      </div>
+      <p class="postinfo"> </p>  
+      {{/each}}
+      <!-- end post container-->
+
+    
+    </div>
+    
+    <!--side bar-->
+    
+    <div id="sidebar">
+      <div class="sidebartop">
+        <h2>public</h2>
+      </div>
+      <div class="sidebarmain">
+        <ul>
+          <li><a href="#">Newest Post</a></li>
+          <li><a href="#">Unanswered</a></li>
+          <li><a href="#">Top Rated</a></li>
+          <li><a href="#">Best Discussions</a></li>
+          <li><a href="#">Reports</a></li>
+        </ul>
+        <h2>my branch</h2>
+        <ul>
+          <li><a href="#">Questions</a></li>
+          <li><a href="#">Answers</a></li>
+          
+          <li><a href="#">Business</a></li>
+    
+        </ul>
+      </div>
+
+      <p class="clear2">&nbsp;</p>
+      <span class="sidebarbottom">&nbsp;</span>
+    </div>
+
+    <p class="clear"></p>
+  </div>
+</div>
+
+
+
+
+
+<br><br><br><br><br><br><br>
+
+    <!--footer-->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>company</h4>
+        <ul>
+          <li><a href="#">about us</a></li>
+          <li><a href="#">our services</a></li>
+          <li><a href="#">privacy policy</a></li>
+          <li><a href="#">affiliate program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>get help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">shipping</a></li>
+          <li><a href="#">returns</a></li>
+          <li><a href="#">order status</a></li>
+          <li><a href="#">payment options</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>online shop</h4>
+        <ul>
+          <li><a href="#">Vegetables</a></li>
+          <li><a href="#">Fruits</a></li>
+          <li><a href="#">Beans</a></li>
+          <li><a href="#">others</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--footer-->
+    

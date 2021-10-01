@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/buyerh.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuyerHandler</title>
+</head>
+<body>
+    {{!-- {{#each buyer}}
+
+    <h>{{this.name}}</h>
+
+    {{/each}} --}}
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><span class="las la-clinic-medical"></span> <span>Carbonic</span></h2>
+        </div>
+        <!--Secciones-del-tablero-->
+        <div class="sidebar-menu">
+            
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <span class="las la-bars"></span>
+                </label> Registered Buyers
+            </h2>
+
+            <div class="search-wrapper">
+                <span class="las la-search"></span>
+                <input type="search" placeholder="Search Buyers by email" />
+            </div>
+           
+        </header>
+
+        <main>
+            <div class="cards">
+
+            
+
+             
+
+                <div class="card-single">
+                    <div>
+                        
+                        <h1>2</h1>
+                        <span>Total Registered Buyers</span>
+                    </div>
+                    <div>
+                        <span class="lab la-wpforms"></span>
+                    </div>
+                </div>
+            </div>
+            <!--Tabla-->
+            <div class="recent-grid">
+                <div class="projects">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Buyer List</h3>
+
+                           
+                        </div>
+
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table width="100%">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Contact Number</td>
+											<td>E mail</td>
+											<td>Address</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>  
+                                         {{#each buyer}} 
+                                        <tr>
+                                           
+                                            <td>{{this.name}}</td>
+										     <td>{{this.contactNumber}}</td>
+                                              <td>{{this.email}}</td>
+										     <td>{{this.address}}</td>
+   
+
+                                        
+                                        
+                                        </tr>
+                                         {{/each}}
+
+
+                                    </tbody>
+									
+                                </table>
+                     
+
+                  
+                        
+        
+
+</body>
+</html>

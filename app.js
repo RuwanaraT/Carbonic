@@ -13,6 +13,15 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/product');
 
+var buyerRouter=require('./routes/buyerh');
+
+
+var adminkRouter = require('./routes/admin'); //j
+
+var forumRouter = require('./routes/forum');
+
+
+
 
 
 var app = express();
@@ -26,8 +35,12 @@ app.use(cookieParser());
 app.use('/',require('./routes/pages'));
 app.use('/auth',require('./routes/auth'));
 app.use('/pmviewproduct',require('./routes/product'));
+//
+app.use('/editbuyer',require('./routes/auth'));
+//
 app.use('/addproduct',require('./routes/product'));
 app.use('/fhand', require('./routes/fhand'));
+
 
 app.use('/forumHome',require('./routes/forumHome')); //h
 app.use('/cancel',require('./routes/cancel'));
@@ -38,9 +51,39 @@ app.use('/checkRow',require('./routes/checkRow'));
 
 
 
+app.use('/forumHome', forumRouter);
+
+
+app.use('/cart', require('./routes/cart'));
 
 
 
+
+app.use('/buyerh',buyerRouter);
+
+
+app.use('/delfeedback', adminkRouter);  //j
+
+app.use('/viewadmin', adminkRouter); //j
+
+app.use('/adminprofile/:aid', adminkRouter); //j
+
+
+
+
+
+
+
+
+
+
+app.get("/shoppingcart",(req,res)=>{
+  res.render("shoppingcart")
+});
+
+app.get("/home",(req,res)=>{
+  res.render("home")
+});
 
 
 
@@ -65,6 +108,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/',productRouter);
+app.use('/',adminkRouter); //j
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

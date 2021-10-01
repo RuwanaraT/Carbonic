@@ -76,7 +76,20 @@ exports.bregister=(req,res)=>{
             return res.render('bregister',{
                 message:'Password is not same'
             });
+
+            //////
+        }else if(password<5){
+            return res.render('bregister',{
+               message:'password include 5 characters'
+            });
         }
+        else if(name==''){
+            return res.render('bregister',{
+                 message:'Must be included username'
+              });
+
+            }  
+            ////////
         //new
         // else if(name==0){
         //     return res,render('bregister',{
@@ -183,7 +196,7 @@ exports.editbuyer=(req,res)=>{
     const buyerid=req.params.id;
     db.query("SELECT * FROM bdetails WHERE id=?",[buyerid],function(err,rows){
        if(err) throw err;
-        res.render('editbuyer');
+        res.render('editbuyer',{userdata:rows});
    
     })
 
@@ -194,12 +207,23 @@ exports.updatebuyer=(req,res)=>{
     const email=req.body.email;
     const address=req.body.address;
     const contactNumber=req.body.contactNumber;
-    const id=req.body.id;
-    db.query("UPDATE bdetails SET name=?,email=?,address=?,contactNumber=? WHERE id=?",[name,email,address,contactNumber,id],function(err,results){
-        if(err) throw err;
-        console.log(err);
-        res.redirect('profile');
+    const Updateid=req.body.id;
+     db.query("UPDATE bdetails SET name=?,email=?,address=?,contactNumber=? WHERE id=?",[name,email,address,contactNumber,Updateid],function(err,results){
+    if(err) throw err;
+    console.log(err);
+    res.redirect('../../')
     })
+    
    
 
 }
+
+exports.blogout=async(req,res,next)=>{
+    res.cookie('jwt','blogout',{
+        expires:new Date(Date.now()+2*1000),
+        //after click log out cookie will expire 2 seconds
+        httpOnly:true
+    });
+    res.status(200).redirect('/')
+}
+

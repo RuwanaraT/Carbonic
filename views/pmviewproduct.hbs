@@ -14,16 +14,24 @@
     <input type="radio" name="options" id="option1" autocomplete="off" checked> View Products
   </label>
   <label class="btn btn-success">
-    <input type="radio" name="options" id="option2" autocomplete="off"> Add Products
+    <input type="radio" name="options" id="option2" autocomplete="off"><a href="/addproduct"class="text-white"> Add Products</a> 
   </label>
   <label class="btn btn-success">
     <input type="radio" name="options" id="option3" autocomplete="off"> Monthly Sales Report
   </label>
-  <label class="btn btn-success">
+  {{!-- <label class="btn btn-success">
     <input type="radio" name="options" id="option4" autocomplete="off"> Radio
-  </label>
+  </label> --}}
 </div>
 <hr>
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid justify-content-center">
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
 <br><br>
 {{!-- start of product list --}}
 {{!-- <section>
@@ -80,7 +88,7 @@
   
         <div class="z-depth-1 rounded mb-3 mb-md-0 text-right">
           <img class="img-thumbnail w-50"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg"
+            src="img/productcard.jpeg"
             alt="Sample">
         </div>
         
@@ -91,26 +99,24 @@
           <div class="col-lg-7 col-xl-7">
   
             <h5>{{ this.pname }}</h5>
-            <p class="mb-2 text-muted text-uppercase small">Shirts</p>
+            <p class="mb-2 text-muted text-uppercase small">{{this.ptype}}</p>
             
             <hr>
-            <p class="mb-lg-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
-              sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis
-              voluptates laboriosam. Distinctio, officia quis dolore quos sapiente tempore alias.</p>
+            <p class="mb-lg-0">{{this.pdesc}}</p>
   
           </div>
           <div class="col-lg-5 col-xl-5">
   
-            <h6 class="mb-3"><span>{{ this.pricepu }}</span></h6>
+            <h6 class="mb-3"><span>Price Per Unit - $ {{ this.pricepu }}</span></h6>
             <div class="my-4">
-              <button type="button" class="btn btn-success btn-md mr-1 mb-2"><i
-                  class="bi bi-arrow-clockwise pr-2"></i>Update</button>
+              <a href="/prdupdate/{{ this.pid }}"><button type="button" class="btn btn-success btn-md mr-1 mb-2"><i
+                  class="bi bi-arrow-clockwise pr-2"></i>Update</button></a>
               <button type="button" class="btn btn-light btn-md mr-1 mb-2"><i
                   class="fas fa-info-circle pr-2"></i>Details</button>
             </div>
-            <button type="button" class="btn btn-danger btn-md px-3 mb-lg-2 material-tooltip-main"
-              data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i
-                class="bi bi-trash"></i></button>
+            <a href="/deleteProduct/{{ this.pid }}"><button type="button" class="btn btn-danger btn-md px-3 mb-lg-2 material-tooltip-main"
+              data-toggle="tooltip" data-placement="top" title="Delete Product"><i
+                class="bi bi-trash"></i></button></a>
   
           </div>
         </div>
@@ -121,7 +127,7 @@
 {{/each}}
   {{!-- end of product list --}}
 
-    <br><br><br><br><br>
+    {{!-- <br><br><br><br><br> --}}
 
     <!--footer-->
 <footer class="footer">

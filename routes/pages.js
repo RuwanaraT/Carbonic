@@ -25,22 +25,41 @@ router.get("/bregister",(req,res)=>{
     res.render("blogin")
   });
 
-// router.get("/addproduct",(req,res)=>{
-//     res.render("addproduct")
-//   });
+router.get("/addproduct",(req,res)=>{
+    res.render("addproduct")
+  });
 
 //  router.get("/pmviewproduct",(req,res)=>{
 //     res.render("pmviewproduct")
 //   });
   
 
-  //router.get("/addforum",(req,res)=>{
-  //  res.render("addforum")
+
+  router.get("/1st",(req,res)=>{ //h
+   res.render("1st")
+  });
+
+  // router.get("/",(req,res)=>{          //h
+  //   res.render("2nd")
   // });
 
-  router.get("/forumHome",(req,res)=>{
+  router.get("/forumHome/forumUser",(req,res)=>{
+   res.render("forumUser")
+  });
+
+
+  router.get("/",(req,res)=>{            //h
     res.render("forumHome")
   });
+
+  // router.get("/forumpost",(req,res)=>{            //h
+  //   res.render("forumPost")
+  // });
+
+
+
+ 
+
 
   router.get("/bprofile",authController.isLoggedIn, (req,res)=>{
     if(req.buyer){
@@ -60,6 +79,16 @@ router.get("/bregister",(req,res)=>{
     res.render("fregister");
     
 });
+
+
+router.get("/shoppingcart",(req,res)=>{
+    res.render("shoppingcart")
+  });
+  
+router.get("/home",(req,res)=>{
+    res.render("home")
+  });
+
 
 router.get('/contactus', (req, res) => {
 
@@ -104,6 +133,7 @@ router.get('/resetpassword', (req, res) => {
   
 });
 
+
 router.get('/fdelete', (req, res) => {
 
   res.render("fdelete");
@@ -135,6 +165,7 @@ res.render("alogin");
 
 });
 
+
 router.get("/pickupform",(req,res)=>{
   res.render("pickupform");
 });//ir
@@ -150,5 +181,17 @@ router.get("/pickupdetailstable",(req,res)=>{
 router.get("/requests",(req,res)=>{
   res.render("requests");
 });//ir
+
+router.get('/', (req, res) => {
+  res.render("buyerh");
+  
+});
+
+router.get('/feedback', (req, res) => {
+
+  res.render("feedback");
+  
+  });
+
 
   module.exports=router;

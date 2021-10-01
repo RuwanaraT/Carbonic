@@ -1,0 +1,148 @@
+/*body {
+    background-image:url(img/viewadmin.jpg);   
+  background-size:cover;
+  background-attachment:fixed;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  margin: 50px 60px 100px 0;
+}
+
+td, th {
+  border:0.5px solid #fff;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #cccccc;
+  }
+
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 95%;
+  min-height: 100%;
+  padding: 20px;
+}
+
+#formContent {
+  background:  #fff;
+  padding: 30px;
+  width: 90%;
+  max-width: 900px;
+  position: relative;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  text-align: center;
+  align-items: center;
+}
+
+h2 {
+	text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+  display:inline-block;
+  margin: 40px 8px 20px 8px; 
+  color: #000;
+}
+
+#del {
+	background-color: #8B0000;
+	color: white;
+	padding: 9px 22px;
+	text-align: center;
+	border: none;
+	border-radius: 5px 5px 5px 5px;
+}
+
+#edit {
+	background-color: #1E90FF;
+	color: white;
+	padding: 9px 29px;
+	text-align: center;
+	border: none;
+	border-radius: 5px 5px 5px 5px;
+}*/
+
+body {
+  background-image:url(img/viewadmin.jpg);   
+background-size:cover;
+background-attachment:fixed;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  margin-left: 70px;
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+
+td, th {
+  border: 0.5px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #cccccc;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 95%;
+  min-height: 100%;
+  padding: 20px;
+}
+
+#formContent {
+  background: #fff;
+  padding: 30px;
+  width: 90%;
+  max-width: 1000px;
+  position: relative;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  text-align: center;
+  align-items: center;
+}
+
+h2 {
+	text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+  display:inline-block;
+  margin: 40px 8px 20px 8px; 
+  color: #000;
+}
+
+#del {
+	background-color: #8B0000;
+	color: white;
+	padding: 5px 19px;
+	text-align: center;
+	border: none;
+	border-radius: 5px 5px 5px 5px;
+}
+
+#edit {
+	background-color: #1E90FF;
+	color: white;
+	padding: 5px 26px;
+	text-align: center;
+	border: none;
+	border-radius: 5px 5px 5px 5px;
+}
