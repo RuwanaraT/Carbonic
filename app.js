@@ -34,13 +34,13 @@ app.use('/addproduct',require('./routes/product'));
 app.use('/fhand', require('./routes/fhand'));
 
 
-// app.use('/2nd',require('./routes/3rd')); //h
+
 app.use('/forumHome', forumRouter);
 
 
 app.use('/cart', require('./routes/cart'));
 
-// app.use('/forumHome',require('./routes/forumHome')); //h
+
 
 
 
