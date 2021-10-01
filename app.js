@@ -42,7 +42,7 @@ app.use('/addproduct',require('./routes/product'));
 app.use('/fhand', require('./routes/fhand'));
 
 
-app.use('/forumHome',require('./routes/forumHome')); //h
+//app.use('/forumHome',require('./routes/forumHome')); //h
 app.use('/cancel',require('./routes/cancel'));
 app.use('/addDetails',require('./routes/pickup'));//ir
 app.use('/pickup',require('./routes/pickup'));//ir
