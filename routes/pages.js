@@ -43,8 +43,8 @@ router.get("/addproduct",(req,res)=>{
   //   res.render("2nd")
   // });
 
-  router.get("/addforum",(req,res)=>{
-   res.render("addforum")
+  router.get("/forumHome/forumUser",(req,res)=>{
+   res.render("forumUser")
   });
 
 
@@ -52,9 +52,9 @@ router.get("/addproduct",(req,res)=>{
     res.render("forumHome")
   });
 
-  router.get("/forumpost",(req,res)=>{            //h
-    res.render("forumPost")
-  });
+  // router.get("/forumpost",(req,res)=>{            //h
+  //   res.render("forumPost")
+  // });
 
 
 
