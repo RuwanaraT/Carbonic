@@ -31,6 +31,18 @@ function enableButton()
 
 }
 
+function deleteAccount(id) {
+
+     if(id == 'del') {
+
+          confirm("Are You Sure, Do You want to delete Your Account ? ");
+     }
+     else{
+
+          alert("Account Deletion is unsuccessful");
+     }
+}
+
 
 function retrieveData(value) {
 
@@ -49,7 +61,7 @@ function retrieveData(value) {
      }
 
      else {
-          alert("Invalid")
+          alert("Invalid");
      }
 } 
 
