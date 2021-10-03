@@ -2,6 +2,7 @@ const mysql = require("mysql");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const {promisify}=require('util');
+const nodemailer = require('nodemailer');
 
 const db = mysql.createConnection({
 
@@ -154,4 +155,45 @@ exports.logout = async (req, res) => {
     });
 
     res.status(200).redirect('/');
+}
+
+// route for reset password
+exports.resetpassword = async (req, res) => {
+
+  var em = req.body.em;
+  var pwd = req.body.pwd;
+
+  let encryptPassword = await bcrypt.hash(pwd, 8);
+
+  db.query("UPDATE farmers SET fpwd = ? WHERE femail = ?", [encryptPassword, em], function(err, result) {
+
+    if(err) throw err;
+    res.redirect('/resetpassword');
+
+  });
+
+  console.log(req.body);
+  const transporter=nodemailer.createTransport({
+      service:'gmail',
+      auth:{
+          user:'sewminiruwanara@gmail.com',
+          pass:''
+      }
+  })
+  const mailOption={
+      from:'carbonic30@gmail.com',
+      to: req.body.em,
+      subject:'Reset Password',
+      text:'Your newly updated password is '+ req.body.pwd
+  }
+  transporter.sendMail(mailOption,(error,info)=>{
+      if(error){
+          console.log(error);
+          res.send('error')
+      }else{
+          console.log('Email sent :'+info.response)
+          res.send('success')
+      }
+  })
+
 }
