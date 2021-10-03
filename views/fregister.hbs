@@ -2,10 +2,10 @@
 
     <script src = "javascripts/fregister.js"> </script>
 
-    <script> 
+    {{!-- <script> 
     alert("Welcome to Carbonic !!!");
     var response = confirm("Do you want to create a farmer account ?");
-     </script>
+     </script> --}}
 
      <link rel="stylesheet" href="/header.css">
      <link rel="stylesheet" href="/footer.css">
@@ -91,7 +91,7 @@
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-control" id="fmobile" name="fmobile" placeholder="Mobile Number" required>
+            <input type="text" class="form-control" id="fmobile" name="fmobile" placeholder="Mobile Number" required pattern="[0-9]{10}">
           </div>
 
           <hr style="border: 1px dimgray solid;">
