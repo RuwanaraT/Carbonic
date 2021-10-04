@@ -93,4 +93,21 @@ router.post('/fprofile/:id', function(req, res) {
 });
 
 
+ // route for retrieve farmers from farmer table
+ router.get('/freport', function(req, res, next) {
+
+  db.query('SELECT * FROM farmers', function (err, rows) {
+
+    if(err) throw err;
+
+    console.log(rows);
+
+    res.render('freport', {farmers:rows} );
+
+  });
+
+ 
+});
+
+
 module.exports = router;
