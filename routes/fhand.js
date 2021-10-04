@@ -21,6 +21,8 @@ router.post('/login', fhandController.login);
 
 router.get('/logout', fhandController.logout);
 
+router.post('/resetpassword', fhandController.resetpassword);
+
 
 // route for update fprofile
 router.post('/fprofile/:id', function(req, res) {
