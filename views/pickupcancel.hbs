@@ -22,15 +22,16 @@
                         <form id="contact-form" role="form">
                             <div class="controls">
                                 <div class="row">
+                                     <form class="form-card" action="/cancel/addCancel" method="POST"></form>
                                     <div class="col-md-6">
-                                        <form class="form-card" action="" method="POST"></form>
-                                        <div class="form-group"> <label for="form_name">Pickup ID *</label> <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your pickup id *" required="required" data-error="Firstname is required." readonly> </div>
+                                        <div class="form-group"> <label for="form_email">Pickup Date *</label> <input id="form_email" type="date" name="pcdate" class="form-control" placeholder="Please enter pickup date *" required="required" data-error="Valid date is required."> </div>
                                     </div>
                                    
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="form-group"> <label for="form_email">Pickup Date *</label> <input id="form_email" type="date" name="pcdate" class="form-control" placeholder="Please enter pickup date *" required="required" data-error="Valid date is required."> </div>
+                                       
+                                        <div class="form-group"> <label for="form_name">Pickup ID *</label> <input id="form_name" type="text" name="ppid" class="form-control" placeholder="Please enter your pickup id *" required="required" data-error="Pickup id required."> </div>
                                     </div>
                                     
                                 </div>

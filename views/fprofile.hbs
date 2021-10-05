@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="/header.css">
 <link rel="stylesheet" href="/footer.css">
 <link rel="stylesheet" href="/fprofile.css">
+<script src = "javascripts/fregister.js"> </script>
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
@@ -73,14 +74,14 @@
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Documents : </li>
                 <center>
-                <li class="list-group-item"><a href="#" class="card-link" style="text-decoration: none;">Download Document 1</a></li>
+                <li class="list-group-item"><a href="fhand/freport" class="card-link" style="text-decoration: none;" download="Ratings">Ratings - 2021</a></li>
                 <li class="list-group-item"><a href="#" class="card-link" style="text-decoration: none;">Download Document 2</a></li>
                 <li class="list-group-item"><a href="#" class="card-link" style="text-decoration: none;">Download Document 3</a></li>
                 </center>
                 <li class="list-group-item"><a href="fhand/searchforbuyers" class="card-link" style="text-decoration: none; color: black;">Find for Buyers<img src="img/investor.png" alt="" height="10%" width="10%" style="position: relative; left: 45%;"></a></li>
                 <li class="list-group-item"><a href="/addproduct" class="card-link" style="text-decoration: none; color: black;">Add Products<img src="img/fruit.png" alt="" height="10%" width="10%" style="position: relative; left: 49%;"></a></li>
                 <li class="list-group-item"><a href="/resetpassword" class="card-link" style="text-decoration: none; color: black;"> Reset Password <img src="img/rotation-lock.png" alt="" height="10%" width="10%" style="position: relative; left: 38%;"></a></li>
-                <li class="list-group-item"><a href="fhand/fdelete/{{user.id}}" class="card-link" style="text-decoration: none; color: black;"> Delete Account <img src="img/delete.png" alt="" height="10%" width="10%" style="position: relative; left: 40%;"></a></li>
+                <li class="list-group-item"><a href="fhand/fdelete/{{user.id}}"  class="btn btn-sm btn-danger" onclick="deleteAccount('del')" id = "del" style="text-decoration: none; color: white; width:100%"> Delete Account </a></li>
             </ul>
 
             </div>
@@ -95,7 +96,7 @@
                     <h1 style="color: seagreen; font-weight: bold;"> My Carbonic </h1>
                 </div>
                 <div class="card-body">
-                    <h6 class="card-title">Good Morning, </h6>
+                    <h6 class="card-title" id="greeting"></h6>
                     <h5 class="card-title">{{user.fname}}, </h5>
                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, eos! Quos quaerat necessitatibus voluptas fuga, cupiditate, consequuntur minus a exercitationem consectetur nulla officiis quidem. Cupiditate facilis sunt est consequuntur adipisci.</p>    
                 </div>
@@ -205,8 +206,31 @@
     <br>
     
     </div>
-    
 
+
+
+    <script>
+
+         var today = new Date();
+         var hourNow = today.getHours();
+         
+         if(hourNow > 18) {
+           document.getElementById('greeting').innerHTML = "Good Afternoon,"
+         }
+         else if(hourNow > 12) {
+           document.getElementById('greeting').innerHTML = "Good Evening,"
+         }
+         else if(hourNow > 0) {
+           document.getElementById('greeting').innerHTML = "Good Morning,"
+         }
+         else {
+           document.getElementById('greeting').innerHTML = "Good Day !!!"
+         }
+
+}
+
+    </script>
+  
 
 
 <br><br>

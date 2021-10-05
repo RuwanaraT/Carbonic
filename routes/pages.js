@@ -43,8 +43,8 @@ router.get("/addproduct",(req,res)=>{
   //   res.render("2nd")
   // });
 
-  router.get("/addforum",(req,res)=>{
-   res.render("addforum")
+  router.get("/forumHome/forumUser",(req,res)=>{
+   res.render("forumUser")
   });
 
 
@@ -52,9 +52,9 @@ router.get("/addproduct",(req,res)=>{
     res.render("forumHome")
   });
 
-  router.get("/forumpost",(req,res)=>{            //h
-    res.render("forumPost")
-  });
+  // router.get("/forumpost",(req,res)=>{            //h
+  //   res.render("forumPost")
+  // });
 
 
 
@@ -164,16 +164,40 @@ router.get('/alogin', (req, res) => {
 res.render("alogin");
 
 });
-router.get('/', (req, res) => {
 
+
+router.get("/pickupform",(req,res)=>{
+  res.render("pickupform");
+});//ir
+
+router.get("/pickupcancel",(req,res)=>{
+  res.render("pickupcancel");
+});//ir
+
+router.get("/pickupdetailstable",(req,res)=>{
+  res.render("pickupdetailstable");
+});//ir
+
+router.get("/requests",(req,res)=>{
+  res.render("requests");
+});//ir
+
+router.get('/', (req, res) => {
   res.render("buyerh");
   
-  });
+});
 
 router.get('/feedback', (req, res) => {
 
   res.render("feedback");
   
   });
+
+  router.get('/freport', (req, res) => {
+
+    res.render("freport");
+    
+    });
+
 
   module.exports=router;

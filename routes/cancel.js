@@ -15,6 +15,20 @@ router.get('/requests', function(req, res, next) {
   
 });
 
+router.post('/addCancel',function(req,res){
+    var reqdata = {
+      pck_date:req.body.pcdate,
+      reason:req.body.message,
+      pck_id:req.body.ppid,
+    };
+    console.log(reqdata);
+    connection.query("INSERT INTO requests SET  ?", reqdata,function(err,result){
+        if(err)throw err;
+        res.send("data inserted.");
+    });
+    
+});
+
 
 
 module.exports = router;
