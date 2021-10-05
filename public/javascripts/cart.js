@@ -168,7 +168,7 @@ function clearCart() {
   CartIsEmpty();
   CartItemsTotal();
 }
-//quantitychanging
+//quantitychanging single product
 
 function qtyChange(event, handler) {
   let btnClicked = event.parentElement.parentElement;
@@ -229,7 +229,7 @@ function sideNav(handler) {
   cover.style.display = handler ? "block" : "none";
   CartIsEmpty();
 }
-
+//order
 function buy(handler) {
   if (cartDetails.length == 0) return;
   sideNav(!handler);
@@ -250,7 +250,7 @@ function order() {
   Stocks();
   clearCart();
 }
-
+//order Thank You message
 function okay(event) {
   let container = document.getElementsByClassName("invoice")[0];
   if (event.target.innerText == "continue") {
@@ -290,7 +290,7 @@ function Product(product = {}) {
   return `
 <div class='card'>
   <div class='top-bar'>
-    <em class="stocks">In Stock</em>
+    <em class="stocks">In Stock</em> 
   </div>
   <div class='img-container'>
     <img class='product-img' src='${imageUrl}' alt='' />
@@ -353,8 +353,8 @@ function Banner() {
   </div>
 <div  class='order-now'></div>
 </div>`;
-}
-
+}//out of stock and limit purchase
+//cart purchase and clear
 function CartSideNav() {
   return `
 <div class='side-nav'>
@@ -371,7 +371,7 @@ function CartSideNav() {
 </div>`;
 }
 //totalpurchase
-
+//order
 function Purchase() {
   let toPay = document.getElementsByClassName("total")[0].innerText;
   let itemNames = cartDetails.map(item => {
@@ -400,7 +400,7 @@ function Purchase() {
 </div>`;
 }
 
-//orderconfirm
+//orderconfirm message
 
 function OrderConfirm() {
   let orderId = Math.round(Math.random() * 1000);
@@ -455,7 +455,7 @@ function ToggleBackBtns() {
     btn.innerHTML = AddBtn();
   }
 }
-
+//empty cart message
 function CartIsEmpty() {
   let emptyCart = `<span class='empty-cart'>Looks Like You Haven't Added Any Product In The Cart</span>`;
   if (cartDetails.length == 0) {
@@ -463,7 +463,7 @@ function CartIsEmpty() {
   }
 }
 
-//stock
+//stock messages
 
 function CartItemsTotal() {
   let totalPrice = cartDetails.reduce((totalCost, item) => {
