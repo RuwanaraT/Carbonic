@@ -79,7 +79,7 @@ router.post('/updateproduct/:pid', function(req,res){
     connection.query("UPDATE product SET pname=?,expdate=?,qty=?,pricepu=?,pdesc=? WHERE pid=?",[pname,expdate,qty,pricepu,pdesc,updateId], function(err,respond){
       if(err) throw err;
 
-      res.redirect('/pmviewproduct')//else ridirect to 2k piitipassata
+      res.redirect('/pmviewproduct')//else ridirect to 2 pages backwards
 
     });
 
@@ -98,6 +98,20 @@ router.get('/deleteProduct/:pid', function(req,res){
 
       res.redirect('/pmviewproduct')//to redirect to the same pageafter deletion
     })
+});
+
+//To view single product details
+router.get('/productdetail/:pid',function(req,res){
+
+  var singlepid = req.params.pid;
+
+  connection.query("SELECT * FROM product WHERE pid = ?",[singlepid], function(err,rows){
+
+    if(err) throw err;
+
+    res.render('productdetail', {product:rows});
+  })
+
 });
 
 
