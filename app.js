@@ -104,7 +104,9 @@ app.get("/pay",(req,res)=>{
 //*bovini
 
 
-
+app.get("/pdf",(req,res)=>{
+  res.render("pdf")
+});
 
 
 app.listen(8081,()=>{
