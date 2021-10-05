@@ -17,69 +17,16 @@
     <input type="radio" name="options" id="option2" autocomplete="off"><a href="/addproduct"class="text-white"> Add Products</a> 
   </label>
   <label class="btn btn-success">
-    <input type="radio" name="options" id="option3" autocomplete="off"> Monthly Sales Report
+    <input type="radio" name="options" id="option3" autocomplete="off"><a href="/pmviewproduct" download class="text-white"> Monthly Sales Report</a>
   </label>
   {{!-- <label class="btn btn-success">
     <input type="radio" name="options" id="option4" autocomplete="off"> Radio
   </label> --}}
 </div>
 <hr>
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid justify-content-center">
-    <form class="d-flex">
-      <input class="form-control me-2" type="search" onkeyup="searchFun()"  placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" id="search" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-<br><br>
-{{!-- start of product list --}}
-{{!-- <section>
 
-    <div class="row mb-4">
-      <div class="col-md-5 col-lg-3 col-xl-3">
-  
-        <div class="z-depth-1 rounded mb-3 mb-md-0 text-right">
-          <img class="img-thumbnail w-50"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg"
-            alt="Sample">
-        </div>
-        
-  
-      </div>
-      <div class="col-md-7 col-lg-9 col-xl-9">
-        <div class="row">
-          <div class="col-lg-7 col-xl-7">
-  
-            <h5>Fantasy T-shirt</h5>
-            <p class="mb-2 text-muted text-uppercase small">Shirts</p>
-            
-            <hr>
-            <p class="mb-lg-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
-              sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis
-              voluptates laboriosam. Distinctio, officia quis dolore quos sapiente tempore alias.</p>
-  
-          </div>
-          <div class="col-lg-5 col-xl-5">
-  
-            <h6 class="mb-3"><span>$12.99</span></h6>
-            <div class="my-4">
-              <button type="button" class="btn btn-success btn-md mr-1 mb-2"><i
-                  class="bi bi-arrow-clockwise pr-2"></i>Update</button>
-              <button type="button" class="btn btn-light btn-md mr-1 mb-2"><i
-                  class="fas fa-info-circle pr-2"></i>Details</button>
-            </div>
-            <button type="button" class="btn btn-danger btn-md px-3 mb-lg-2 material-tooltip-main"
-              data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i
-                class="bi bi-trash"></i></button>
-  
-          </div>
-        </div>
-      </div>
-    </div>
-  
-  </section> --}}
-<table id="myTable">
+{{!-- start of product list --}}
+
 {{#each product}}
   <section>
 
@@ -111,8 +58,8 @@
             <div class="my-4">
               <a href="/prdupdate/{{ this.pid }}"><button type="button" class="btn btn-success btn-md mr-1 mb-2"><i
                   class="bi bi-arrow-clockwise pr-2"></i>Update</button></a>
-              <button type="button" class="btn btn-light btn-md mr-1 mb-2"><i
-                  class="fas fa-info-circle pr-2"></i>Details</button>
+              <a href="/productdetail/{{ this.pid }}"><button type="button" class="btn btn-light btn-md mr-1 mb-2"><i
+                  class="fas fa-info-circle pr-2"></i>Details</button></a>
             </div>
             <a href="/deleteProduct/{{ this.pid }}"><button type="button" class="btn btn-danger btn-md px-3 mb-lg-2 material-tooltip-main"
               data-toggle="tooltip" data-placement="top" title="Delete Product"><i
@@ -125,30 +72,54 @@
   
   </section>
 {{/each}}
-</table>
   {{!-- end of product list --}}
 
-    {{!-- <br><br><br><br><br> --}}
-
-    <!--footer-->
-
-    {{!-- search --}}
-
-      <script>
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid justify-content-center">
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" id="search" placeholder="Search" aria-label="Search" onkeyup="searchFun()">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<br><br>
+  {{!-- start all product table --}}
+    <table class="table table-striped" id="prdTable">
+  <thead>
+    <tr>
+      {{!-- <th scope="col">#</th> --}}
+      <th scope="col">Product</th>
+      <th scope="col">Type</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price per Unit</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each product}}
+    <tr id="tr">
+      {{!-- <th scope="row">{{ this.pid }}</th> --}}
+      <td>{{ this.pname }}</td>
+      <td>{{this.ptype}}</td>
+      <td>{{ this.qty }}</td>
+      <td>{{ this.pricepu }}</td>
+    </tr>
+    {{/each}}
+    
+    <script>
                   const searchFun=()=>{
-                      let filter=document.getElementById('search').value.toUpperCase();
+                      let filter=document.getElementById('search').value.toLowerCase();
 
-                 let myTable=document.getElementById('myTable');
-                 let p=myTable.getElementsByTagName('p');
+                 let prdTable=document.getElementById('prdTable');
+                 let tr=prdTable.getElementsByTagName('tr');
 
                  for(var i=0;i<tr.length;i++){
-                       let p=tr[i].getElementsByTagName('p')[2];
-                       if(p){
-                           let textvalue=p.textContent||p.innerHTML;
-                           if(textvalue.toUpperCase().indexOf(filter)>-1){
-                               p[i].style.display="";
+                       let td=tr[i].getElementsByTagName('td')[1];
+                       if(td){
+                           let textvalue=td.textContent||td.innerHTML;
+                           if(textvalue.toLowerCase().indexOf(filter)>-1){
+                               tr[i].style.display="";
                            }else{
-                               p[i].style.display="none";
+                               tr[i].style.display="none";
                            }
 
                            }
@@ -156,12 +127,17 @@
 
                   }
                   
-                  
-              </script>          
         
 
 
+              </script>
+  </tbody>
+</table>
+  {{!-- End of all product table --}}
 
+    {{!-- <br><br><br><br><br> --}}
+
+    <!--footer-->
 <footer class="footer">
   <div class="container">
     <div class="row">
@@ -206,4 +182,4 @@
   </div>
 </footer>
 <!--footer-->
-   
+    
