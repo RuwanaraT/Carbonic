@@ -62,7 +62,9 @@ app.get("/home",(req,res)=>{
   res.render("home")
 });
 
-
+app.get("/pdf",(req,res)=>{
+  res.render("pdf")
+});
 
 
 app.listen(8081,()=>{
