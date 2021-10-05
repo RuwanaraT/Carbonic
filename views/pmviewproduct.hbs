@@ -17,7 +17,7 @@
     <input type="radio" name="options" id="option2" autocomplete="off"><a href="/addproduct"class="text-white"> Add Products</a> 
   </label>
   <label class="btn btn-success">
-    <input type="radio" name="options" id="option3" autocomplete="off"><a href="/pmviewproduct" download class="text-white"> Monthly Sales Report</a>
+    <input type="radio" name="options" id="option3" autocomplete="off"><a href="/pmviewproduct" download class="text-white"> Expected Revenue Report</a>
   </label>
   {{!-- <label class="btn btn-success">
     <input type="radio" name="options" id="option4" autocomplete="off"> Radio
@@ -84,6 +84,7 @@
 </nav>
 <br><br>
   {{!-- start all product table --}}
+    <h2>Expected Revenue Report</h2>
     <table class="table table-striped" id="prdTable">
   <thead>
     <tr>
@@ -92,7 +93,7 @@
       <th scope="col">Type</th>
       <th scope="col">Quantity</th>
       <th scope="col">Price per Unit</th>
-      <th scope="col">Expected Income</th>
+      <th scope="col">Expected Revenue</th>
     </tr>
   </thead>
   <tbody>
