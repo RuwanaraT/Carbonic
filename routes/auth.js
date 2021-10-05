@@ -11,6 +11,8 @@ router.get('/deleteBuyer/:id',authController.deleteBuyer);
 router.get('/editbuyer/:id',authController.editbuyer);
 router.post('/updatebuyer/:id',authController.updatebuyer);
 router.get('/blogout',authController.blogout);
+ router.get('/search',authController.search);
+
 
 // const db=mysql.createConnection({
 //     host: "localhost",

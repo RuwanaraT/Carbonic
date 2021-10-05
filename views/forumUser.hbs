@@ -47,30 +47,12 @@
   </div>
   <div id="mainpage">
     <div id="content">
-      <div class="side-image">
-      <center>
-      <h2 class="topic1">  Ask Question</h2>
-      </center>
-      <!-- Quction form-->
-
-      <form action="/forumHome/addPost" method="POST" >
-        <div class="contactform">
-          <label for="Name"></label>
-          <textarea class="textfield" name="psubject" cols="30" rows="2" placeholder="                                     What's on your mind ?"></textarea>  
-          <div class="clear2"></div>
-          <label for="Comments"></label>
-          <textarea class="textfield" name="pdescription" cols="30" rows="3" placeholder="                                               Explan "></textarea>
-          <div class="clear2"></div>
-          <button type="submit" class="form-submit">Submit</button><a href="#" class="form-btn"></a>
-          <p class="postinfo"> </p>
-        </div>
-      </form>
-      </div>
-
+      
+<p class="postinfo"> </p>
       <!--end Quction form-->  
 
         <div class="topic">
-          <h1>All Questions</h1>
+          <h1>my Questions</h1>
           <h5 class="amount">475- questios</h5>
         </div>
       
@@ -108,7 +90,6 @@
           </div>
         </div>
       </div>
-      
       <p class="postinfo"> </p>  
       {{/each}}
       <!-- end post container-->
@@ -132,7 +113,7 @@
         </ul>
         <h2>my branch</h2>
         <ul>
-          <li><a href="/forumHome/forumUser">Questions</a></li>
+          <li><a href="#">Questions</a></li>
           <li><a href="#">Answers</a></li>
           
           <li><a href="#">Business</a></li>

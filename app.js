@@ -42,13 +42,21 @@ app.use('/addproduct',require('./routes/product'));
 app.use('/fhand', require('./routes/fhand'));
 
 
-// app.use('/2nd',require('./routes/3rd')); //h
+//app.use('/forumHome',require('./routes/forumHome')); //h
+app.use('/cancel',require('./routes/cancel'));
+app.use('/addDetails',require('./routes/pickup'));//ir
+app.use('/pickup',require('./routes/pickup'));//ir
+app.use('/deletepck',require('./routes/pickup'));//ir
+app.use('/checkRow',require('./routes/checkRow'));
+
+
+
 app.use('/forumHome', forumRouter);
 
 
 app.use('/cart', require('./routes/cart'));
 
-// app.use('/forumHome',require('./routes/forumHome')); //h
+
 
 
 app.use('/buyerh',buyerRouter);
@@ -64,21 +72,10 @@ app.use('/adminprofile/:aid', adminkRouter); //j
 
 
 
-app.get("/pickupform",(req,res)=>{
-  res.render("pickupform")
-});
 
-app.get("/pickupcancel",(req,res)=>{
-  res.render("pickupcancel")
-});
 
-app.get("/pickupdetailstable",(req,res)=>{
-  res.render("pickupdetailstable")
-});
 
-app.get("/requests",(req,res)=>{
-  res.render("requests")
-});
+
 
 app.get("/shoppingcart",(req,res)=>{
   res.render("shoppingcart")
@@ -87,6 +84,24 @@ app.get("/shoppingcart",(req,res)=>{
 app.get("/home",(req,res)=>{
   res.render("home")
 });
+//bovini*
+app.use('/',require('./routes/invoicelist'));
+//app.use('/invoicetemplate',require('./routes/invoicetemplte'));
+
+app.use('/pay', require('./routes/pay'));
+
+app.get("/invoicelist",(req,res)=>{
+  res.render("invoicelist")
+});
+
+app.get("/invoicetemplate",(req,res)=>{
+  res.render("invoicetemplate")
+});
+
+app.get("/pay",(req,res)=>{
+  res.render("pay")
+});
+//*bovini
 
 
 
