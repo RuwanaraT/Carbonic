@@ -77,7 +77,7 @@
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid justify-content-center">
     <form class="d-flex">
-      <input class="form-control me-2" type="search" id="search" placeholder="Search" aria-label="Search" onkeyup="searchFun()">
+      <input class="form-control me-2" type="search" id="search" placeholder="Search" aria-label="Search" onkeyup="searchPrdType()">
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
   </div>
@@ -92,21 +92,29 @@
       <th scope="col">Type</th>
       <th scope="col">Quantity</th>
       <th scope="col">Price per Unit</th>
+      <th scope="col">Expected Income</th>
     </tr>
   </thead>
   <tbody>
     {{#each product}}
     <tr id="tr">
+      {{!-- <script>
+       document.getElementById("income").innerHTML = Math.imul({{this.qty}},{{this.pricepu}});
+      </script> --}}
       {{!-- <th scope="row">{{ this.pid }}</th> --}}
       <td>{{ this.pname }}</td>
       <td>{{this.ptype}}</td>
       <td>{{ this.qty }}</td>
       <td>{{ this.pricepu }}</td>
+      <td id="income" >
+                   <script> document.write({{this.qty}}*{{this.pricepu}});</script>
+      </td>
+      
     </tr>
     {{/each}}
     
     <script>
-                  const searchFun=()=>{
+                  const searchPrdType=()=>{
                       let filter=document.getElementById('search').value.toLowerCase();
 
                  let prdTable=document.getElementById('prdTable');
@@ -126,11 +134,8 @@
                        }
 
                   }
-                  
-        
-
-
-              </script>
+      
+    </script>
   </tbody>
 </table>
   {{!-- End of all product table --}}
