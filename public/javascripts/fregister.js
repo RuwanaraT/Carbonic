@@ -1,21 +1,3 @@
-/*function checkPassword ()
-{
-         var check1 = document.getElementById("pwd").value;
-         var check2 = document.getElementById("rpwd").value;
-
-         if(check1 != check2)
-         {
-               alret("Passwords are mismatched !!!");
-               return false;
-         }
-     
-         else
-         {
-              alert("Passwords are matched !!!");
-              return true;
-         }
-         
-}*/
 
 function enableButton()
 {
@@ -39,7 +21,17 @@ function deleteAccount(id) {
      }
      else{
 
-          alert("Account Deletion is unsuccessful");
+          alert("Account Deletion is Unsuccessful");
+     }
+}
+
+function alertEmail(result) {
+
+     if(result == 'reset') {
+          alert("Password is Reseted Successfully, Please Check Your Email !");
+     }
+     else{
+          alert("Reset Password is Unsuccessful");
      }
 }
 

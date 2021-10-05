@@ -193,5 +193,11 @@ router.get('/feedback', (req, res) => {
   
   });
 
+  router.get('/freport', (req, res) => {
+
+    res.render("freport");
+    
+    });
+
 
   module.exports=router;

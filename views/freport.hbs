@@ -1,0 +1,97 @@
+ 
+ <div class = "container-fluid" style="background-color: whitesmoke;">
+
+            <center>
+            <br>
+            <h1 style="color: seagreen; font-weight:bolder">Carbonic</h1>
+            </center>
+
+            <br>
+
+            <center>
+
+            <div class="container"> 
+
+                
+            <div class="row">
+
+                <div class="group col-md-4">
+
+
+                    <i><h5>Meet Us</h4></i>
+                    <i><h6>Carbonic, <br> No : 138/1, <br> Bishop Street, <br> Rajagiriya, <br> Sri Lanka.</h5></i>
+
+                </div>
+
+
+                <div class="group col-md-4">
+
+                    <i><h5>Call Us</h4></i>
+                        <i><h6>+94 112902368</i>    
+
+                </div>
+
+                <div class="group col-md-4">
+
+                    <i><h5>Email Us</h4></i>
+                    <i><h6>carbonic30@gmail.com</h6></i>
+
+                </div>
+
+            </div>
+
+        
+        </div>
+
+        </center>
+
+        <hr style="border: 2px solid seagreen;">
+
+        <div class = "container-fluid" style="background-color: springgreen">
+            <h2>Annual Contribution Report On Farmers - 2021</h2>
+
+        </div>
+
+        <div class = "container-fluid">
+            
+            <table class="table" id="searchTable">
+
+                <thead>
+
+                  <tr>
+                    <th scope="col"># Number</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Mobile</th>
+                    <th scope="col">District</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Contact No</th>
+                    <th scope="col">Rating</th>
+                  </tr>
+
+                </thead>
+
+                <tbody>
+            
+                  {{#each farmers}}
+            
+                  <tr class="table-success">
+                    <th scope="row">{{this.id}}</th>
+                    <td>{{this.fname}}</td>
+                    <td>{{this.fmobile}}</td>
+                    <td>{{this.fdistrict}}</td>
+                    <td>{{this.femail}}</td>
+                    <td>{{this.fmobile}}</td>
+                    <td>{{this.frating}}</td>
+                  </tr>
+            
+                  {{/each}}
+
+                </tbody>
+
+              </table>
+              
+              <br>
+            
+        </div>
+
+    </div>
