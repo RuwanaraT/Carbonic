@@ -47,6 +47,10 @@ router.get("/addproduct",(req,res)=>{
    res.render("forumUser")
   });
 
+  router.get("/forumHome/forumLogin",(req,res)=>{
+    res.render("forumLogin")
+   });
+
 
   router.get("/",(req,res)=>{            //h
     res.render("forumHome")
@@ -211,8 +215,18 @@ router.get('/feedback', (req, res) => {
         });
         router.get('/pdf', (req, res) => {
 
+
           res.render("pdf");
           
           });
+
+  router.get('/freport', (req, res) => {
+
+    res.render("freport");
+    
+    });
+
+
+
 
   module.exports=router;

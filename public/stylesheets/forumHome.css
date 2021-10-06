@@ -92,3 +92,28 @@
     color: cadetblue;
 }
 
+.btns{
+    margin-top: 10px;
+
+    
+}
+
+.btns button{
+    background-color: #016914be; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  
+}
+
+.btns button:hover{
+   background-color: #33b24a;
+}
+

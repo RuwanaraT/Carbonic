@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="/buyerh.css">
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
     <title>BuyerHandler</title>
+
+   
 </head>
 <body>
     {{!-- {{#each buyer}}
@@ -34,9 +37,10 @@
 
             <div class="search-wrapper">
                 <span class="las la-search"></span>
-                <input type="search" placeholder="Search Buyers by email" />
+                <form action="/auth/search" method="">
+                <input type="search" id="search" name="search" onkeyup="searchFun()" placeholder="Search Buyers by email" />
             </div>
-           
+           </form>
         </header>
 
         <main>
@@ -48,6 +52,7 @@
 
                 <div class="card-single">
                     <div>
+                        
                         
                         <h1>2</h1>
                         <span>Total Registered Buyers</span>
@@ -69,7 +74,7 @@
 
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table width="100%">
+                                <table width="100%" id="myTable">
                                     <thead>
                                         <tr>
                                             <td>Name</td>
@@ -80,13 +85,17 @@
                                     </thead>
                                     <tbody>  
                                          {{#each buyer}} 
-                                        <tr>
+                                        <tr id="tr">
                                            
                                             <td>{{this.name}}</td>
 										     <td>{{this.contactNumber}}</td>
                                               <td>{{this.email}}</td>
 										     <td>{{this.address}}</td>
    
+                                             {{!-- <td>xxxxx</td>
+										     <td>xxxxx}</td>
+                                              <td>xxxxx</td>
+										     <td>xxxxxxx}</td> --}}
 
                                         
                                         
@@ -98,9 +107,64 @@
 									
                                 </table>
                      
-
+                 <button type="button"  id="button" onclick="dwonloadfile()" class="btn btn-secondary btn-sm">Small button</button>
                   
-                        
+              <script>
+                  const searchFun=()=>{
+                      let filter=document.getElementById('search').value.toUpperCase();
+
+                 let myTable=document.getElementById('myTable');
+                 let tr=myTable.getElementsByTagName('tr');
+
+                 for(var i=0;i<tr.length;i++){
+                       let td=tr[i].getElementsByTagName('td')[2];
+                       if(td){
+                           let textvalue=td.textContent||td.innerHTML;
+                           if(textvalue.toUpperCase().indexOf(filter)>-1){
+                               tr[i].style.display="";
+                           }else{
+                               tr[i].style.display="none";
+                           }
+
+                           }
+                       }
+
+                  }
+                  
+                var button=document.getElementById('button')
+                button.addEventListener('click',function(e){
+                  var table=document.getElementById('myTable').value
+                  var filename="Buyer Details.txt"
+
+                  download(table,filename)
+                })
+                  
+                  function download(table,filename){
+                      var element=document.createElement('a')
+                      element.setAttribute('href','data:text/plain;charset=utf-8'+encodeURIComponent(table))
+                      element.setAttribute('download',filename)
+                      element.style.display='none'
+                      document.body.appendChild(element)
+                      element.click()
+                      document.body.removeChild(element)
+                  }
+
+
+{{!-- function dwonloadfile(){
+    var table=document.getElementsByTagName('tr').value;
+    
+    var file=new File([table],"info.txt",{type:"text/plain: charset=utf-8"});
+    var url=window.URL.createObjectURL(file);
+    var elem=document.createElement("a");
+    elem.style.display="none";
+    elem.href=url;
+    elem.download=file.name;
+    elem.click();
+    window.URL.revokeObjectURL(url);
+} --}}
+
+
+              </script>           
         
 
 </body>

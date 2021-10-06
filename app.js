@@ -64,11 +64,9 @@ app.use('/buyerh',buyerRouter);
 
 app.use('/delfeedback', adminkRouter);  //j
 
-app.use('/viewadmin', adminkRouter); //j
-
 app.use('/adminprofile/:aid', adminkRouter); //j
 
-
+app.use('/admin', adminkRouter); //j
 
 
 
@@ -104,7 +102,9 @@ app.get("/pay",(req,res)=>{
 //*bovini
 
 
-
+app.get("/pdf",(req,res)=>{
+  res.render("pdf")
+});
 
 
 app.listen(8081,()=>{

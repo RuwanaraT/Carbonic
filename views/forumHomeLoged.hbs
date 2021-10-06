@@ -31,10 +31,13 @@
     <div class="cancel-icon">
        <span class="fas fa-times"></span>
     </div>
-    <form action="#">
-       <input type="search" class="search-data" placeholder="Search" required>
+    <form action="/forumHome/search/{{buyername}}" method="POST">
+       <input type="search" class="search-data" placeholder="Search" name="search" required>
        <button type="submit" class="fas fa-search"></button>
     </form>
+    <div class="nav-items-login">
+       <li class="login"><a href="/forumHome">Logout</a></li>
+    </div>   
  </nav>
  <!-- navigation bar-->
 
@@ -47,20 +50,46 @@
   </div>
   <div id="mainpage">
     <div id="content">
-      
-<p class="postinfo"> </p>
+      <div class="side-image">
+      <center>
+      <h1 class="topic1" style="color:#074713be">Welcome {{buyername}}</h1>
+      <h2 class="topic1">  Ask Question</h2>
+      </center>
+      <!-- Quction form-->
+
+      <form action="/forumHome/addPost/{{buyername}}" method="POST" >
+        <div class="contactform">
+          <label for="Name"></label>
+          <textarea class="textfield" name="psubject" cols="30" rows="2" placeholder="                     What's on your mind {{buyername}}?"></textarea>  
+          <div class="clear2"></div>
+          <label for="Comments"></label>
+          <textarea class="textfield" name="pdescription" cols="30" rows="3" placeholder="                                               Explan "></textarea>
+          <div class="clear2"></div>
+          <button type="submit" class="form-submit">Submit</button>
+          <p class="postinfo"> </p>
+        </div>
+      </form>
+      </div>
+
       <!--end Quction form-->  
 
-      <center><h1>{{buyername}}</h1></center><br><br>
         <div class="topic">
-          <h2>My Questions</h2>
-          <h5 class="amount">{{rowcount}} - questios</h5>
+          <h1>All Questions</h1>
+          <h5 class="amount">{{rowcount}}- questios</h5>
         </div>
       
       <p class="postinfo"> </p>
 
 
-      
+          <center>
+          {{#if message}}
+    
+          <div>
+          <h3>{{message}}</h3>
+          </div>
+          
+
+        {{/if}}</center>
 
       <!--post container-->
       {{#each post}}
@@ -82,7 +111,7 @@
         </div>
         <div class="post-contend post-center" >
           <div class="subject">
-            <a href="/forumHome/forumPost/{{this.pid}}">
+            <a href="/forumHome/forumPost/{{this.pid}}/{{this.psubject}}/{{this.bid}}/{{this.pdescription}}/{{this.date}}/{{buyername}}"><!---->
              {{this.psubject}}
             </a>
           </div>
@@ -90,16 +119,9 @@
             {{this.pdescription}}
           </div>
         </div>
-
       </div>
-        <div class="btns">
-          <a href="/forumHome/deletePost/{{this.pid}}/{{this.bid}}" ><button>Delete</button></a>
-          <a href="/forumHome/updatePost/{{this.pid}}/{{this.bid}}"><button>Update</button></a>
-        </div>
-
-
-      <p class="postinfo"> </p>
-
+      
+      <p class="postinfo"> </p>  
       {{/each}}
       <!-- end post container-->
 
@@ -118,11 +140,11 @@
           <li><a href="#">Unanswered</a></li>
           <li><a href="#">Top Rated</a></li>
           <li><a href="#">Best Discussions</a></li>
-          <li><a href="#">Reports</a></li>
+          <li><a href="/forumHome/forumReport/forumReport">Reports</a></li>
         </ul>
         <h2>my branch</h2>
         <ul>
-          <li><a href="#">Questions</a></li>
+          <li><a href="/forumHome/forumUser/{{buyername}}">Questions</a></li>
           <li><a href="#">Answers</a></li>
           
           <li><a href="#">Business</a></li>

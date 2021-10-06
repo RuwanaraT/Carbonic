@@ -16,6 +16,16 @@ router.get('/', function(req, res, next) {
   });
 });
 
+// const totBuyers='SELECT SUM(id) FROM bdetails'
+
+// router.get('/',function(req,res,next){
+//   connection.query(totBuyers,function(err,rows){
+//     if(err) throw err;
+//     console.log(totBuyers);
+//     res.render('buyerh',{totBuyers:totBuyers[o].totBuyers});
+//   })
+// })
+
 
 
 

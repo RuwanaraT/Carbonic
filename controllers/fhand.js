@@ -2,6 +2,7 @@ const mysql = require("mysql");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const {promisify}=require('util');
+const nodemailer = require('nodemailer');
 
 const db = mysql.createConnection({
 
@@ -13,6 +14,7 @@ const db = mysql.createConnection({
     
 });
 
+// route for login
 exports.login = async (req, res) => {
 
     try{
@@ -23,7 +25,7 @@ exports.login = async (req, res) => {
             return res.status(400).render('login', {
                 message: 'Please provide an email and password'
             })
-        }
+    }
 
         db.query('SELECT * FROM farmers WHERE femail = ?', [femail], async (error, results) => {
 
@@ -64,6 +66,7 @@ exports.login = async (req, res) => {
     }
 }
 
+// route for farmer registration
 exports.fregister = (req, res) => {
 
     console.log(req.body);
@@ -106,6 +109,7 @@ exports.fregister = (req, res) => {
     });
 }
 
+// route for loggedin
 exports.isLoggedIn = async (req, res, next) => {
 
     //console.log(req.cookies);
@@ -145,6 +149,7 @@ exports.isLoggedIn = async (req, res, next) => {
      
 }
 
+// route for logout
 exports.logout = async (req, res) => { 
 
     res.cookie('jwt', 'logout', {
@@ -154,4 +159,45 @@ exports.logout = async (req, res) => {
     });
 
     res.status(200).redirect('/');
+}
+
+// route for reset password
+exports.resetpassword = async (req, res) => {
+
+  var em = req.body.em;
+  var pwd = req.body.pwd;
+
+  let encryptPassword = await bcrypt.hash(pwd, 8);
+
+  db.query("UPDATE farmers SET fpwd = ? WHERE femail = ?", [encryptPassword, em], function(err, result) {
+
+    if(err) throw err;
+    res.redirect('/resetpassword');
+    
+  });
+
+  console.log(req.body);
+  const transporter=nodemailer.createTransport({
+      service:'gmail',
+      auth:{
+          user:'carbonic30@gmail.com',
+          pass:'rootroot'
+      }
+  })
+  const mailOption={
+      from: req.body.em,
+      to: 'carbonic30@gmail.com',
+      subject:'Reset Password',
+      text:'Your newly updated password is '+ req.body.pwd
+  }
+  transporter.sendMail(mailOption,(error,info)=>{
+      if(error){
+          console.log(error);
+          res.send('error')
+      }else{
+          console.log('Email sent :'+info.response)
+          res.send('success')
+      }
+  })
+
 }

@@ -6,7 +6,11 @@
     <link rel="stylesheet" href="/footer.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-
+    <link rel="stylesheet" href="/forumLogin.css">
+    
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
 
 
   <!-- navigation bar-->
@@ -39,106 +43,31 @@
  <!-- navigation bar-->
 
 
+<!--login form-->
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
 
-<div id="wrap">
-  
-  <div id="header">
-  
-  </div>
-  <div id="mainpage">
-    <div id="content">
-      
-<p class="postinfo"> </p>
-      <!--end Quction form-->  
-
-      <center><h1>{{buyername}}</h1></center><br><br>
-        <div class="topic">
-          <h2>My Questions</h2>
-          <h5 class="amount">{{rowcount}} - questios</h5>
-        </div>
-      
-      <p class="postinfo"> </p>
+    <!-- Icon -->
 
 
-      
+    <!-- Login Form -->
+    <form action="/forumHome/forumLogin/login" method="POST">
+      <input type="text" id="email" class="fadeIn second" name="email" placeholder="login">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
 
-      <!--post container-->
-      {{#each post}}
-      
-      <div class="post-container">
-        <div class="post-detail post-center">
-          <div class="post-user">
-            <a href="#"><small>{{this.bid}}</small></a>
-          </div>
-          <div class="post-time commen-margin">
-            <small> 
-              {{this.date}}
-            </small>
-          </div>
-          <div class="post-status  commen-margin">
-            02 -<small> Like</small> <br>
-            05-<small>Reply</small>
-          </div>
-        </div>
-        <div class="post-contend post-center" >
-          <div class="subject">
-            <a href="/forumHome/forumPost/{{this.pid}}">
-             {{this.psubject}}
-            </a>
-          </div>
-          <div class="description commen-margin">
-            {{this.pdescription}}
-          </div>
-        </div>
-
-      </div>
-        <div class="btns">
-          <a href="/forumHome/deletePost/{{this.pid}}/{{this.bid}}" ><button>Delete</button></a>
-          <a href="/forumHome/updatePost/{{this.pid}}/{{this.bid}}"><button>Update</button></a>
-        </div>
-
-
-      <p class="postinfo"> </p>
-
-      {{/each}}
-      <!-- end post container-->
-
+      {{#if message}}
     
-    </div>
-    
-    <!--side bar-->
-    
-    <div id="sidebar">
-      <div class="sidebartop">
-        <h2>public</h2>
-      </div>
-      <div class="sidebarmain">
-        <ul>
-          <li><a href="#">Newest Post</a></li>
-          <li><a href="#">Unanswered</a></li>
-          <li><a href="#">Top Rated</a></li>
-          <li><a href="#">Best Discussions</a></li>
-          <li><a href="#">Reports</a></li>
-        </ul>
-        <h2>my branch</h2>
-        <ul>
-          <li><a href="#">Questions</a></li>
-          <li><a href="#">Answers</a></li>
-          
-          <li><a href="#">Business</a></li>
-    
-        </ul>
-      </div>
+        <div>
+         <h3>{{message}}</h3>
+         </div>
 
-      <p class="clear2">&nbsp;</p>
-      <span class="sidebarbottom">&nbsp;</span>
-    </div>
+        {{/if}}
 
-    <p class="clear"></p>
   </div>
 </div>
-
-
 
 
 
@@ -189,4 +118,3 @@
   </div>
 </footer>
 <!--footer-->
-    

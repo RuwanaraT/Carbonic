@@ -3,6 +3,8 @@
   const jwt=require('jsonwebtoken');
   const bcrypt=require('bcryptjs');
   const nodemailer=require('nodemailer');
+//   const Sequelize=require('sequelize');
+//   const Op=Sequelize.Op;
   const {promisify}=require('util');
 
   const db=mysql.createConnection({
@@ -218,6 +220,11 @@ exports.updatebuyer=(req,res)=>{
 
 }
 
+exports.search=(req,res)=>{
+    console.log(req.body);
+    db.query("SELECT * FROM bdetails WHERE email like 'new%';")
+}
+
 exports.blogout=async(req,res,next)=>{
     res.cookie('jwt','blogout',{
         expires:new Date(Date.now()+2*1000),
@@ -226,4 +233,5 @@ exports.blogout=async(req,res,next)=>{
     });
     res.status(200).redirect('/')
 }
+
 

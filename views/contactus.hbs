@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Form</title>
+        <link rel="stylesheet" href="/footer.css">
+        <link rel="stylesheet" href="/header.css">
     <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
@@ -60,8 +62,80 @@
         }
     </script>
   </head>
+ <img class="logo1" src="img/logo.svg" width="200px" height="200px">
+      <nav>
+         <img class="logo" src="img/carbonic-favicon-01.svg" width="200px" height="200px">
+         <ul>
+            <li><a class="active" href="/" style="text-decoration: none;">Home</a></li>
+            
+            <li>
+               <a href="#" style="text-decoration: none;">Browse Products
+               <i class="fas fa-caret-down"></i>
+               </a>
+               <ul>
+                  <li><a href="#" style="text-decoration: none;">Vegetables</a></li>
+                  <li><a href="#" style="text-decoration: none;">Fruits</a></li>
+                  <li>
+                     <a href="#" style="text-decoration: none;">Others
+                     <i class="fas fa-caret-right"></i>
+                     </a>
+                     <ul>
+                        <li><a href="#" style="text-decoration: none;">Plants & seeds</a></li>
+                        <li><a href="#" style="text-decoration: none;">Grains</a></li>
+                        <li><a href="#" style="text-decoration: none;">Fertilizer</a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+            <li><a href="/contactus" style="text-decoration: none;">Contact Us</a></li>
+             <li><a href="#" style="text-decoration: none;">About Us</a></li>
+            <li><a href="#" style="text-decoration: none;">Feedback</a></li>
+            {{# if user}}
+               <li>
+               <a href="/fprofile" style="text-decoration: none;">Profile
+               {{!-- <i class="fas fa-caret-down"></i> --}}
+               </a>
+               {{!-- <ul>
+                  <li><a href="/fregister">Farmer</a></li>
+                  <li><a href="/bregister">Buyer</a></li>
+               </ul> --}}
+            </li>
+            <li>
+               <a href="/fhand/logout" style="text-decoration: none;">Log Out
+               {{!-- <i class="fas fa-caret-down"></i> --}}
+               </a>
+               {{!-- <ul>
+                  <li><a href="/login">Farmer</a></li>
+                  <li><a href="#">Buyer</a></li>
+               </ul> --}}
+            </li>
+            {{else}}
+             <li>
+               <a href="#" style="text-decoration: none;">Register
+               <i class="fas fa-caret-down"></i>
+               </a>
+               <ul>
+                  <li><a href="/fregister" style="text-decoration: none;">Farmer</a></li>
+                  <li><a href="/bregister" style="text-decoration: none;">Buyer</a></li>
+               </ul>
+            </li>
+            <li>
+               <a href="#" style="text-decoration: none;">Switch To
+               <i class="fas fa-caret-down"></i>
+               </a>
+               <ul>
+                  <li><a href="/login" style="text-decoration: none;">Farmer</a></li>
+                  <li><a href="#" style="text-decoration: none;">Buyer</a></li>
+               </ul>
+            </li>
+            {{/if}}
+         </ul>
+      </nav>
+
+<br><br><br><br><br>
+
   <body>
-    <div class="container">
+    <div class="container1">
       <span class="big-circle"></span>
       <img src="img/shape.png" class="square" alt="" />
       <div class="form">
@@ -135,6 +209,53 @@
       </div>
     </div>
 
+  <br><br><br><br><br>
+
+    <!--footer-->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>company</h4>
+        <ul>
+          <li><a href="#">about us</a></li>
+          <li><a href="#">our services</a></li>
+          <li><a href="#">privacy policy</a></li>
+          <li><a href="#">affiliate program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>get help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">shipping</a></li>
+          <li><a href="#">returns</a></li>
+          <li><a href="#">order status</a></li>
+          <li><a href="#">payment options</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>online shop</h4>
+        <ul>
+          <li><a href="#">Vegetables</a></li>
+          <li><a href="#">Fruits</a></li>
+          <li><a href="#">Beans</a></li>
+          <li><a href="#">others</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--footer-->
    
   </body>
 </html>

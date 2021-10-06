@@ -7,12 +7,10 @@
    <center><h1 style="font-weight: bold; color:seagreen;"> Search for Buyers </h1> </center>
    <hr style="border: 2px solid black">
 
-   <form class="d-flex" action="" method="POST">
-    <input class="form-control me-2" type="search" placeholder="Search by location..." aria-label="Search">
-    <button class="btn btn-outline-success" type="submit">Search</button>
-  </form>
 
-  <table class="table">
+    <input class="form-control me-2" type="search" placeholder="Search by location..." aria-label="Search" id="sbuyer" onkeyup="searchBuyers()">
+
+  <table class="table" id="searchTable">
     <thead>
       <tr>
         <th scope="col"># Number</th>
@@ -39,3 +37,38 @@
   </table>
   <br>
 </div>
+
+
+{{!-- implementation of the search bar --}}
+<script>
+
+const searchBuyers = () => {
+
+  let keyword = document.getElementById('sbuyer').value.toUpperCase();
+
+  let stable = document.getElementById('searchTable');
+
+  let row = document.getElementsByTagName('tr');
+
+  for(var i = 0; i < row.length; i++) {
+
+    let data = row[i].getElementsByTagName('td')[2];
+
+    if(data) {
+       
+       let input = data.textContent || data.innerHTML;
+
+       if(input.toUpperCase().indexOf(keyword) > -1) {
+
+         row[i].style.display = "";
+       }
+       else {
+
+         row[i].style.display = "none";
+       }
+    }
+
+  }
+}
+
+</script>
