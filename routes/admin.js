@@ -1,4 +1,5 @@
 var express = require('express');
+const app = require('../app');
 var router = express.Router();
 var connection  = require('../config/connection')
 
@@ -58,6 +59,20 @@ router.get ('/deletefeedback/:cuzid', function (req, res)  {
     });
 });
 
+
+
+
+router.get('/admin', function(req, res) {
+
+    var adminid = req.params.aid;
+
+    connection.query("SELECT * FROM admin WHERE aid = ?", [adminid], function(err, rows) {
+    if (err) throw err;
+    res.render('admin', {admin:rows});
+
+    });
+
+});
 
 
 
@@ -124,7 +139,7 @@ router.get('/adminprofile/:aid', function(req, res) {
 
        connection.query("UPDATE admin SET afname =?, alname =?, aphone =?, asection =?, aemail =?, apsw =? WHERE aid =?", [ afname, alname,aphone, asection, aemail, apsw, idad], function (req, respond) {
            if (err) throw err;
-           res.render('viewadmin');
+           res.redirect('/update');
        });
 
     });
@@ -133,6 +148,24 @@ router.get('/adminprofile/:aid', function(req, res) {
 
 
 
+    router.get("/alogin", function(req, res){
+        res.redirect('/alogin');
+    });
+
+    router.post("/alogin", function(req, res){
+        var aemail = req.body.aemail;
+        var apsw = req.body.apsw;
+
+        connection.query("SELECT* FROM admin WHERE aemail = ? and apsw = ?",[aemail,apsw],function(error,results,fields){
+            if (results. length > 0) {
+                res.redirect("/admin");
+            } else {
+                res. redirect("/alogin");
+            }
+
+            console.log(rows);
+        });
+    });
 
 
 

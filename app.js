@@ -64,11 +64,9 @@ app.use('/buyerh',buyerRouter);
 
 app.use('/delfeedback', adminkRouter);  //j
 
-app.use('/viewadmin', adminkRouter); //j
-
 app.use('/adminprofile/:aid', adminkRouter); //j
 
-
+app.use('/admin', adminkRouter); //j
 
 
 
