@@ -1,3 +1,16 @@
+
+var express = require('express');
+var router = express.Router();
+var connection  = require('../config/connection')
+
+const express=require('express');
+const payController=require('../controllers/pay');
+
+const router=express.Router();
+
+router.post('/bregister',payController.bregister)
+
+
 window.onload = function () {
     document.getElementById("download")
         .addEventListener("click", () => {
@@ -13,4 +26,9 @@ window.onload = function () {
             };
             html2pdf().from(invoice).set(opt).save();
         })
-}
+
+} 
+module.exports=router;
+
+
+

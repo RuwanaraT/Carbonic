@@ -281,7 +281,72 @@
                     <div class="table-title">
                         <div class="row">
                             <div class="col-sm-6">
+          <body>
+    <!-- ## START HERE ##-->
+    
+    <input class="form-control me-1" type="search" name="search" id="search" placeholder="Search InvoiceID.." name="search" aria-label="Search InvoiceID">/>
+    <button class="btn btn-primary align-self-center" type="submit">Search</button>
+     
+    <table>
         
+      <thead>
+        <tr>
+          <th>InvoiceID</th>
+          <th>Buyer Name</th>
+          <th>Email</th>
+          <th>Address</th>
+            <th>SubTotal</th>
+              <th>Due Date</th>
+                <th>Phone No</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Dilshan Dissanayake</td>
+          <td>dilshan@gmail.com</td>
+           <td>dilshan@gmail.com</td>
+            <td>dilshan@gmail.com</td>
+             <td>dilshan@gmail.com</td>
+              <td>dilshan@gmail.com</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Lahiru Perera</td>
+          <td>lahi89@gmail.com</td>
+           <td>dilshan@gmail.com</td>
+            <td>dilshan@gmail.com</td>
+             <td>dilshan@gmail.com</td>
+              <td>dilshan@gmail.com</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Irosha Pieris</td>
+          <td>1iro@gmail.com</td>
+           <td>dilshan@gmail.com</td>
+            <td>dilshan@gmail.com</td>
+             <td>dilshan@gmail.com</td>
+              <td>dilshan@gmail.com</td>
+              
+        </tr>
+      </tbody>
+      
+    </table>
+    
+    <script>
+      const searchInput = document.getElementById("search");
+      const rows = document.querySelectorAll("tbody tr");
+      console.log(rows);
+      searchInput.addEventListener("keyup", function (event) {
+        const q = event.target.value.toLowerCase();
+        rows.forEach((row) => {
+          row.querySelector("td").textContent.toLowerCase().startsWith(q)
+            ? (row.style.display = "table-row")
+            : (row.style.display = "none");
+        });
+      });
+    </script>
+  </body>
                
                                 
          
@@ -306,8 +371,7 @@
                         </div>
                     </div>
                                                                      <form class="d-flex" method="POST" action="/" novalidate>
-                  <input class="form-control me-2" type="search" placeholder="Search InvoiceID" name="search" aria-label="Search InvoiceID">
-                  <button class="btn btn-primary align-self-center" type="submit">Search</button>
+                  
                 </form>            
         
                     <table class="table table-striped table-hover">
@@ -322,6 +386,8 @@
                                             <th>Order Status</th>
                             </tr>
                         </thead>
+         
+                        
                         <tbody>
                             <tr>
                                 <td>
@@ -540,7 +606,7 @@
                 </div>
             </div>
         </div>
-        <body>
+      <body>
     <table>
         <tr>
             <td>
@@ -552,8 +618,8 @@
                         <input type="text" name="invoiceId" id="invoiceId">
                     </div>
                     <div>
-                        <label>Buyer Email</label>
-                        <input type="text" name="buyerEmail" id="buyerEmail">
+                        <label>Buyer ID</label>
+                        <input type="text" name="buyerId" id="buyerId">
                     </div>
                     <div>
                         <label>Order ID</label>
@@ -586,7 +652,7 @@
                             <img src="">
                             
                             <th>InvoiceID</th>
-                            <th>Buyer Email</th>
+                            <th>Buyer ID</th>
                             <th>Order ID</th>
                             <th>Due Date</th> 
                             <th>Sub Total</th>
@@ -599,7 +665,7 @@
                             
                            
                             <td>#567890</td>
-                            <td>dilshan45@gmail.com</td>
+                            <td>1</td>
                             <td>1022</td>
                             <td>23/12/2021</td>
                             <td>LKR.39000.00</td>
@@ -613,7 +679,7 @@
                             
                            
                             <td>#567890</td>
-                            <td>ab56@gmail.com</td>
+                            <td>1</td>
                             <td>1022</td>
                             <td>23/12/2021</td>
                             <td>LKR.39000.00</td>
@@ -627,7 +693,7 @@
                             
                            
                             <td>#567890</td>
-                            <td>ab78@gmail.com</td>
+                            <td>1</td>
                             <td>1022</td>
                             <td>23/12/2021</td>
                             <td>LKR.39000.00</td>
@@ -641,7 +707,7 @@
                             
                            
                             <td>#567890</td>
-                            <td>bniboja@gmail.com</td>
+                            <td>1</td>
                             <td>1022</td>
                             <td>23/12/2021</td>
                             <td>LKR.39000.00</td>
@@ -655,7 +721,7 @@
                             
                            
                             <td>#567890</td>
-                            <td>dilshan@gmail.com</td>
+                            <td>1</td>
                             <td>1022</td>
                             <td>23/12/2021</td>
                             <td>LKR.39000.00</td>
@@ -671,10 +737,16 @@
             </td>
         </tr>
     </table>
+    
     <script src="invoicelist.js"></script>
-    <link rel="stylesheet" href="styles.css">
-</head>
-
+    
+   
+      </body>
+    <script>
+    
+</script>
+    <script src="invoilist.js"></script>
+  
 </body>
 
 </html>

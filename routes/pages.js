@@ -196,12 +196,36 @@ router.get('/feedback', (req, res) => {
   res.render("feedback");
   
   });
+  
+  router.get('/invoilist', (req, res) => {
+
+    res.render("invoilist");
+    
+    });
+    router.get('/invoicetemplate', (req, res) => {
+
+      res.render("invoicetemplate");
+      
+      });
+    
+      router.get('/receipt', (req, res) => {
+
+        res.render("receipt");
+        
+        });
+        router.get('/pdf', (req, res) => {
+
+
+          res.render("pdf");
+          
+          });
 
   router.get('/freport', (req, res) => {
 
     res.render("freport");
     
     });
+
 
 
 
