@@ -42,6 +42,7 @@ nav .nav-items{
   display: flex;
   flex: 1;
   padding: 0 0 0 40px;
+  color: #fff;
 }
 nav .nav-items li{
   list-style: none;
@@ -56,6 +57,24 @@ nav .nav-items li a{
 nav .nav-items li a:hover{
   color: #33b24a;
 }
+nav .nav-items-login li{
+  list-style: none;
+  padding: 0 0px;
+  margin-left: 100px;
+  margin-right: -50px;
+}
+
+nav .nav-items-login li a{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+nav .nav-items-login li a:hover{
+  color: #33b24a;
+}
+
 nav form{
   display: flex;
   height: 40px;
@@ -506,7 +525,18 @@ label {
 	margin-left: 263px;
 	width: 80px;
 	margin-top: 5px;
-  background-color: #9ab9a7b6  ;
+  font-size: 14px;
+  /* background-color: #9ab9a7b6  ; */
+  background-color: #016914be; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 10px; 
+  
+}
+
+.form-submit:hover{
+  background-color: #33b24a;
+
 }
 
 .form-btn{

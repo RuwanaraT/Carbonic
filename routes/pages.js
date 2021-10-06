@@ -47,6 +47,10 @@ router.get("/addproduct",(req,res)=>{
    res.render("forumUser")
   });
 
+  router.get("/forumHome/forumLogin",(req,res)=>{
+    res.render("forumLogin")
+   });
+
 
   router.get("/",(req,res)=>{            //h
     res.render("forumHome")
