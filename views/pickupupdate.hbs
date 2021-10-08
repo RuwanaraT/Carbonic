@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+        <title>Schedule Your PickUp</title>
+        <link rel="stylesheet" href="/pickupstyles.css">
+
+    </head>
+    <body>
+        <div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+            <h3>Schedule Your Pickup</h3>
+            <p class="blue-text">Just schedule your pickup<br> *Please kindly set pickup date minimum of two days from ordered date.</p>
+            <div class="card">
+                <h5 class="text-center mb-4">Update Your Pickup Details Here</h5>
+                 {{#each updatePckData}}
+                <form class="form-card" action="/pickup/edit" method="POST">
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Buyer name<span class="text-danger"> *</span></label> <input type="text" id="fname" name="bname" placeholder="Enter buyer username" value="{{ this.buyername}}" > </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Province<span class="text-danger"> *</span></label> <input type="text" id="province" name="province" placeholder="Enter your province" value="{{ this.province }}"> </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Mobile<span class="text-danger"> *</span></label> <input type="tel" id="mobile" name="mobile" placeholder="Enter driver mobile no"  pattern="[0-9]{10}" value="{{this.driver_mobile }}"> </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Pickup Time<span class="text-danger"> *</span></label> <input type="time" id="pcktime" name="pcktime" placeholder="Enter pickup time" value="{{ this.settime }}"> </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Pickup Date<span class="text-danger"> *</span></label> <input type="date" id="pckdate" name="pckdate" placeholder="Enter pickup date" value="{{ this.setdate }}"> </div>
+                         <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Driver NIC<span class="text-danger"> *</span></label> <input type="text" id="drnic" name="drnic" placeholder="Enter driver nic" pattern="[0-9]{10}" value="{{ this.driver_NIC }}"> </div>
+                    </div>
+                     <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Vehicle No<span class="text-danger"> *</span></label> <input type="text" id="vcno" name="vcno" placeholder="Enter vehicle no" pattern="[a-z]{2}-[0-9]{4}" value="{{ this.vehicle_no }}"> </div>
+                        
+                    </div>
+                   
+                    <div class="row justify-content-end">
+                        <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary">Update</button> </div>
+                    </div>
+                </form>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+        </body>
+    </html>

@@ -2,9 +2,13 @@ body {
     color: #000;
     overflow-x: hidden;
     height: 100%;
-    background-image: url("img/backgroundimg.jpg");
+    background-image: url("img/deliveryimg.png");
     background-repeat: no-repeat;
-    background-size: 100% 140%
+    background-size: 100% 100%;
+   
+}
+body h3{
+   margin-top: 50px;;
 }
 
 .card {
@@ -16,7 +20,9 @@ body {
 }
 
 .blue-text {
-    color: #00BCD4
+    margin-top: 20px;
+    color:green;
+    font-style: bold;
 }
 
 .form-control-label {

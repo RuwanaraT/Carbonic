@@ -9,11 +9,7 @@
         <link rel="stylesheet" href="/pckdetailstable.css">
         </head>
     
-            
-    
-    
-         <body>
-        
+    <body>
         <!--MDB Tables-->
         <div class="container mt-4">
             <div class="card mb-4">
@@ -23,7 +19,7 @@
                         <!-- Grid column -->
                         <div class="col-md-12">
                             <h2 class="pt-3 pb-4 text-center font-bold font-up deep-purple-text">Handling Pickups</h2>
-                                <input class="form-control my-0 py-1 pl-3 purple-border" type="text" placeholder="Search by date..." aria-label="Search">
+                                <input class="form-control my-0 py-1 pl-3 purple-border" type="text" id="dateSearch" placeholder="Search by date..." aria-label="Search" onkeyup="dateSearchFunction()">
                                 <span class="input-group-addon waves-effect purple lighten-2" id="basic-addon1"><a><i class="fa fa-search white-text" aria-hidden="true"></i></a></span>
                             </div>
                         </div>
@@ -31,7 +27,7 @@
                     </div>
                     <!-- Grid row -->
                     <!--Table-->
-                    <table class="table table-striped">
+                    <table class="table table-striped" id="myTable">
                         <!--Table head-->
                         <thead>
                             <tr>
@@ -65,7 +61,7 @@
                                 <td>{{ this.driver_NIC }}</td>
                                 <td>{{ this.vehicle_no }}</td>
                                 <td>{{ this.buyerid }}</td>
-                                <td><input type="checkbox" id="toggle"></td>
+                                <td><a href="/pickup/checked/{{ this.pid }}"><input type="button" id="toggle" class="btn btn-primary" value="Done"></a></td>
                                 <td><input type="checkbox" id="toggle"></td>
                                 <td><a href="/pickup/deletepck/{{ this.pid }}"><button type="button" class="btn btn-primary" name="">Delete</button></a><td>
                             </tr>
@@ -74,7 +70,10 @@
                         <!--Table body-->
                     </table>
                     <!--Table-->
+                    
                 </div>
+                <button type="button" class="btn btn-primary" onclick="window.print()">Print this page</button>
             </div>
-            </body>
+            
+    </body>
     </html>

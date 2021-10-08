@@ -1,0 +1,54 @@
+<head>
+     <link rel="stylesheet" href="/pickupReportstyles.css">
+     <style>
+       body h2{
+         font-family: Arial;
+         text-align: center;
+         margin-top: 120px;
+         margin-bottom: 50px;
+         color:darkgreen;
+       }
+       body h3{
+         text-align: center;
+       }
+     </style>
+</head>
+
+<div class="container">
+  <table id="customers">
+    <h2>Monthly Orders Dispatched Report</h2>
+    <h3>Carbonic.com</h3>
+    <caption><i>Monthly Order Dispatched Report for month October 2021.</i></caption>
+    <thead>
+      <tr>
+        <th scope="col">Pickup ID</th>
+        <th scope="col">Buyer Name</th>
+        <th scope="col">Province</th>
+        <th scope="col">Dispatched Time</th>
+        <th scope="col">Dispatched Date</th>
+        <th scope="col">Vehicle NO</th>
+        <th scope="col">Budget</th>
+      </tr>
+    </thead>
+    <tbody>
+     
+    {{#each dispatchobj }}
+      <tr>
+        <td scope="row">{{ this.pid }}</td>
+        <td>{{ this.buyername }}</td>
+        <td>{{ this.province }}</td>
+        <td data-type="time">{{ this.settime }}</td>
+        <td data-type="date">{{ this.setdate }}</td>
+        <td>{{ this.vehicle_no }}</td>
+        <td data-title="Budget" data-type="currency">Rs.150,000,000</td>
+      </tr>
+     
+      
+    {{/each}} 
+
+     
+     
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-primary" onclick="window.print()">Downlaod PDF</button>
+</div>
