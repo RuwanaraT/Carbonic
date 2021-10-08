@@ -10,7 +10,60 @@
 
     </head>
     <body>
-        <div class="container-fluid px-1 py-5 mx-auto">
+        <link rel="stylesheet" href="/header.css">
+<link rel="stylesheet" href="/footer.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+<img class="logo1" src="img/logo.svg" width="200px" height="200px">
+<nav>
+    <img class="logo" src="img/carbonic-favicon-01.svg" width="200px" height="200px">
+    <ul>
+        <li><a class="active" href="/index">Home</a></li>
+
+        <li>
+            <a href="#">Browse Products
+                <i class="fas fa-caret-down"></i>
+            </a>
+            <ul>
+                <li><a href="#">Vegetables</a></li>
+                <li><a href="#">Fruits</a></li>
+                <li>
+                    <a href="#">Others
+                        <i class="fas fa-caret-right"></i>
+                    </a>
+                    <ul>
+                        <li><a href="#">Plants & seeds</a></li>
+                        <li><a href="#">Grains</a></li>
+                        <li><a href="#">Fertilizer</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Feedback</a></li>
+        <li>
+            <a href="#">Register
+                <i class="fas fa-caret-down"></i>
+            </a>
+            <ul>
+                <li><a href="/fregister">Farmer</a></li>
+                <li><a href="/bregister">Buyer</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/blogin">Switch To
+                <i class="fas fa-caret-down"></i>
+            </a>
+            <ul>
+                <li><a href="/login">Farmer</a></li>
+                <li><a href="/blogin">Buyer</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<div class="container-fluid px-1 py-5 mx-auto">
     <div class="row d-flex justify-content-center">
         <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
             <h3>Schedule Your Pickup</h3>
@@ -19,24 +72,24 @@
                 <h5 class="text-center mb-4">Add Your Pickup Details Here</h5>
                 <form class="form-card" action="/pickup/addDetails" method="POST">
                     <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Buyer name<span class="text-danger"> *</span></label> <input type="text" id="fname" name="bname" placeholder="Enter buyer username" > </div>
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Province<span class="text-danger"> *</span></label> <input type="text" id="province" name="province" placeholder="Enter your province" > </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Buyer name<span class="text-danger"> *</span></label> <input type="text" id="fname" name="bname" placeholder="Enter buyer username" required> </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Province<span class="text-danger"> *</span></label> <input type="text" id="province" name="province" placeholder="Enter your province" required> </div>
                     </div>
                     <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Mobile<span class="text-danger"> *</span></label> <input type="tel" id="mobile" name="mobile" placeholder="Enter driver mobile no"  pattern="[0-9]{10}"> </div>
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Pickup Time<span class="text-danger"> *</span></label> <input type="time" id="pcktime" name="pcktime" placeholder="Enter pickup time" > </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Driver Mobile<span class="text-danger"> *</span></label> <input type="tel" id="mobile" name="mobile" placeholder="Enter driver mobile no"  pattern="[0-9]{10}"> </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Pickup Time<span class="text-danger"> *</span></label> <input type="time" id="pcktime" name="pcktime" placeholder="Enter pickup time" required> </div>
                     </div>
                     <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Pickup Date<span class="text-danger"> *</span></label> <input type="date" id="pckdate" name="pckdate" placeholder="Enter pickup date" > </div>
-                         <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Driver NIC<span class="text-danger"> *</span></label> <input type="text" id="drnic" name="drnic" placeholder="Enter driver nic" pattern="[0-9]{10}"> </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Pickup Date<span class="text-danger"> *</span></label> <input type="date" id="pckdate" name="pckdate" placeholder="Enter pickup date" required> </div>
+                         <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Driver NIC<span class="text-danger"> *</span></label> <input type="text" id="drnic" name="drnic" placeholder="Enter driver nic" pattern="[0-9]{10}" required> </div>
                     </div>
                      <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Vehicle No<span class="text-danger"> *</span></label> <input type="text" id="vcno" name="vcno" placeholder="Enter vehicle no" pattern="[a-z]{2}-[0-9]{4}"> </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Vehicle No<span class="text-danger"> *</span></label> <input type="text" id="vcno" name="vcno" placeholder="Enter vehicle no" pattern="[a-z]{2}-[0-9]{4}" required> </div>
                         
                     </div>
                    
                     <div class="row justify-content-end">
-                        <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary">Submit</button> </div>
+                        <div class="form-group col-sm-6">  <button type="submit" class="btn-block btn-primary">Submit</button></div>
                     </div>
                 </form>
             </div>
@@ -44,4 +97,49 @@
     </div>
 </div>
         </body>
+        <!--footer-->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">our services</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                    <li><a href="#">affiliate program</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">shipping</a></li>
+                    <li><a href="#">returns</a></li>
+                    <li><a href="#">order status</a></li>
+                    <li><a href="#">payment options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>online shop</h4>
+                <ul>
+                    <li><a href="#">Vegetables</a></li>
+                    <li><a href="#">Fruits</a></li>
+                    <li><a href="#">Beans</a></li>
+                    <li><a href="#">others</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--footer-->
     </html>

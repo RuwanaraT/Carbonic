@@ -1,14 +1,22 @@
 body {
     color: #000;
     overflow-x: hidden;
-    background-image: url("img/food.jpg");
+    background-color: lavender;
     background-repeat: no-repeat;
     
     
 }
+body h2{
+    text-align: center;
+    color: lightseagreen;
+
+}
+
+
 
 .table.table-bordered th {
     text-align: center;
+    margin-top: 50px;
 }
 
 .form-2 .input-group-addon {
