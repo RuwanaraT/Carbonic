@@ -37,24 +37,26 @@ git-cheat-sheet can be found [here](https://education.github.com/git-cheat-sheet
 
 1. Clone or download the repository.
 2. Open GitHub Dekstop.
-2. Select cloned/downloaded current repository.
+2. Select cloned/downloaded repository as current repository.
 3. Make sure to be in your respective branch.
 
                ` After doing changes `
 
 4. Select change files.
 5. Put a commit message.
-7. Click on "Commit to <Your Branch Name>"
+7. Click on "Commit to `<Your branch name>`"
 8. Click on "Push origin".
 9. Click on "Create new pull request".
+
+             ` After that GitHub will be opend using browser an allow you to confirm the create pull request `
 
 
 ##### Pull changes were made, in to your branch 
 
 1. Go to main branch.
-2. Click on 'Fetch origin'.
+2. Click on "Fetch origin".
 3. Go to your branch.
-4. Click on "Choose a branch to merge into <your brach name>".
+4. Click on "Choose a branch to merge into `<your brach name>`".
 5. Click to Merge.
 6. Click on "Push origin".
  
