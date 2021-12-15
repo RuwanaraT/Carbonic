@@ -6,6 +6,8 @@
       <link rel="stylesheet" href="/buyerDashboard.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 </head>
 <body>
    	<p>{{buyer.name}}</p>
@@ -15,7 +17,16 @@
   <a href="/bprofile"class="icon-a"><i class="fa fa-user icons"></i> &nbsp;&nbsp;Your Profile</a>
   {{!-- <a href=""class="icon-a"><i class="fa fa-shopping-cart"></i> &nbsp;&nbsp;Your Cart</a> --}}
   <a href="/shoppingcart"class="icon-a"><i class="fa fa-shopping-bag icons"></i> &nbsp;&nbsp;Buy Product</a>
-  <a href="/contactus"class="icon-a"><i class="fa fa-volume-control-phone"></i> &nbsp;&nbsp;Contact Us</a>
+
+<a href=""class="icon-a"> <i class="fas fa-file"></i> &nbsp;&nbsp;Invoice <i class="fas fa-caret-down"></i>
+	   <a href="/invoicelist">Invoice List</a>
+	   <a href="/invoicetemplate">Invoice Template</a>
+	   <a href="/pay">Payment - Receipt</a>
+ </a>
+
+
+
+  <a href="/contactus"class="icon-a"><i class="fa fa-mobile"></i> &nbsp;&nbsp;Contact Us</a>
   <a href="#"class="icon-a"><i class="fa fa-users icons"></i> &nbsp;&nbsp;About us</a>
   <a href="/auth/blogout"class="icon-a"><i class="fa fa-sign-out"></i> &nbsp;&nbsp;Log Out</a>
 
